@@ -1,0 +1,27 @@
+{
+  "name": "vue-component",
+  "version": "1.0.0",
+  "description": "针对VUE框架而开发的组件",
+  "main": "src/scripts/vue-component.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtiiii/vue-component.git"
+  },
+  "keywords": [
+    "javascript",
+    "vue",
+    "component"
+  ],
+  "author": "FuneralObjects <874972403@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtiiii/vue-component/issues"
+  },
+  "homepage": "https://github.com/jtiiii/vue-component#readme"
+}
