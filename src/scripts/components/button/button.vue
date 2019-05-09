@@ -12,7 +12,7 @@
         border: 1px solid;
         border-radius: 5px;
         cursor: pointer;
-
+        margin: 1px;
     }
     button:active{
         box-shadow: 0 0;

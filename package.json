@@ -1,10 +1,10 @@
 {
-  "name": "vue-component",
+  "name": "f-vue-components",
   "version": "0.0.1",
-  "description": "针对VUE框架而开发的组件",
+  "description": "参考了bootstrap样式而自己开发的vue组件",
   "main": "src/scripts/vue-component.js",
   "directories": {
-    "example": "example"
+    "example": "use 'npm run start' to show sample."
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
@@ -25,6 +25,7 @@
   "bugs": {
     "url": "https://github.com/jtiiii/vue-component/issues"
   },
+  "files": ["src", "README.md", ""],
   "homepage": "https://github.com/jtiiii/vue-component#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",

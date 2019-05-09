@@ -7,7 +7,7 @@ console.info(vc);
 let keys = Object.keys(vueComponents);
 
 keys.forEach( key => {
-   Vue.component(key,vueComponents[key]);
+   Vue.component(vueComponents[key].name,vueComponents[key]);
 });
 
 window.Vue = Vue;

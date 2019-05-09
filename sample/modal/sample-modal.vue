@@ -1,50 +1,42 @@
 <template>
-    <div>
-        <div class="modal-container">
-            <modal :show="show1" :type="'warning'" @close="show1 = false">
-                <template #title> This is a modal title.</template>
-                This is a modal.
-            </modal>
-            <button type="button" @click="show1 = true"> show modal1 </button>
-        </div>
-        <div class="modal-container">
-            <modal :show="show2" :hasMask="false" :type="'info'" @close="show2 = false">
-                <template #title> This is a modal title.</template>
-                This is a modal without the mask.
-            </modal>
-            <button type="button" @click="show2 = true"> show modal2 </button>
-        </div>
-        <div class="modal-container">
-            <modal :show="true" :height="'100px'" :width="'240px'" :canClose="false" :position="position3" :hasMask="false" :type="'success'">
-                <template #title> This is a modal title.</template>
-                This is a modal without the mask.
-            </modal>
-            <button type="button" @click="position3 = position3 === 'top-right'? 'bottom-right': 'top-right'">Change Position</button>
-        </div>
-
-        <div class="modal-container">
-            <modal :show="show4" :height="'100px'" :width="'240px'" :position="position4" @close="show4 = false" :type="'danger'">
-                <template #title> This is a modal title.</template>
-                This is a modal without the mask.
-            </modal>
-            <button style="float:right;" type="button" @click="position4 = position4 === 'top-left'? 'bottom-left': 'top-left'">Change Position</button>
-            <button style="float:right;" type="button" @click="show4 = true"> show modal4 </button>
-        </div>
+    <div class="modal-container">
+        <modal :show="show" :position="position" :hasMask="hasMask" :type="type" :width="'500px'" :height="'400px'" @close="show = false">
+            Change position:
+            <br/>
+            <template #title> This is a modal title.</template>
+            <v-button @click="position ='top-left'">To top-left</v-button>
+            <v-button @click="position ='top-right'">To top-right</v-button>
+            <v-button @click="position ='bottom-right'">To bottom-right</v-button>
+            <v-button @click="position ='bottom-left'">To bottom-left</v-button>
+            <v-button @click="position ='center'">To center</v-button>
+            <hr/>
+            <v-button :type="'info'" @click="hasMask = !hasMask"> Open / Close the mask.</v-button>
+            <hr/>
+            Change type:
+            <br/>
+            <v-button @click="type = 'default'"> default</v-button>
+            <v-button :type="'warning'" @click="type = 'warning'">to warning</v-button>
+            <v-button :type="'danger'" @click="type = 'danger'">to danger</v-button>
+            <v-button :type="'success'" @click="type = 'success'">to success</v-button>
+            <v-button :type="'info'" @click="type = 'info'">to info</v-button>
+        </modal>
+        <v-button @click="show = true">show modal</v-button>
     </div>
 </template>
 <script>
     import Modal from '../../src/scripts/components/modal/modal.vue';
+    import Button from '../../src/scripts/components/button/button.vue';
     export default {
         components:{
             'modal': Modal,
+            'v-button': Button
         },
         data: function(){
             return {
-                show1: true,
-                show2: true,
-                position3: 'top-right',
-                position4: 'bottom-left',
-                show4: true
+                show: true,
+                type: 'default',
+                hasMask: true,
+                position: 'center',
             };
         },
         methods:{
@@ -57,7 +49,7 @@
     .modal-container{
         float: left;
         position: relative;
-        width: 50%;
-        height: 400px;
+        width: 100%;
+        height: 800px;
     }
 </style>
