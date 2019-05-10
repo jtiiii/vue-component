@@ -1,6 +1,6 @@
 {
   "name": "f-vue-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "参考了bootstrap样式而自己开发的vue组件",
   "main": "src/scripts/vue-component.js",
   "directories": {
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/jtiiii/vue-component/issues"
   },
-  "files": ["src", "README.md", ""],
+  "files": ["package.json", "README","src"],
   "homepage": "https://github.com/jtiiii/vue-component#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",

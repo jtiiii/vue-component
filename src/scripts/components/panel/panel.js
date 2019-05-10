@@ -1,6 +1,3 @@
-
-
-
 export const Option ={
     name: 'panel',
     props:{
