@@ -1,12 +1,13 @@
 <script type="text/javascript">
     import {Option} from './modal';
+
     export default Option;
 </script>
 <template>
     <div v-show="show">
         <div v-if="hasMask" class="mask" ref="mask">
         </div>
-        <panel class="modal" ref="modal" :style="modalStyle" :width="width" :type="type" :height="height" :canClose="canClose" @close="closeEvent">
+        <panel class="modal" ref="modal" :style="modalStyleComputed" :width="width" :type="type" :height="height" :canClose="canClose" @close="closeEvent">
             <template #title><slot name="title"></slot>&nbsp;</template>
             <slot></slot>
         </panel>

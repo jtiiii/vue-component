@@ -1,24 +1,24 @@
 <template>
     <div class="modal-container">
         <modal :show="show" :position="position" :hasMask="hasMask" :type="type" :width="'500px'" :height="'400px'" @close="show = false">
-            Change position:
+            Change position to:
             <br/>
             <template #title> This is a modal title.</template>
-            <v-button @click="position ='top-left'">To top-left</v-button>
-            <v-button @click="position ='top-right'">To top-right</v-button>
-            <v-button @click="position ='bottom-right'">To bottom-right</v-button>
-            <v-button @click="position ='bottom-left'">To bottom-left</v-button>
-            <v-button @click="position ='center'">To center</v-button>
+            <v-button @click="position ='top-left'">top-left</v-button>
+            <v-button @click="position ='top-right'">top-right</v-button>
+            <v-button @click="position ='bottom-right'">bottom-right</v-button>
+            <v-button @click="position ='bottom-left'">bottom-left</v-button>
+            <v-button @click="position ='center'">center</v-button>
             <hr/>
             <v-button :type="'info'" @click="hasMask = !hasMask"> Open / Close the mask.</v-button>
             <hr/>
-            Change type:
+            Change type to:
             <br/>
             <v-button @click="type = 'default'"> default</v-button>
-            <v-button :type="'warning'" @click="type = 'warning'">to warning</v-button>
-            <v-button :type="'danger'" @click="type = 'danger'">to danger</v-button>
-            <v-button :type="'success'" @click="type = 'success'">to success</v-button>
-            <v-button :type="'info'" @click="type = 'info'">to info</v-button>
+            <v-button :type="'warning'" @click="type = 'warning'">warning</v-button>
+            <v-button :type="'danger'" @click="type = 'danger'">danger</v-button>
+            <v-button :type="'success'" @click="type = 'success'">success</v-button>
+            <v-button :type="'info'" @click="type = 'info'">info</v-button>
         </modal>
         <v-button @click="show = true">show modal</v-button>
     </div>
@@ -26,6 +26,7 @@
 <script>
     import Modal from '../../src/scripts/components/modal/modal.vue';
     import Button from '../../src/scripts/components/button/button.vue';
+
     export default {
         components:{
             'modal': Modal,

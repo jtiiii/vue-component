@@ -46,6 +46,11 @@ export const Option = {
             validator: function( position ){
                 return ['top-left','top-right','bottom-left','bottom-right','center'].indexOf(position) !== -1;
             }
+        },
+        modalStyle:{
+            type: Object,
+            required: false,
+            default: () => {return {}},
         }
     },
     data: () => {
@@ -71,32 +76,46 @@ export const Option = {
         }
     },
     computed:{
-        modalStyle: function(){
+        modalStyleComputed: function(){
+            let result;
             switch (this.position) {
-                case 'top-left': return {
-                    'top': '5px',
-                    'left': '5px',
-                };
-                case 'top-right': return {
-                    'top': '5px',
-                    'right': '5px',
-                };
-                case 'bottom-left': return {
-                    'bottom': '5px',
-                    'left': '5px',
-                };
-                case 'bottom-right': return {
-                    'bottom': '5px',
-                    'right': '5px',
-                };
+                case 'top-left':
+                    result = {
+                        'top': '5px',
+                        'left': '5px',
+                    };
+                    break;
+                case 'top-right':
+                    result = {
+                        'top': '5px',
+                        'right': '5px',
+                    };
+                    break;
+                case 'bottom-left':
+                    result = {
+                        'bottom': '5px',
+                        'left': '5px',
+                    };
+                    break;
+                case 'bottom-right':
+                    result = {
+                        'bottom': '5px',
+                        'right': '5px',
+                    };
+                    break;
                 case 'center':
-                default: return {
-                    'top': '50%',
-                    'left': '50%',
-                    'margin-left': - this.styles.modal.width / 2 + 'px',
-                    'margin-top': - this.styles.modal.height / 2 + 'px'
-                };
+                default:
+                    result = {
+                        'top': '50%',
+                        'left': '50%',
+                        'margin-left': - this.styles.modal.width / 2 + 'px',
+                        'margin-top': - this.styles.modal.height / 2 + 'px'
+                    };
             }
+            if(Object.keys(this.modalStyle).length){
+                return Object.assign(this.modalStyle,result);
+            }
+            return result;
         }
     },
     updated: function(){

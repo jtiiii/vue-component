@@ -12,7 +12,7 @@ const Option = {
             default: '35px'
         },
         type:{
-            type:String,
+            type: String,
             required: false,
             default: 'default',
             validator: function( value ){

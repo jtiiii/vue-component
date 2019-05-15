@@ -1,6 +1,6 @@
 {
   "name": "f-vue-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "参考了bootstrap样式而自己开发的vue组件",
   "main": "src/scripts/vue-component.js",
   "directories": {
@@ -25,13 +25,19 @@
   "bugs": {
     "url": "https://github.com/jtiiii/vue-component/issues"
   },
-  "files": ["package.json", "README","src"],
+  "files": [
+    "package.json",
+    "README",
+    "src"
+  ],
   "homepage": "https://github.com/jtiiii/vue-component#readme",
   "devDependencies": {
-    "clean-webpack-plugin": "^0.1.19",
-    "css-loader": "^0.28.11",
+    "clean-webpack-plugin": "^2.0.2",
+    "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.21.0",
+    "loader": "^2.1.1",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.30.0",
@@ -39,6 +45,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
+    "md5": "^2.2.1",
     "vue": "^2.6.10"
   }
 }

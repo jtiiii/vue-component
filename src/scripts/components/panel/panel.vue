@@ -1,5 +1,6 @@
 <script type="text/javascript">
     import {Option} from './panel';
+
     export default Option;
 </script>
 <template>
@@ -23,9 +24,11 @@
         padding: 5px;
         font-weight: bolder;
         border-bottom: 1px solid #e8e8e8;
+        height: 25px;
     }
     .panel-body{
         padding: 5px;
+        height: calc( 100% - 45px);
     }
     .panel-footer{
         border: none;

@@ -11,10 +11,13 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     entry:{
-        tree: entryPath('sample/tree/sample-tree.js'),
-        panel: entryPath('sample/panel/sample-panel.js'),
-        modal: entryPath('sample/modal/sample-modal.js'),
-        button: entryPath('sample/button/sample-button.js'),
+        tree: entryPath('sample/tree/app.js'),
+        panel: entryPath('sample/panel/app.js'),
+        modal: entryPath('sample/modal/app.js'),
+        button: entryPath('sample/button/app.js'),
+        input: entryPath('sample/input/app.js'),
+        search: entryPath('sample/search/app.js'),
+        upload: entryPath('sample/upload/app.js')
 
     },
     output:{
@@ -23,14 +26,20 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.vue$/,
+            {test: /\.vue$/,
                 use: ['vue-loader']
             },
-            {
-                test: /\.css$/,
+            {test: /\.css$/,
                 use: ['style-loader','css-loader']
-            }
+            },
+            { test: /\.(jpg|png|jpeg|ttf|ttc)$/,
+                use:[{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 81920,
+                        outputPath: 'assets'
+                    }}]
+            },
         ]
     },
     resolve: {
@@ -42,8 +51,8 @@ module.exports = {
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             template: './public/sample.html',
-            chunks: ['tree','panel','modal','button']
+            chunks: ['tree','panel','modal','button','input','search','upload']
         }),
-        new CleanWebpackPlugin('build')
+        new CleanWebpackPlugin()
     ]
 };

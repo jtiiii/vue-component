@@ -1,14 +1,15 @@
 <template>
     <div v-if="node.id">
-        <div :title="title" class="title" ><a v-if="canClick" >{{ text }}</a><span v-else="canClick">{{ text }}</span></div>
-        <div v-if="hasChildren" class="indentation">
-            <tree-node v-for="child in children" :key="child.id" :node = "child" :parent="node"></tree-node>
+        <img class="expand" @click="expand" :style="expandStyle" :src="expandIcon"><div :title="node.id" :class="classType" class="title" ><a v-if="canClick" >{{ node.text }}</a><span v-else="canClick">{{ text }}</span></div>
+        <div v-show="expandStatus" v-if="hasChildren" class="indentation">
+            <tree-node v-for="child in children" :key="child.id" :node = "child" :parent="node" :generation=" generation + 1 "></tree-node>
         </div>
     </div>
 </template>
 
 <script>
     import {Option} from './TreeNode';
+
     export default Option;
 </script>
 
@@ -20,10 +21,39 @@
     ul{
         list-style-type: none;
     }
-    .title{
-        background: #aaa;
+    .expand{
+        width: 18px;
+        position: relative;
+        top: 4px;
+        transform: rotate(180deg);
     }
     .indentation{
-        padding-left: 20px;
+        padding: 10px;
+    }
+    .title{
+        display: inline-block;
+        border-radius: 5px;
+        padding: 3px;
+        margin: 1px 0;
+    }
+    .title-default{
+        color: #000;
+        background: #e8e8e8;
+    }
+    .title-success{
+        color: #3c763d;
+        background-color: #d6e9c6;
+    }
+    .title-warning{
+        color: #8a6d3b;
+        background-color: #faebcc;
+    }
+    .title-info{
+        color: #31708f;
+        background-color: #bce8f1;
+    }
+    .title-danger{
+        color: #a94442;
+        background-color: #ebccd1;
     }
 </style>
