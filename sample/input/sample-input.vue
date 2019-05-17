@@ -1,6 +1,9 @@
 <template>
     <div>
-        <input-text></input-text>
+        <input-text v-model="text"></input-text>
+        <br/>
+        {{ text }}
+        <br/>
         &nbsp;
         <input-file @select="notice">Select Files</input-file>
         &nbsp;
@@ -15,7 +18,9 @@
             'input-file': Input.File
         },
         data(){
-            return { };
+            return {
+                text: ''
+            };
         },
         methods:{
             notice: function( files ){

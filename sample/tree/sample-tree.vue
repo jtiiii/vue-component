@@ -1,11 +1,11 @@
 <template>
     <div>
-        <tree-node :node="node"></tree-node>
+        <tree-node @expand="expand" :node="node" @node-click="itemClick"></tree-node>
     </div>
 </template>
 <script>
     import TreeNodeVue from '../../src/scripts/components/tree/tree-node.vue';
-    import TreeNode from '../../src/scripts/components/tree/TreeNode';
+    import TreeNode from '../../src/scripts/components/tree/tree-node';
 
     const sampleData =
         {
@@ -35,6 +35,14 @@
             return {
                 node: TreeNode.of(sampleData)
             };
+        },
+        methods:{
+            itemClick( item ){
+                item.select = !item.select;
+            },
+            expand( node ){
+                console.log('expand:',node);
+            }
         }
     }
 </script>

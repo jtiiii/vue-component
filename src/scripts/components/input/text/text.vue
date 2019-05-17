@@ -1,5 +1,5 @@
 <template>
-    <input :style="inputStyle" :placeholder="placeholder" type ="text"/>
+    <input @input="textChange" :value="text" :style="inputStyle" :placeholder="placeholder" type ="text"/>
 </template>
 <script>
     import {Option} from './text';

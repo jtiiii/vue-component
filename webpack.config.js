@@ -17,7 +17,9 @@ module.exports = {
         button: entryPath('sample/button/app.js'),
         input: entryPath('sample/input/app.js'),
         search: entryPath('sample/search/app.js'),
-        upload: entryPath('sample/upload/app.js')
+        upload: entryPath('sample/upload/app.js'),
+        thumbnail: entryPath('sample/thumbnail/app.js'),
+        table: entryPath('sample/table/app.js')
 
     },
     output:{
@@ -36,7 +38,7 @@ module.exports = {
                 use:[{
                     loader: 'url-loader',
                     options: {
-                        limit: 81920,
+                        // limit: 81920,
                         outputPath: 'assets'
                     }}]
             },
@@ -51,7 +53,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             template: './public/sample.html',
-            chunks: ['tree','panel','modal','button','input','search','upload']
+            chunks: ['tree','panel','modal','button','input','search','upload','thumbnail','table']
         }),
         new CleanWebpackPlugin()
     ]

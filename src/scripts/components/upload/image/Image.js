@@ -4,6 +4,8 @@ import Button from '../../button/button.vue';
 import SizeUtils from '../../../util/SizeUtils';
 import loading from './loading.png';
 
+import Thumbnail from '../../thumbnail/thumbnail.vue';
+
 import MD5 from 'md5';
 
 function UploadImage(file){
@@ -42,7 +44,8 @@ export const Option={
     components: {
         'v-modal': Modal,
         'upload': Input.File,
-        'v-button': Button
+        'v-button': Button,
+        'thumbnail': Thumbnail,
     },
     props: {
         title: {

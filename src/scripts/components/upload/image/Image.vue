@@ -8,16 +8,7 @@
         <v-modal :hasMask="false" :width="'700px'" :height="'530px'">
             <template #title>{{ title }}</template>
             <div class="thumbnail-list">
-                <div class="thumbnail" v-for="img in images">
-                    <div class="thumbnail-img" >
-                        <img :src="img.src" @click="preview(img)" />
-                    </div>
-                    <div class="thumbnail-info">
-                        <span class="thumbnail-info-name">{{ img.name }}</span>
-                        <br/>
-                        <span class="thumbnail-info-size">{{ img.formatSize() }} - {{ img.suffix }}</span>
-                    </div>
-                </div>
+                <thumbnail v-for="img in images" :key="img.name" :src="img.src" @image-click="preview" :name="img.name" :size="img.size" :suffix="img.suffix" ></thumbnail>
             </div>
             <div class="upload-tool">
                 <upload @select="select" :fileType="'image'" :type="'info'">{{ selectText }}</upload>
@@ -47,44 +38,7 @@
         overflow-y: scroll;
         height: calc(100% - 40px);
     }
-    .thumbnail{
-        display: inline-block;
-        margin: 5px;
-        width: 160px;
-    }
-    .thumbnail-img{
-        width: 160px;
-        height: 160px;
-        display: table-cell;
-        position: relative;
-        vertical-align: middle;
-        text-align: center;
-    }
-    .thumbnail-info{
-        background: #eee;
-        line-height: 25px;
-        text-align: center;
-        width: 100%;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-    .thumbnail-info-name{
-        font-weight: bolder;
-    }
-    .thumbnail-info-size{
-        font-size: 12px;
-        display: inline-block;
-        position: relative;
-        right: 0;
-        opacity: .6;
-    }
-    .thumbnail-img > img{
-        max-width: 100%;
-        max-height: 100%;
-    }
-    .thumbnail-img > img:hover {
-        box-shadow: 0 0 8px #000;
-    }
+
     .preview{
         width: 100%;
         height: 100%;

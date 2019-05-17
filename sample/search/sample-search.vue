@@ -1,6 +1,7 @@
 <template>
     <div>
-        <search :height="'20px'"></search>
+        <search v-model="text" :height="'20px'"></search>
+        {{ text }}
     </div>
 </template>
 <script>
@@ -11,7 +12,9 @@
             'search': Search
         },
         data(){
-            return {};
+            return {
+                text: ''
+            };
         }
     }
 </script>
