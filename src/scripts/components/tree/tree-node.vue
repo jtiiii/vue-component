@@ -2,7 +2,7 @@
     <div v-if="node.id" class="node">
         <img class="expand" @click="expand" :style="expandStyle" :src="expandIcon"><div :title="node.id" :class="classType" class="title" ><a v-if="canClick" @click="nodeClick" >{{ node.text }}</a><span v-else="canClick">{{ text }}</span></div>
         <div v-show="expandStatus" v-if="hasChildren" class="indentation">
-            <tree-node @node-click="sonClick" v-for="child in children" :key="child.id" :node = "child" :parent="node" :generation=" generation + 1 "></tree-node>
+            <tree-node @node-click="sonClick" @expand="sonExpand" v-for="child in children" :key="child.id" :node = "child" :parent="node" :generation=" generation + 1 "></tree-node>
         </div>
     </div>
 </template>

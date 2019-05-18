@@ -70,6 +70,9 @@ export const Option = {
         },
         sonClick( son ){
             this.$emit('node-click', son);
+        },
+        sonExpand( son ){
+            this.$emit('expand', son);
         }
     }
 };
