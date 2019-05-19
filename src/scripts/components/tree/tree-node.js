@@ -50,7 +50,7 @@ export const Option = {
             }
             switch (this.node.type){
                 case 'success': return {'title-success' : true};
-                case 'info': return {'title-success' : true};
+                case 'info': return {'title-info' : true};
                 case 'warning': return {'title-warning' : true};
                 case 'danger': return {'title-danger' : true};
                 default : return{ 'title-default': true};

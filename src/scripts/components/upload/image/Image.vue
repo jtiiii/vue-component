@@ -5,7 +5,7 @@
 </script>
 <template>
     <div>
-        <v-modal :hasMask="false" :width="'700px'" :height="'530px'">
+        <v-modal :hasMask="false" @close="close" :show="show" :width="width" :height="height">
             <template #title>{{ title }}</template>
             <div class="thumbnail-list">
                 <thumbnail v-for="img in images" :key="img.name" :src="img.src" @image-click="preview" :name="img.name" :size="img.size" :suffix="img.suffix" ></thumbnail>

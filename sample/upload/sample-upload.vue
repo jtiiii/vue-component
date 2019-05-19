@@ -1,6 +1,6 @@
 <template>
     <div class="upload-sample">
-        <upload-image>
+        <upload-image :show="true" @close="close">
             <template #select-button> Select </template>
             <template #reset-button> Reset </template>
             <template #submit-button> Submit </template>
@@ -18,7 +18,9 @@
             return {};
         },
         methods: {
-
+            close(){
+                console.info('close');
+            }
         }
     };
 </script>

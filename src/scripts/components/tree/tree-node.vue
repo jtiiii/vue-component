@@ -6,13 +6,11 @@
         </div>
     </div>
 </template>
-
-<script>
+<script type="text/javascript">
     import {Option} from './tree-node';
 
     export default Option;
 </script>
-
 <style scoped>
     a{
         text-decoration: none;

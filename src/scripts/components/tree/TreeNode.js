@@ -1,15 +1,26 @@
 function TreeNode({id, type , text = '', children = [], canClick = true, canOpen = false, select = false}){
     this.id = id;
     this.text =text;
-    this.children = [];
-    children.forEach( child => this.children.push(TreeNode.of(child)));
+    this.resetChildren(children);
     this.type = type? 'default': type;
     this.canClick = canClick;
     this.select = select;
     this.canOpen = canOpen? canOpen: this.children.length !== 0;
+    this.parent = null;
 }
 TreeNode.prototype = {
     constructor : TreeNode,
+    addChildren( node ){
+        let c = TreeNode.of(node);
+        this.children.push(c);
+        c.parent = this;
+    },
+    resetChildren( nodes ){
+        this.children = [];
+        nodes.forEach( node => {
+            this.addChildren(node);
+        });
+    },
 };
 TreeNode.of = obj => obj instanceof TreeNode? obj: new TreeNode(obj);
 export default TreeNode;

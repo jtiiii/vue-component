@@ -77,11 +77,25 @@ export const Option={
             type: Array,
             required: false,
             default: () => []
+        },
+        width:{
+            type: String,
+            required: false,
+            default: '700px'
+        },
+        height:{
+            type: String,
+            required: false,
+            default: '530px'
+        },
+        show:{
+            type: Boolean,
+            required: false,
+            default: false
         }
     },
     data(){
         return {
-            // images: [],
             previewImg:{
                 src: '#',
                 show: false
@@ -119,6 +133,9 @@ export const Option={
         },
         submit: function(){
             this.$emit('submit',this.images);
+        },
+        close: function(){
+            this.$emit('close');
         }
     }
 };
