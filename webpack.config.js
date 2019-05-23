@@ -19,7 +19,8 @@ module.exports = {
         search: entryPath('sample/search/app.js'),
         upload: entryPath('sample/upload/app.js'),
         thumbnail: entryPath('sample/thumbnail/app.js'),
-        table: entryPath('sample/table/app.js')
+        table: entryPath('sample/table/app.js'),
+        editor: entryPath('sample/editor/app.js')
 
     },
     output:{
@@ -53,7 +54,12 @@ module.exports = {
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             template: './public/sample.html',
-            chunks: ['tree','panel','modal','button','input','search','upload','thumbnail','table']
+            chunks: [ 'tree', 'panel', 'modal', 'button',
+                'input',
+                'search',
+                'upload',
+                'thumbnail',
+                'table','editor']
         }),
         new CleanWebpackPlugin()
     ]
