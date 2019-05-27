@@ -36,6 +36,11 @@ export default {
             type: Array,
             required: false,
             default: () => []
+        },
+        style:{
+            type: Object,
+            required: false,
+            default: null
         }
     },
     data(){
@@ -73,7 +78,11 @@ export default {
             return Boolean(this.$slots.footer);
         },
         editorStyle(){
-            return { 'width':this.width, 'height': this.height};
+            let result = { 'width':this.width, 'height': this.height};
+            if( this.style ){
+                Object.assign(result,this.style);
+            }
+            return result;
         }
     },
     methods: {
@@ -94,7 +103,7 @@ export default {
         initEditor(){
             this.option.placeholder = this.placeholder;
             this.editor = new Quill(this.$refs['editor'],this.option);
-            this.$emit('init',this.editor);
+            this.$emit('init', this.editor);
         },
         initChangeHandler(){
             this.editor.on('text-change', this.change );

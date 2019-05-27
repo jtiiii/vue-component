@@ -19,11 +19,10 @@
         width: 100%;
         height: 100%;
         background: #3333;
-        text-align: center;
-        overflow: hidden;
-        overflow-y: scroll;
-        margin:0;
-        padding:0;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        left: 0;
     }
     .modal{
         border-radius: 5px;
