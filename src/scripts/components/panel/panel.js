@@ -28,6 +28,11 @@ export const Option ={
             type: Boolean,
             required: false,
             default: true
+        },
+        customStyle:{
+            type: Object,
+            required: false,
+            default: () => {}
         }
 
     },
@@ -38,10 +43,11 @@ export const Option ={
     },
     computed:{
         panelStyle: function(){
-            return {
+            let size = {
                 width: this.width,
                 height: this.height
             };
+            return Object.assign(size,this.customStyle);
         },
         panelClass: function(){
             let result = {'panel': true};

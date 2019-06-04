@@ -1,5 +1,6 @@
 import SizeUtils from '../../util/SizeUtils';
 import Thumbnail from './ThumbnailModel';
+import StringUtils from '../../util/StringUtils';
 
 const Option = {
     props:{
@@ -60,6 +61,9 @@ const Option = {
                 return { 'width': this.thumbnail.width, 'height':this.thumbnail.height};
             }
             return { 'width': this.width, 'height': this.height };
+        },
+        imageName: function(){
+            return StringUtils.fixLength(this.thumbnail? this.thumbnail.name : this.name, 2);
         }
     }
 };

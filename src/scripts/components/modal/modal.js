@@ -112,10 +112,7 @@ export const Option = {
                         'margin-top': - this.styles.modal.height / 2 + 'px'
                     };
             }
-            if(Object.keys(this.modalStyle).length){
-                return Object.assign(this.modalStyle,result);
-            }
-            return result;
+            return Object.assign(result,this.modalStyle);
         }
     },
     updated: function(){

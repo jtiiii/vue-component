@@ -18,7 +18,7 @@
             return {
                 thumbnails: [
                     ThumbnailModel
-                        .of({ name: 'image1', size: 762642, suffix: '.jpg', src: img1}),
+                        .of({ name: 'image1image1image1image1image1image1image1image1image1image1vvimage1image1image1image1image1image1image1', size: 762642, suffix: '.jpg', src: img1}),
                     ThumbnailModel
                         .of({ name: 'image2', size: 366793, suffix: '.jpg', src: img2}),
                     ThumbnailModel

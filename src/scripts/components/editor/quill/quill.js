@@ -37,10 +37,10 @@ export default {
             required: false,
             default: () => []
         },
-        style:{
+        customStyle:{
             type: Object,
             required: false,
-            default: null
+            default: () => {}
         }
     },
     data(){
@@ -80,7 +80,7 @@ export default {
         editorStyle(){
             let result = { 'width':this.width, 'height': this.height};
             if( this.style ){
-                Object.assign(result,this.style);
+                Object.assign(result,this.customStyle);
             }
             return result;
         }

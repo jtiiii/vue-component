@@ -6,10 +6,10 @@
 <template>
     <div class="thumbnail">
         <div class="thumbnail-img" :style="imgStyle" >
-            <img :src="thumbnail ? thumbnail.src : src" @click="imageClick" />
+            <img :title="thumbnail? thumbnail.name : name" :src="thumbnail ? thumbnail.src : src" @click="imageClick" />
         </div>
         <div class="thumbnail-info">
-            <span class="thumbnail-info-name">{{ thumbnail? thumbnail.name : name }}</span>
+            <span class="thumbnail-info-name">{{ imageName }}</span>
             <br/>
             <span class="thumbnail-info-size">{{ formatSize }} - {{ thumbnail? thumbnail.suffix : suffix }}</span>
         </div>
@@ -37,11 +37,16 @@
     }
     .thumbnail-info-name{
         font-weight: bolder;
+        display: inline-block;
+        /*overflow: hidden;*/
+        /*overflow-x: scroll;*/
+        width: 100%;
     }
     .thumbnail-info-size{
         font-size: 12px;
         display: inline-block;
         position: relative;
+        width: 100%;
         right: 0;
         opacity: .6;
     }
