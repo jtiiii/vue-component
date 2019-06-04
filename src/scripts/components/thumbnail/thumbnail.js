@@ -63,7 +63,13 @@ const Option = {
             return { 'width': this.width, 'height': this.height };
         },
         imageName: function(){
-            return StringUtils.fixLength(this.thumbnail? this.thumbnail.name : this.name, 2);
+            let limitLength = 15;
+            let name = this.thumbnail? this.thumbnail.name : this.name;
+            let result =StringUtils.fixLength(name, limitLength, '', true);
+            if(name.length > limitLength){
+                result += '...';
+            }
+            return result;
         }
     }
 };

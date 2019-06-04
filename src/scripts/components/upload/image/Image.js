@@ -3,10 +3,9 @@ import Input from '../../input/input';
 import Button from '../../button/button.vue';
 import SizeUtils from '../../../util/SizeUtils';
 import loading from './loading.png';
+import SparkMd5 from 'spark-md5';
 
 import Thumbnail from '../../thumbnail/thumbnail.vue';
-
-import MD5 from 'md5';
 
 function UploadImage(file){
     this.file = file;
@@ -20,18 +19,25 @@ function UploadImage(file){
 UploadImage.prototype = {
     constructor: UploadImage,
     loadBase64Url(){
+        // let blobSlice = File.prototype.slice || File.prototype.mozSlice || File.prototype.webkitSlice;
+        let reader = new FileReader();
+        let byteReader = new FileReader();
+
         return new Promise( resolve => {
-            let reader = new FileReader();
             if(this.file){
                 reader.readAsDataURL(this.file);
+                byteReader.readAsBinaryString(this.file);
                 let _this = this;
                 reader.onload = function(){
                     _this.src = this.result;
-                    _this.md5 = MD5(this.result);
-                    _this.load = true;
-                    console.info('read');
-                    resolve( _this );
+                    byteReader.onload = function(){
+                        _this.md5 = SparkMd5.hashBinary(this.result,false);
+                        _this.load = true;
+                        resolve( _this );
+                    };
+
                 };
+
             }
         });
     },

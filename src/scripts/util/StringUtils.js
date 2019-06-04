@@ -15,11 +15,15 @@ const StringUtils = {
         }while ( true ) ;
         return result;
     },
-    fixLength( str, length ,join ) {
+    fixLength( str, length ,join, left ) {
         if (!join) {
             join = '';
         }
-        return (Array(length).join(join) + str).slice(-length);
+        let temp = new Array(length).join(join);
+        let result = left? str+ temp : temp + str;
+        return left?
+            result.substring(0,length):
+            result.slice(-length);
     },
     isString( obj ){
         return typeof obj === 'string' && obj.constructor === String;
