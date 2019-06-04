@@ -38,8 +38,6 @@
     .thumbnail-info-name{
         font-weight: bolder;
         display: inline-block;
-        /*overflow: hidden;*/
-        /*overflow-x: scroll;*/
         width: 100%;
     }
     .thumbnail-info-size{
