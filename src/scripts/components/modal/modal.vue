@@ -25,9 +25,11 @@
         left: 0;
     }
     .modal{
-        border-radius: 5px;
+        border-radius: 0.375rem; /* 6px */
         box-shadow: 1px 1px 5px 1px #000;
         position: absolute;
+        display: flex;
+        flex-direction: column;
     }
 
 </style>

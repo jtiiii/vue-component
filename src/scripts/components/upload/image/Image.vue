@@ -24,9 +24,7 @@
             <template #title>
                 {{ previewTitle }}
             </template>
-            <div class="preview">
-                <img style="max-width:100%;" :src="previewImg.src">
-            </div>
+            <img style="max-width:100%;" :src="previewImg.src">
         </v-modal>
     </div>
 </template>
@@ -57,15 +55,4 @@
         max-width: 100%;
     }
 
-    .preview{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        overflow-y: scroll;
-        text-align: center;
-        object-fit: contain;
-    }
 </style>

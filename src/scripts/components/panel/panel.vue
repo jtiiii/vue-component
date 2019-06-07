@@ -17,7 +17,7 @@
 
     .panel{
         max-width: 100%;
-        border: 2px solid #e8e8e8;
+        border: 0.125rem /* 2px */ solid #e8e8e8;
         border-radius: 5px;
         background: #fff;
     }
@@ -61,9 +61,18 @@
         height: 1.875rem; /* 30px */
         line-height: 1.875rem; /* 30px */
     }
+    @media screen and (max-width:480px){
+        .panel-body{
+            height: calc( 100% - 4.185rem); /* 100% - 67px */
+        }
+    }
+    @media screen and (min-width:480px){
+        .panel-body{
+            height: calc( 100% - 3.375rem); /* 100% - 54px */
+        }
+    }
     .panel-body{
         padding: 0.375rem; /* 6px */
-        height: calc( 100% - 3.375rem); /* 100% - 54px */
         width: calc(100% - 0.75rem); /* 100% - 12px */
         overflow: hidden;
         overflow-y: scroll;
