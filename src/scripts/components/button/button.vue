@@ -4,23 +4,45 @@
     export default Option;
 </script>
 <template>
-    <button :class="typeClass" type="button" :style="buttonStyle" @click="click"><slot></slot></button>
+    <button :class="typeClass" type="button" @click="click"><slot></slot></button>
 </template>
 <style scoped>
     button{
-        font-size: 16px;
         outline: none;
-        border: 1px solid;
-        border-radius: 5px;
+        border: none;
+        border-radius: 0.625rem; /* 10px */
         cursor: pointer;
-        margin: 1px;
+        margin: 0.375rem; /* 6px */
+        display: inline-block;
+        min-height: 2.25rem; /* 36px */
         text-align: center;
+        padding: 0.625rem;
+
     }
-    button:active{
-        box-shadow: 0 0 2px #000;
+    @media screen and (min-width:480px){
+        button{
+            font-size: 1rem;
+            text-align: center;
+        }
+        button:active{
+            box-shadow: 0 0 2px #000;
+        }
+        button:hover{
+            opacity: 0.8;
+        }
     }
-    button:hover{
-        opacity: 0.8;
+    @media screen and (max-width:480px){
+        button{
+            font-size: 1.25rem;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-user-select: none;
+            -moz-user-focus: none;
+            -moz-user-select: none;
+        }
+        button:active{
+            opacity: .7;
+        }
+
     }
     button:disabled{
         background: #ccc;

@@ -87,12 +87,17 @@ export const Option={
         width:{
             type: String,
             required: false,
-            default: '700px'
+            default: undefined
         },
         height:{
             type: String,
             required: false,
-            default: '530px'
+            default: undefined
+        },
+        size:{
+            type: String,
+            required: false,
+            default: 'large'
         },
         show:{
             type: Boolean,
@@ -142,6 +147,16 @@ export const Option={
         },
         close: function(){
             this.$emit('close');
+        },
+        resizePreview(){
+            this.previewStyle['width'] = window.innerWidth + 'px';
+            this.previewStyle['height'] = window.innerHeight + 'px';
         }
+    },
+    created(){
+        let _vue = this;
+        // window.onresize = function() {
+        //     _vue.resizePreview();
+        // }
     }
 };

@@ -4,12 +4,20 @@ export const Option ={
         width:{
             type: String,
             required: false,
-            default: '300px',
+            default: undefined,
         },
         height:{
             type: String,
             required: false,
-            default: '200px'
+            default: undefined
+        },
+        size: {
+            type: String,
+            required: false,
+            default: 'auto',
+            validator: function( size ){
+                return ['auto','smaller','small','medium','large','larger'].indexOf( size ) !== -1;
+            }
         },
         type:{
             type: String,
@@ -43,29 +51,34 @@ export const Option ={
     },
     computed:{
         panelStyle: function(){
-            let size = {
-                width: this.width,
-                height: this.height
-            };
+            let size = {};
+            if(this.width){
+                size['width'] = this.width;
+            }
+            if(this.height){
+                size['height'] = this.height;
+            }
             return Object.assign(size,this.customStyle);
         },
         panelClass: function(){
             let result = {'panel': true};
-            switch (this.type) {
-                case 'success':
-                    result['panel-success'] = true;
-                    break;
-                case 'warning':
-                    result['panel-warning'] = true;
-                    break;
-                case 'info':
-                    result['panel-info'] = true;
-                    break;
-                case 'danger':
-                    result['panel-danger'] = true;
-                    break;
-                default: break;
-            }
+            result['panel-'+this.size] = true;
+            result['panel-'+this.type] = true;
+            // switch (this.type) {
+            //     case 'success':
+            //         result['panel-success'] = true;
+            //         break;
+            //     case 'warning':
+            //         result['panel-warning'] = true;
+            //         break;
+            //     case 'info':
+            //         result['panel-info'] = true;
+            //         break;
+            //     case 'danger':
+            //         result['panel-danger'] = true;
+            //         break;
+            //     default: break;
+            // }
             return result;
         },
         hasTitle: function(){

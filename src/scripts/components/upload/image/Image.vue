@@ -5,7 +5,7 @@
 </script>
 <template>
     <div>
-        <v-modal :hasMask="false" @close="close" :show="show" :width="width" :height="height">
+        <v-modal :hasMask="false" @close="close" :show="show" :size="size" :width="width" :height="height">
             <template #title>{{ title }}</template>
             <div class="thumbnail-list">
                 <thumbnail v-for="img in images" :key="img.name" :src="img.src" @image-click="preview" :name="img.name" :size="img.size" :suffix="img.suffix" ></thumbnail>
@@ -16,7 +16,11 @@
                 <v-button :type="'success'" @click="submit">{{ submitText }}</v-button>
             </div>
         </v-modal>
-        <v-modal :show="previewImg.show" :modalStyle="previewStyle" :height="'100%'" :width="'100%'" @close="previewImg.show = false" >
+<!--        <div v-show="previewImg.show" :style="previewStyle" @click="previewImg.show = false" class="mask">-->
+<!--            <img :src="previewImg.src" />-->
+<!--        </div>-->
+
+        <v-modal :show="previewImg.show" :modalStyle="previewStyle" @close="previewImg.show = false" >
             <template #title>
                 {{ previewTitle }}
             </template>
@@ -30,18 +34,35 @@
     .upload-tool{
         position: relative;
         float: right;
-        margin: 5px;
     }
     .thumbnail-list{
         width: 100%;
         overflow: hidden;
         overflow-y: scroll;
-        height: calc(100% - 40px);
+        height: calc(100% - 3.25rem); /* 100% - 50px*/
+    }
+    .mask{
+        background: #000;
+        overflow: hidden;
+        overflow-y: scroll;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mask > img{
+        max-width: 100%;
     }
 
     .preview{
         width: 100%;
         height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
         overflow-y: scroll;
         text-align: center;

@@ -4,16 +4,6 @@ export const Option={
         event: 'input'
     },
     props:{
-        width: {
-            type: String,
-            required: false,
-            default: 'auto',
-        },
-        height:{
-            type: String,
-            required: false,
-            default: '18px'
-        },
         placeholder:{
             type: String,
             required: false,
@@ -31,14 +21,6 @@ export const Option={
     watch:{
         'text': function( value ){
             this.$emit('change', value);
-        }
-    },
-    computed:{
-        inputStyle: function(){
-            return {
-                'width': this.width,
-                'height': this.height
-            };
         }
     },
     methods: {

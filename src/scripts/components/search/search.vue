@@ -6,15 +6,15 @@
 <template>
     <div class="searchBox">
         <img class="searchLogo" :src="searchIcon">
-        <v-input @input="searchChange" :text="search" :height="height" :width="width" class="searchInput"></v-input>
+        <v-input @input="searchChange" :text="search" class="searchInput"></v-input>
     </div>
 </template>
 <style scoped>
     .searchLogo{
-        width: 18px;
-        height: 18px;
+        width: 1.125rem; /* 18px */
+        height: 1.125rem; /* 18px */
         position: absolute;
-        top: 3px;
+        top: 0.375rem;
         left: 4px;
         z-index: 1;
     }

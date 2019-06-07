@@ -10,16 +10,6 @@ export const Option = {
         'v-input': Input
     },
     props:{
-        width: {
-            type: String,
-            required: false,
-            default: 'auto'
-        },
-        height: {
-            type: String,
-            required: false,
-            default: '18px'
-        },
         search:{
             type: String,
             required: false,

@@ -9,17 +9,22 @@ export const Option = {
         width:{
             type: String,
             required: false,
-            default: '300px',
+            default: undefined,
         },
         height:{
             type: String,
             required: false,
-            default: '200px'
+            default: undefined,
         },
         show:{
             type: Boolean,
             required: false,
             default: true
+        },
+        size:{
+            type: String,
+            required: false,
+            default: undefined
         },
         hasMask:{
             type: Boolean,

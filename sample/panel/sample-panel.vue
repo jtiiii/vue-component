@@ -1,31 +1,28 @@
 <template>
     <div>
-        <panel class="p" :width="'200px'" :height="'100px'">
+        <panel class="p" :size="'auto'">
             <template #title >This is a title</template>
+            auto size
+            <br/>
             This is a 'default' panel.
         </panel>
-
-        <panel class="p" :width="'200px'" :height="'100px'" :type="'success'">
+        <panel class="p" :size="'smaller'" :type="'success'">
             <template #title >This is a title</template>
             This is a 'success' panel.
         </panel>
-
-        <panel class="p" :width="'200px'" :height="'100px'" :type="'warning'">
+        <panel class="p" :size="'small'" :type="'warning'">
             <template #title >This is a title</template>
             This is a 'warning' panel.
         </panel>
-
-        <panel class="p" :show="true" :width="'200px'" :height="'100px'" :type="'info'">
+        <panel class="p" :size="'medium'" :type="'info'">
             <template #title >This is a title</template>
             This is a 'info' panel.
         </panel>
-
-        <panel class="p" :show="true" :canClose="true" @close="closeHandle" :width="'200px'" :height="'100px'" :type="'danger'">
+        <panel class="p" :show="true" :canClose="true" @close="closeHandle" :size="'large'" :type="'danger'">
             <template #title >This is a title</template>
             This is a 'danger' panel.
         </panel>
-
-        <panel class="p" :width="'200px'" :height="'100px'" :type="'default'">
+        <panel class="p" :size="'larger'" :type="'default'">
             This is a 'default' panel without title.
         </panel>
     </div>
@@ -49,6 +46,6 @@
 <style scoped>
     .p{
         float: left;
-        margin: 10px;
+        margin: 10px 0;
     }
 </style>

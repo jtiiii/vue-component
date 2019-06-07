@@ -28,7 +28,7 @@
     }
 </script>
 <style scoped>
-    div > button{
-        margin: 0 5px;
-    }
+    /*div > button{*/
+    /*    margin: 0 5px;*/
+    /*}*/
 </style>

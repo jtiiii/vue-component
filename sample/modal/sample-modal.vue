@@ -1,6 +1,6 @@
 <template>
     <div class="modal-container">
-        <modal :show="show" :position="position" :hasMask="hasMask" :type="type" :width="'500px'" :height="'400px'" @close="show = false">
+        <modal :show="show" :position="position" :hasMask="hasMask" :type="type" @close="show = false">
             Change position to:
             <br/>
             <template #title> This is a modal title.</template>

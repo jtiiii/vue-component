@@ -7,28 +7,66 @@
     <div v-show="show" :style="panelStyle" :class="panelClass">
         <div v-if="hasTitle" class="panel-title">
             <slot name="title"></slot>
-            <button v-if="canClose" class="close-button" type="button" @click="close"><span>x</span></button>
+            <button v-if="canClose" class="close-button" type="button" @click="close">x</button>
         </div>
         <div class="panel-body"><slot></slot></div>
         <div v-if="hasFooter" class="panel-footer"><slot name="footer"></slot></div>
     </div>
 </template>
 <style scoped>
+
     .panel{
+        max-width: 100%;
         border: 2px solid #e8e8e8;
         border-radius: 5px;
         background: #fff;
     }
+    .panel-auto{
+        width: auto;
+        height: auto;
+    }
+    .panel-smaller{
+        width: 9.375rem; /* 150px */
+        height: 6.25rem; /* 100px */
+    }
+    .panel-small{
+        width: 18.75rem; /* 300px */
+        height: 9.375rem; /* 150px */
+    }
+    .panel-smaller{
+        width: 9.375rem; /* 150px */
+        height: 6.25rem; /* 100px */
+    }
+    .panel-small{
+        width: 18.75rem; /* 300px */
+        height: 9.375rem; /* 150px */
+    }
+    .panel-medium{
+        width: 30rem; /* 480px */
+        height: 15.6rem; /* 250px */
+    }
+    .panel-large{
+        width: 43.75rem; /* 700px */
+        height: 31.25rem; /* 500px */
+    }
+    .panel-larger{
+        width: 75rem; /* 1200px */
+        height: 56.25rem; /* 900px */
+    }
     .panel-title{
         background-color: #e8e8e8;
-        padding: 5px;
+        padding: 0.375rem; /* 6px */
         font-weight: bolder;
-        border-bottom: 1px solid #e8e8e8;
-        height: 25px;
+        border-bottom: 0.0625rem solid #e8e8e8; /* 1px */
+        height: 1.875rem; /* 30px */
+        line-height: 1.875rem; /* 30px */
     }
     .panel-body{
-        padding: 5px;
-        height: calc( 100% - 45px);
+        padding: 0.375rem; /* 6px */
+        height: calc( 100% - 3.375rem); /* 100% - 54px */
+        width: calc(100% - 0.75rem); /* 100% - 12px */
+        overflow: hidden;
+        overflow-y: scroll;
     }
     .panel-footer{
         border: none;
@@ -73,13 +111,8 @@
         opacity: .2;
         background: none;
         border: none;
-        font-size: inherit;
+        font-size: 1.5rem;
         font-weight: inherit;
-        padding: 0;
-        margin: 0 5px;
         cursor: pointer;
-    }
-    .close-button:active{
-        opacity: .4;
     }
 </style>

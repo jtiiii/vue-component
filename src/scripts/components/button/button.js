@@ -1,16 +1,16 @@
 const Option = {
     name: 'v-button',
     props: {
-        width:{
-            type: String,
-            required: false,
-            default: 'auto',
-        },
-        height:{
-            type: String,
-            required: false,
-            default: '35px'
-        },
+        // width:{
+        //     type: String,
+        //     required: false,
+        //     default: 'auto',
+        // },
+        // height:{
+        //     type: String,
+        //     required: false,
+        //     default: '35px'
+        // },
         type:{
             type: String,
             required: false,

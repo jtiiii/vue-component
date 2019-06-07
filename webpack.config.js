@@ -20,7 +20,8 @@ module.exports = {
         upload: entryPath('sample/upload/app.js'),
         thumbnail: entryPath('sample/thumbnail/app.js'),
         table: entryPath('sample/table/app.js'),
-        editor: entryPath('sample/editor/app.js')
+        editor: entryPath('sample/editor/app.js'),
+        layout: entryPath('sample/layout/app.js')
 
     },
     output:{
@@ -45,6 +46,10 @@ module.exports = {
             },
         ]
     },
+    devServer: {
+        port: 8080,
+        host: '192.168.1.101'
+    },
     resolve: {
         alias: {
             '$vue': 'vue/dist/vue.esm.js'
@@ -59,7 +64,7 @@ module.exports = {
                 'search',
                 'upload',
                 'thumbnail',
-                'table','editor']
+                'table','editor','layout']
         }),
         new CleanWebpackPlugin()
     ]
