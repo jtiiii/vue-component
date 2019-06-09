@@ -26,15 +26,6 @@ export const Option = {
         };
     },
     computed:{
-        expandStyle(){
-            if(this.expandStatus && this.node.canOpen){
-                return { 'transform': 'rotate(270deg)' ,'cursor': 'pointer' };
-            }
-            if(this.node.canOpen){
-                return { 'cursor': 'pointer' };
-            }
-            return { 'opacity': 0};
-        },
         hasChildren (){
             return this.children && (this.children instanceof Array ) &&  this.children.length !== 0;
         },

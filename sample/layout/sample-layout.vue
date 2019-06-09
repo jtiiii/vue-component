@@ -14,8 +14,14 @@
             return {
                 tabs: [
                     {text:'tab-1'},
-                    {link:'#',text:'tab-2'},
-                    {link:'#',text:'tab-3'}
+                    {text:'tab-2'},
+                    {text:'tab-3'},
+                    {text:'tab-4'},
+                    {text:'tab-5'},
+                    {text:'tab-6'},
+                    {text:'tab-7'},
+                    {text:'tab-8'}
+
                 ],
             };
         }

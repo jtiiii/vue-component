@@ -1,14 +1,19 @@
 <template>
     <div class="modal-container">
-        <modal :show="show" :position="position" :hasMask="hasMask" :type="type" @close="show = false">
-            Change position to:
+        <modal :show="show" :position="position" :canClose="canClose" :hasMask="hasMask" :type="type" @close="show = false">
+            <template #title v-if="title"> This is a modal title.</template>
+            Change position to the inside:
             <br/>
-            <template #title> This is a modal title.</template>
             <v-button @click="position ='top-left'">top-left</v-button>
             <v-button @click="position ='top-right'">top-right</v-button>
             <v-button @click="position ='bottom-right'">bottom-right</v-button>
             <v-button @click="position ='bottom-left'">bottom-left</v-button>
             <v-button @click="position ='center'">center</v-button>
+            <br/>
+            Change position to the outside:
+            <br/>
+            <v-button @click="position ='under-left'">under-left</v-button>
+            <v-button @click="position ='under-right'">under-right</v-button>
             <hr/>
             <v-button :type="'info'" @click="hasMask = !hasMask"> Open / Close the mask.</v-button>
             <hr/>
@@ -38,10 +43,11 @@
                 type: 'default',
                 hasMask: true,
                 position: 'center',
+                title: true,
+                canClose: true,
             };
         },
         methods:{
-
         }
     }
 </script>

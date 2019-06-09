@@ -4,11 +4,11 @@
     export default Option;
 </script>
 <template>
-    <div v-show="show">
-        <div v-if="hasMask" class="mask" ref="mask">
+    <div v-show="show" class="container">
+        <div v-if="hasMask" @click="maskClick" class="mask" ref="mask">
         </div>
-        <panel class="modal" ref="modal" :style="modalStyleComputed" :size="size" :width="width" :type="type" :height="height" :canClose="canClose" @close="closeEvent">
-            <template #title><slot name="title"></slot>&nbsp;</template>
+        <panel class="modal" :class="modalClass" ref="modal" :style="modalStyleComputed" :size="size" :width="width" :type="type" :height="height" :canClose="canClose" @close="closeEvent">
+            <template #title><slot name="title"></slot></template>
             <slot></slot>
         </panel>
     </div>
@@ -31,5 +31,36 @@
         display: flex;
         flex-direction: column;
     }
+    .container{
+        /*display: flex;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+    }
+    .modal-position-top{
+        top: 0.25rem; /* 4px */
+    }
+    .modal-position-left{
+        left: 0.25rem; /* 4px */
+    }
+    .modal-position-right{
+        right: 0.25rem /* 4px */
+    }
+    .modal-position-bottom{
+        bottom: 0.25rem; /* 4px */
+    }
+    .modal-position-under{
+        top: calc( 100% + 0.25rem ); /* 100% + 4px */
+    }
+    .modal-position-above{
+        bottom: calc( 100% + 0.25rem ); /* 100% + 4px */
+    }
+    .modal-position-verticalCenter{
+        top: 50%;
+    }
+    .modal-position-alignCenter{
+        left: 50%;
+    }
+
+
 
 </style>

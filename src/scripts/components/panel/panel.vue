@@ -16,7 +16,6 @@
 <style scoped>
 
     .panel{
-        max-width: 100%;
         border: 0.125rem /* 2px */ solid #e8e8e8;
         border-radius: 5px;
         background: #fff;
@@ -62,11 +61,17 @@
         line-height: 1.875rem; /* 30px */
     }
     @media screen and (max-width:480px){
+        .panel{
+            max-width: 100%;
+        }
         .panel-body{
             height: calc( 100% - 4.185rem); /* 100% - 67px */
         }
     }
     @media screen and (min-width:480px){
+        .panel-limit{
+            max-width: 100%;
+        }
         .panel-body{
             height: calc( 100% - 3.375rem); /* 100% - 54px */
         }

@@ -16,7 +16,7 @@ export const Option ={
             required: false,
             default: 'auto',
             validator: function( size ){
-                return ['auto','smaller','small','medium','large','larger'].indexOf( size ) !== -1;
+                return ['unlimited','auto','smaller','small','medium','large','larger'].indexOf( size ) !== -1;
             }
         },
         type:{
@@ -42,11 +42,10 @@ export const Option ={
             required: false,
             default: () => {}
         }
-
     },
     data:function(){
         return {
-            'showWith': true
+            showWith: true
         };
     },
     computed:{
@@ -62,23 +61,15 @@ export const Option ={
         },
         panelClass: function(){
             let result = {'panel': true};
-            result['panel-'+this.size] = true;
+            switch (this.size) {
+                case 'unlimited':
+                    result['panel-auto'] = true;
+                    break;
+                default:
+                    result['panel-'+this.size] = true;
+                    result['panel-limit'] = true;
+            }
             result['panel-'+this.type] = true;
-            // switch (this.type) {
-            //     case 'success':
-            //         result['panel-success'] = true;
-            //         break;
-            //     case 'warning':
-            //         result['panel-warning'] = true;
-            //         break;
-            //     case 'info':
-            //         result['panel-info'] = true;
-            //         break;
-            //     case 'danger':
-            //         result['panel-danger'] = true;
-            //         break;
-            //     default: break;
-            // }
             return result;
         },
         hasTitle: function(){
