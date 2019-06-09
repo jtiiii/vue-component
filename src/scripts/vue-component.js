@@ -8,6 +8,7 @@ import Upload from './components/upload/Upload';
 import Thumbnail from './components/thumbnail/thumbnail.vue';
 import Editor from './components/editor/editor';
 import Dropdown from './components/dropdown/dropdown.vue';
+import Layout from './components/layout/layout';
 
 import ThumbnailModel from './components/thumbnail/ThumbnailModel';
 import TreeNodeModel from './components/tree/TreeNode';
@@ -16,16 +17,16 @@ import TreeNodeModel from './components/tree/TreeNode';
 //     TreeNode
 // };
 
-const vueComponents = { TreeNode, Button, Panel, Modal, Search, Input, Upload, Thumbnail, Editor, Dropdown};
+const vueComponents = { TreeNode, Button, Panel, Modal, Search, Input, Upload, Thumbnail, Editor, Dropdown, Layout};
 const Model = {
     TreeNode: TreeNodeModel,
     Thumbnail: ThumbnailModel
 };
-export function register(vue){
-    let keys = Object.keys(vueComponents);
-    keys.forEach( key => {
-        vue.component(vueComponents[key].name,vueComponents[key]);
-    });
-}
+// export function register(vue){
+//     let keys = Object.keys(vueComponents);
+//     keys.forEach( key => {
+//         vue.component(vueComponents[key].name,vueComponents[key]);
+//     });
+// }
 export {Model};
 export default vueComponents;

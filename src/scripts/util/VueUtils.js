@@ -3,12 +3,9 @@ const VueUtils = {
         outsideClick:{
             bind: function(el, binding, vnode){
                 let documentHandle = function(e){
-                    console.info(el.dataset);
-                    console.info(vnode);
                     if(el.contains(e.target)){
                         return false;
                     }
-
                     if(binding.expression && binding.value instanceof Function){
                         if(binding.modifiers.el){
                             binding.value(el);

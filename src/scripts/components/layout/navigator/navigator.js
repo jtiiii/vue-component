@@ -1,15 +1,13 @@
 function TabItem({text,select = false, __tab}){
     this.text = text;
     this.select = select;
-    if(__tab){
-        this.__tab = __tab;
-    }else{
-        this.__tab = arguments[0];
-    }
-
+    this.__tab = __tab || arguments[0];
 }
 TabItem.prototype = {
     constructor: TabItem,
+    get(){
+        return this.__tab;
+    }
 };
 TabItem.of = obj => obj instanceof TabItem? obj: new TabItem(obj);
 TabItem.ofs = arr => {
@@ -25,6 +23,14 @@ const Option = {
             required: false,
             default : () => []
         },
+        direction:{
+            type: String,
+            required: false,
+            default: 'column',
+            validator( value ){
+                return ['column','row'].indexOf(value) !== -1
+            }
+        }
     },
     data(){
         return {
@@ -40,12 +46,23 @@ const Option = {
             });
         },
         click( tab ){
-            this.$emit('a-click',tab);
+            this.$emit('a-click',tab,this.select.bind(this));
+        },
+        select( tab ){
             if(this.selected){
                 this.selected.select = false
             }
             this.selected = tab;
-            tab.select = true;
+            if(tab){
+                tab.select = true;
+            }
+        }
+    },
+    computed:{
+        navClass(){
+            let result={};
+            result['nav-direction-'+this.direction] = true;
+            return result;
         }
     },
     created(){

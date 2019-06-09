@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-navigator :tabs="tabs"></v-navigator>
+        <v-navigator :tabs="tabs" :direction="direction" @a-click="select"></v-navigator>
     </div>
 </template>
 <script>
@@ -23,7 +23,14 @@
                     {text:'tab-8'}
 
                 ],
+                direction: 'row'
             };
+        },
+        methods:{
+            select(tab, select){
+                console.info(tab,select);
+                select(tab);
+            }
         }
     };
 </script>
