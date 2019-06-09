@@ -4,6 +4,10 @@ import VueUtils from '../../util/VueUtils';
 import WindowUtils from '../../util/WindowUtils';
 
 const Option = {
+    model:{
+        prop: 'show',
+        event: 'openOrClose',
+    },
     components:{
         'v-button': Button,
         'v-modal': Modal
@@ -18,6 +22,11 @@ const Option = {
             type: String,
             required: false,
             default: 'info'
+        },
+        show:{
+            type: Boolean,
+            required: false,
+            default: undefined,
         }
     },
     directives:{
@@ -34,10 +43,12 @@ const Option = {
         };
     },
     methods: {
-        close: function(){
+        closeMenu: function(){
+            this.$emit('openOrClose',false);
             this.modal.show = false;
         },
         openMenu: function(){
+            this.$emit('openOrClose',true);
             this.modal.show = true;
         },
         mobileSize(){
@@ -49,7 +60,6 @@ const Option = {
             this.modal.position = 'under-left';
             this.modal.hasMask = false;
         }
-
     },
     computed:{
         hasCustomButton(){

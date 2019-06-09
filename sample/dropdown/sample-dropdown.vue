@@ -1,6 +1,6 @@
 <template>
     <div>
-        <dropdown>
+        <dropdown v-model="d1.show">
             <div style="width:5000px;">
                 hello thank you very much;
             </div>
@@ -19,6 +19,13 @@
     export default {
         components: {
             'dropdown': Dropdown
+        },
+        data(){
+            return {
+                d1:{
+                    show: false
+                }
+            }
         }
     }
 </script>

@@ -4,13 +4,13 @@
     export default Option;
 </script>
 <template>
-    <div class="dropdown"  v-outsideClick="close" >
+    <div class="dropdown"  v-outsideClick="closeMenu" >
         <v-button v-if="!hasCustomButton" ref="button" :type="type" @click="openMenu">{{ text }}</v-button>
         <div v-else  ref="button" @click="openMenu" ><slot name="button"></slot></div>
 <!--        <v-panel class="menu" :show="panel.show">-->
 <!--            <slot name="menu"></slot>-->
 <!--        </v-panel>-->
-        <v-modal ref="menu" @mask-click="close" class="menu" :hasMask="modal.hasMask" :position="modal.position" :size="'unlimited'" :show="modal.show">
+        <v-modal ref="menu" @mask-click="closeMenu" class="menu" :hasMask="modal.hasMask" :position="modal.position" :size="'unlimited'" :show="show === undefined? modal.show : show">
             <slot></slot>
         </v-modal>
     </div>
