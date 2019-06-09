@@ -7,6 +7,7 @@ import Input from './components/input/input';
 import Upload from './components/upload/Upload';
 import Thumbnail from './components/thumbnail/thumbnail.vue';
 import Editor from './components/editor/editor';
+import Dropdown from './components/dropdown/dropdown.vue';
 
 import ThumbnailModel from './components/thumbnail/ThumbnailModel';
 import TreeNodeModel from './components/tree/TreeNode';
@@ -15,7 +16,7 @@ import TreeNodeModel from './components/tree/TreeNode';
 //     TreeNode
 // };
 
-const vueComponents = { TreeNode, Button, Panel, Modal, Search, Input, Upload, Thumbnail, Editor};
+const vueComponents = { TreeNode, Button, Panel, Modal, Search, Input, Upload, Thumbnail, Editor, Dropdown};
 const Model = {
     TreeNode: TreeNodeModel,
     Thumbnail: ThumbnailModel
