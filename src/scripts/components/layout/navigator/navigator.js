@@ -2,6 +2,14 @@ function TabItem({text,select = false, __tab}){
     this.text = text;
     this.select = select;
     this.__tab = __tab || arguments[0];
+    Object.defineProperty(this,'text',{
+        set(value){
+            this.__tab.text = value;
+        },
+        get(){
+            return this.__tab.text;
+        }
+    });
 }
 TabItem.prototype = {
     constructor: TabItem,
