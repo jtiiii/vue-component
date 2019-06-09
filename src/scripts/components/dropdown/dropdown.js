@@ -27,6 +27,15 @@ const Option = {
             type: Boolean,
             required: false,
             default: undefined,
+        },
+        position:{
+            type: String,
+            required: false,
+            default: 'under-left',
+            validator( value ){
+                return ['under-left','under-right','above-left','above-right'].indexOf(value )!== -1;
+            }
+
         }
     },
     directives:{
@@ -57,7 +66,7 @@ const Option = {
                 this.modal.hasMask = true;
                 return ;
             }
-            this.modal.position = 'under-left';
+            this.modal.position = this.position;
             this.modal.hasMask = false;
         }
     },

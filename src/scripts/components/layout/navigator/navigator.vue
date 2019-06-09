@@ -20,16 +20,8 @@
     .nav-direction-column{
         flex-direction: column;
     }
-    .nav-direction-column > a{
-        border-radius: 0.375rem;
-        line-height: 2.5rem; /* 40px */
-    }
-    .nav-direction-row > a{
-        box-sizing: border-box;
-        line-height: 1.5rem; /* 20px */
-    }
     a{
-        height: 2.5rem; /* 40px */
+        height: 1.5rem; /* 24px */
         text-decoration: none;
         font-weight: bolder;
         color: #999;
@@ -47,6 +39,14 @@
     }
 
     @media screen and (min-width:480px){
+        .nav-direction-column > a{
+            border-radius: 0.375rem;
+            line-height: 1.5rem; /* 24px */
+        }
+        .nav-direction-row > a{
+            box-sizing: border-box;
+            line-height: 0.5rem; /* 8px */
+        }
         a:hover{
             background: #eeeeeeee;
             opacity: .7;
@@ -58,12 +58,21 @@
     }
 
     @media screen and (max-width:480px){
-
+        .nav-direction-column > a{
+            height: 2rem; /* 32px */
+            border-radius: 0.375rem;
+            line-height: 1.5rem; /* 24px */
+        }
+        .nav-direction-row > a{
+            box-sizing: border-box;
+            line-height: 0.5rem; /* 8px */
+        }
         nav{
             /*color: #fff;*/
         }
         nav > a{
             flex: 1;
+            line-height: 2rem; /* 32px */
             font-size: 1rem; /* 16px */
             text-align: center;
             min-width: 5rem; /* 100px */

@@ -1,7 +1,7 @@
 <template>
     <div>
         <dropdown v-model="d1.show">
-            <div style="width:5000px;">
+            <div style="width:500px;">
                 hello thank you very much;
             </div>
         </dropdown>
