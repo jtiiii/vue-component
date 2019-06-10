@@ -1,6 +1,6 @@
 {
   "name": "f-vue-components",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "参考了bootstrap样式而自己开发的vue组件",
   "main": "src/scripts/vue-component.js",
   "directories": {
