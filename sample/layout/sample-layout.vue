@@ -4,11 +4,11 @@
     </div>
 </template>
 <script>
-    import Layout from '../../src/scripts/components/layout/layout';
+    import FComponents from '../../src/scripts/vue-component';
 
     export default {
         components:{
-            'v-navigator': Layout.Navigator
+            'v-navigator': FComponents.Layout.Navigator
         },
         data(){
             return {

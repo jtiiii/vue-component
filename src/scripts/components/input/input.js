@@ -1,5 +1,5 @@
-import Text from './text/text.vue';
-import File from './file/file.vue';
+const Text = resolve => require(['./text/text.vue'],resolve);
+const File = resolve => require(['./file/file.vue'],resolve);
 
 export default {
     Text,File

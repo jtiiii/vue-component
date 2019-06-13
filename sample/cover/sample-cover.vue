@@ -6,12 +6,13 @@
     </div>
 </template>
 <script>
-    import Cover from '../../src/scripts/components/cover/cover.vue';
+    import FComponents,{Utils} from '../../src/scripts/vue-component';
     import Image from './QQ20181229-1.jpg';
 
+    console.info(Utils.WindowUtils.onresize);
     export default {
         components:{
-            'cover': Cover
+            'cover': FComponents.Cover
         },
         data(){
             return {

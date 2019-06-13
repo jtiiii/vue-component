@@ -1,4 +1,4 @@
-import Navigator from './navigator/navigator.vue';
+const Navigator = resolve => require( ['./navigator/navigator.vue'],resolve );
 
 
 export default {
