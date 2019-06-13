@@ -1,19 +1,17 @@
-import TreeNode from './components/tree/tree-node.vue';
-import Panel from './components/panel/panel.vue';
-import Button from './components/button/button.vue';
-import Modal from './components/modal/modal.vue';
-import Search from './components/search/search.vue';
-import Input from './components/input/input';
-import Upload from './components/upload/Upload';
-import Thumbnail from './components/thumbnail/thumbnail.vue';
-import Editor from './components/editor/editor';
-import Dropdown from './components/dropdown/dropdown.vue';
-import Layout from './components/layout/layout';
-import Cover from './components/cover/cover.vue';
-
-import ThumbnailModel from './components/thumbnail/ThumbnailModel';
-import TreeNodeModel from './components/tree/TreeNode';
-
+const TreeNode = resolve => require(['./components/tree/tree-node.vue'], resolve);
+const Panel = resolve => require(['./components/panel/panel.vue'], resolve);
+const Button = resolve => require(['./components/button/button.vue'], resolve);
+const Modal = resolve => require(['./components/modal/modal.vue'], resolve);
+const Search = resolve => require(['./components/search/search.vue'], resolve);
+const Input = resolve => require(['./components/input/input'], resolve);
+const Upload = resolve => require(['./components/upload/Upload'], resolve);
+const Thumbnail = resolve => require(['./components/thumbnail/thumbnail.vue'], resolve);
+const Editor = resolve => require(['./components/editor/editor'], resolve);
+const Dropdown = resolve => require(['./components/dropdown/dropdown.vue'], resolve);
+const Layout = resolve => require(['./components/layout/layout'], resolve);
+const Cover = resolve => require(['./components/cover/cover.vue'], resolve);
+const ThumbnailModel = resolve => require(['./components/thumbnail/ThumbnailModel'], resolve);
+const TreeNodeModel = resolve => require(["./components/tree/TreeNode"], resolve);
 // export const Model = {
 //     TreeNode
 // };

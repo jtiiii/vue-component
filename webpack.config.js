@@ -12,18 +12,6 @@ module.exports = {
     devtool: 'source-map',
     entry:{
         sample: entryPath('sample/index.js'),
-        // tree: entryPath('sample/tree/app.js'),
-        // panel: entryPath('sample/panel/app.js'),
-        // modal: entryPath('sample/modal/app.js'),
-        // button: entryPath('sample/button/app.js'),
-        // input: entryPath('sample/input/app.js'),
-        // search: entryPath('sample/search/app.js'),
-        // upload: entryPath('sample/upload/app.js'),
-        // thumbnail: entryPath('sample/thumbnail/app.js'),
-        // table: entryPath('sample/table/app.js'),
-        // editor: entryPath('sample/editor/app.js'),
-        // layout: entryPath('sample/layout/app.js'),
-        // dropdown: entryPath('sample/dropdown/app.js')
 
     },
     output:{
@@ -48,10 +36,10 @@ module.exports = {
             },
         ]
     },
-    devServer: {
-        port: 8080,
-        host: '192.168.1.101'
-    },
+    // devServer: {
+    //     port: 8080,
+    //     host: '192.168.1.101'
+    // },
     resolve: {
         alias: {
             '$vue': 'vue/dist/vue.esm.js'
