@@ -1,3 +1,5 @@
+import Utils from './Utils';
+
 const TreeNode = resolve => require(['./components/tree/tree-node.vue'], resolve);
 const Panel = resolve => require(['./components/panel/panel.vue'], resolve);
 const Button = resolve => require(['./components/button/button.vue'], resolve);
@@ -27,5 +29,5 @@ const Model = {
 //         vue.component(vueComponents[key].name,vueComponents[key]);
 //     });
 // }
-export {Model};
+export {Model,Utils};
 export default vueComponents;
