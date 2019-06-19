@@ -4,25 +4,56 @@
     export default Option;
 </script>
 <template>
-    <div>
-        <div class="row" :style="rowStyle" v-for="row in cells">
-            <div class="cell" :style="cellStyle" v-for="cell in row">
-                {{ cell.data }}
+    <div class="table">
+        <div class="row header">
+            <div class="cell" :class="cellClass(index) " v-for="(header, index) in table.headers">
+                {{ formatHeader(header) }}
+            </div>
+        </div>
+        <div class="row" v-show="!row.hidden" v-for="row in table.rows">
+            <div class="cell" v-for="(header, index) in table.headers"
+                 :class="cellClass(index,row.cells[header.column])"
+                 v-cell="row.cells[header.column]">
             </div>
         </div>
     </div>
 </template>
 <style scoped>
+    .table{
+        display: flex;
+        flex-flow: column nowrap;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+    }
+    .header{
+        font-weight: bolder;
+    }
+    .header .cell{
+        display: flex;
+        border-top: none;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+    }
     .row{
-        width: 100%;
-        height: 100px;
+        display: flex;
+        flex: 1;
+        flex-flow: row wrap;
+    }
+    .cell-first{
+        border-left: none;
+    }
+    .cell-notFirst{
+        border-left: 1px solid #ccc;
     }
     .cell{
-        float : left;
-        border: 1px solid #000;
-        /*width: 100px;*/
-        /*height: 100px;*/
+        flex: 1;
+        overflow: hidden;
+        border-top: 1px solid #ccc;
         box-sizing: border-box;
-
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
     }
 </style>

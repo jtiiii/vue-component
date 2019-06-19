@@ -1,120 +1,182 @@
-import ArrayUtils from '../../util/ArrayUtils';
 
-function Cell({area,html,data}){
-    this.area = area;
-    this.html = html;
-    this.data = data;
-}
-Cell.prototype = {
-    constructor: Cell,
-    merge: function( cell ){
-        this.area.merge(cell.area);
+class Table{
+    constructor({ rows = [], headers , style, tableClass }){
+        this.rows = rows.map( row => {
+            let nRow = new Row(row,row);
+            nRow.settCellByHeader(headers);
+            return nRow;
+        });
+        // this.rows.forEach( ( row, index ) => {row.index = index;});
+        this.style = style;
+        this.tableClass = tableClass;
+        this.headers = headers.map( header => new Header(header));
+        this._data = arguments[0];
     }
-};
 
-function Area(left, right, top, bottom){
-    this.left = left;
-    this.right = right;
-    this.top = top;
-    this.bottom = bottom;
-}
-
-Area.prototype =  {
-    constructor: Area,
-    merge: function( area ){
-        if(this.left - area.left > 0){
-            this.left = area.left;
-        }
-        if(this.right - area.right < 0){
-            this.right = area.right;
-        }
-        if(this.top - area.top > 0){
-            this.top = area.top;
-        }
-        if(this.bottom - area.bottom < 0){
-            this.bottom = area.bottom;
-        }
+    get(){
+        return this._data;
     }
-};
-
-function Position(x,y){
-    this.x = x;
-    this.y = y;
 }
 
-function Table( cells ){
-    this.cells = cells;
-}
-Table.prototype = {
-    constructor: Table,
-    merge: function( prePosition, lastPosition ){
-        let cell1 = this.cells[prePosition.x][prePosition.y];
-        let cell2 = this.cells[lastPosition.x][lastPosition.y];
-        cell1.merge(cell2);
-        for(let i = cell1.area.left ; i < cell1.area.right; i++){
-            for( let j = cell1.area.top; j< cell1.area.bottom; j++){
-                this.cells[i][j] = cell1;
-            }
-        }
+class Header {
+    constructor({column, formatter , style, headerClass, columnFormatter , hidden = false }){
+        this.column = column;
+        this.formatter = formatter;
+        this.style = style;
+        this.headerClass = headerClass;
+        this.columnFormatter = columnFormatter;
+        this.hidden = hidden;
+        this._data = arguments[0];
     }
-};
+
+    format(){
+        if(this.formatter && typeof this.formatter === 'function'){
+            return this.formatter( this._data );
+        }
+        return this.column;
+    }
+
+    get(){
+        return this._data;
+    }
+}
+
+class Row{
+    constructor({ style, rowClass, hidden = false }){
+        this.cells = {};
+
+        this.style = style;
+        this.rowClass = rowClass;
+        this.hidden = hidden;
+        this.data = arguments[0];
+    }
+
+    settCellByHeader( headers ){
+        headers.forEach( header => {
+            this.cells[header.column] = new Cell(this.data[header.column],{ columnFormatter: header.columnFormatter});
+        });
+    }
+
+    get(){
+        return this.data;
+    }
+}
+
+class Cell{
+    constructor(data,{ formatter , style, cellClass , columnFormatter }){
+        this.formatter = formatter;
+        this.style = style;
+        this.cellClass = cellClass;
+        this.data = data;
+        this.columnFormatter = columnFormatter;
+    }
+
+    format(row){
+        if(this.formatter && typeof this.formatter === 'function'){
+            return this.formatter( this.data, row, this );
+        }
+        if(this.columnFormatter && typeof this.columnFormatter === 'function'){
+            return this.columnFormatter( this.data, row, this );
+        }
+        if(this.data === undefined || this.data === null){
+            return '';
+        }
+        return this.data.toString();
+    }
+
+    get(){
+        return this.data;
+    }
+}
+
 
 const Option = {
     created(){
-        this.cells = ArrayUtils.dyadicArray(this.rows,this.cols);
-        ArrayUtils.deepForEach(this.cells,
-            (cell, level, index) =>{
-            this.cells[level][index] = new Cell({
-                area: new Area(index,index,level,level),
-                html: '['+level+':'+index+']',
-                data: undefined
-            });
-        });
-        this.table = new Table(this.cells);
+        // this.createTable();
+
     },
     props: {
-        rows: {
-            type: Number,
-            required: true
-        },
-        cols: {
-            type: Number,
-            required: true
-        },
-        cellWidth: {
-            type: String,
+        option:{
+            type: Object,
             required: false,
-            default: ''
+            default: null,
         },
-        cellHeight: {
-            type: String,
+        headers:{
+            type: Array,
             required: false,
-            default: ''
+            default: null
+        },
+        list:{
+            type: Array,
+            required: false,
+            default: null
+        }
+    },
+    directives:{
+        'cell': {
+            bind(el, binding, vnode){
+                let cell = binding.value;
+                let value = cell.format();
+                if( typeof value === 'string' ){
+                    el.innerHTML = value;
+                }
+                //判断是否为为vue对象
+                else if( value && value._isVue ){
+                    //创建一个新的div来挂载回传的vue对象
+                    let node = document.createElement('div');
+                    el.appendChild( node );
+                    //将Vue对象挂载到node节点上
+                    value.$mount(node);
+                    //互相赋予父子值
+                    value.$parent = vnode.context;
+                    vnode.context.$children.push(value);
+                    //将vue对象绑定到el上
+                    el._cell_vue_ = value;
+                }
+            },
+            unbind(el){
+                //解绑的时候销毁vue对象
+                if(el._cell_vue_){
+                    el._cell_vue_.$destroy();
+                }
+            }
         }
     },
     data(){
         return {
-            cells: [],
-            table: null,
+            // table: null
         };
     },
     computed: {
-        cellStyle: function(){
-            return {
-                'width': this.cellWidth || 'auto',
-                'height': this.cellHeight || 'auto'
-            };
-        },
-        rowStyle: function(){
-            return {
-                'height': this.cellHeight || 'auto'
-            };
+        table(){
+            return new Table({
+                rows: this.list || [],
+                headers: this.headers
+            });
         }
     },
     methods: {
-        // cellStyle: function( cell ){
-        //
-        // }
+        createTable(){
+            this.table = new Table({
+                rows: this.list || [],
+                headers: this.headers
+            });
+        },
+        cellClass(index ,cell){
+            let cellClass = cell? cell.cellClass : undefined;
+            let first = {'cell-first': true};
+            let notFirst = {'cell-notFirst': true};
+            if(index !== 0){
+                return Object.assign( notFirst, cellClass);
+            }
+            return Object.assign( first, cellClass);
+        },
+        formatCell( cell, row ){
+            return cell instanceof Cell? cell.format( row ): '';
+        },
+        formatHeader( header ){
+            return header instanceof Header? header.format(): '';
+        }
     }
 };
 export default Option;
