@@ -1,9 +1,6 @@
+import Vue from 'vue';
 import Vuex from 'vuex';
-import Vue from '$vue';
-
 Vue.use(Vuex);
-
-
 
 const CommonStore = new Vuex.Store({
     state:{
