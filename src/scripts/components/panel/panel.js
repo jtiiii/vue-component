@@ -1,3 +1,5 @@
+import CommonStore from '../../store/Common';
+
 export const Option ={
     name: 'panel',
     props:{
@@ -48,7 +50,10 @@ export const Option ={
             showWith: true
         };
     },
-    computed:{
+    computed: {
+        style(){
+            return CommonStore.state.style;
+        },
         panelStyle: function(){
             let size = {};
             if(this.width){
@@ -69,6 +74,7 @@ export const Option ={
                     result['panel-'+this.size] = true;
                     result['panel-limit'] = true;
             }
+            result['panel-corner-'+this.style.corner] = true;
             result['panel-'+this.type] = true;
             return result;
         },

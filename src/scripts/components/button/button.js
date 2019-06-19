@@ -1,3 +1,5 @@
+import CommonStore from '../../store/Common';
+
 const Option = {
     name: 'v-button',
     props: {
@@ -24,20 +26,27 @@ const Option = {
         return { };
     },
     computed: {
-        buttonStyle: function(){
-            return {
-                'width': this.width,
-                'height': this.height
-            };
+        // buttonStyle: function(){
+        //     return {
+        //         'width': this.width,
+        //         'height': this.height
+        //     };
+        // },
+        style(){
+            return CommonStore.state.style;
         },
-        typeClass: function(){
-            switch (this.type) {
-                case 'success': return { 'button-success': true };
-                case 'info': return { 'button-info': true };
-                case 'warning': return { 'button-warning': true };
-                case 'danger': return {'button-danger': true};
-                default: return {'button-default': true};
-            }
+        typeClass(){
+            let result = {};
+            result['button-corner-'+ this.style.corner] = true;
+            result['button-type-'+ this.type ] = true;
+            // switch (this.type) {
+            //     case 'success': return { 'button-success': true };
+            //     case 'info': return { 'button-info': true };
+            //     case 'warning': return { 'button-warning': true };
+            //     case 'danger': return {'button-danger': true};
+            //     default: return {'button-default': true};
+            // }
+            return result;
         }
     },
     methods:{

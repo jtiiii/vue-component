@@ -25,16 +25,10 @@
         left: 0;
     }
     .modal{
-        border-radius: 0.375rem; /* 6px */
         box-shadow: 1px 1px 5px 1px #000;
         position: absolute;
         display: flex;
         flex-direction: column;
-    }
-    .container{
-        /*display: flex;*/
-        /*justify-content: center;*/
-        /*align-items: center;*/
     }
     .modal-position-top{
         top: 0.25rem; /* 4px */

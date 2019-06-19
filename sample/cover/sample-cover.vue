@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-    import FComponents,{Utils} from '../../src/scripts/vue-component';
+    import FComponents,{Utils} from '../../src/main';
     import Image from './QQ20181229-1.jpg';
 
     console.info(Utils.WindowUtils.onresize);

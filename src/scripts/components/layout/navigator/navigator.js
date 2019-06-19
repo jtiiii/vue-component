@@ -1,3 +1,5 @@
+import CommonStore from '../../../store/Common';
+
 function TabItem({text,select = false, __tab}){
     this.text = text;
     this.select = select;
@@ -67,9 +69,15 @@ const Option = {
         }
     },
     computed:{
+        style(){
+            return CommonStore.state.style;
+        },
         navClass(){
             let result={};
             result['nav-direction-'+this.direction] = true;
+            if(this.direction !== 'row') {
+                result['nav-corner-'+this.style.corner] = true;
+            }
             return result;
         }
     },

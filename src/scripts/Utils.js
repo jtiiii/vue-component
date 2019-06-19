@@ -1,12 +1,8 @@
-function asyncLoad( path ){
-    return resolve => require([path],resolve);
-}
-
-const ArrayUtils = asyncLoad('./util/ArrayUtils');
-const NumberUtils = asyncLoad('./util/NumberUtils');
-const SizeUtils = asyncLoad('./util/SizeUtils');
-const VueUtils = asyncLoad('./util/VueUtils');
-const WindowUtils = asyncLoad('./util/WindowUtils');
+const ArrayUtils = resolve => require(['./util/ArrayUtils'],resolve);
+const NumberUtils = resolve => require(['./util/NumberUtils'],resolve);
+const SizeUtils = resolve => require(['./util/SizeUtils'],resolve);
+const VueUtils = resolve => require(['./util/VueUtils'],resolve);
+const WindowUtils = resolve => require(['./util/WindowUtils'],resolve);
 export default {
     ArrayUtils,NumberUtils,SizeUtils,VueUtils,WindowUtils
 }

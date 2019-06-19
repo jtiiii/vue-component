@@ -29,6 +29,14 @@
         padding: 0.375rem; /* 6px */
         cursor: pointer;
     }
+
+    .nav-corner-circle > a{
+        border-radius: 0.375rem;
+    }
+    .nav-corner-square > a{
+        border-radius: 0;
+    }
+
     .nav-direction-row > a.select{
         border-bottom: 0.25rem /* 4px */ solid #777;
         color: #000;
@@ -40,9 +48,10 @@
 
     @media screen and (min-width:480px){
         .nav-direction-column > a{
-            border-radius: 0.375rem;
+            /*border-radius: 0.375rem;*/
             line-height: 1.5rem; /* 24px */
         }
+
         .nav-direction-row > a{
             box-sizing: border-box;
             line-height: 0.5rem; /* 8px */
@@ -60,7 +69,7 @@
     @media screen and (max-width:480px){
         .nav-direction-column > a{
             height: 2rem; /* 32px */
-            border-radius: 0.375rem;
+            /*border-radius: 0.375rem;*/
             line-height: 1.5rem; /* 24px */
         }
         .nav-direction-row > a{

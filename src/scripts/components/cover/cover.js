@@ -1,3 +1,5 @@
+import CommonStore from '../../store/Common';
+
 const Option = {
     props:{
         src:{
@@ -20,10 +22,16 @@ const Option = {
         return {};
     },
     computed:{
+        style: () => CommonStore.state.style,
         coverInfoClass(){
             let result = {};
             result['cover-info-' + this.position ] = true;
             return result;
+        },
+        coverClass(){
+          let result = {};
+          result['cover-corner-'+this.style.corner] = true;
+          return result;
         }
     }
 };

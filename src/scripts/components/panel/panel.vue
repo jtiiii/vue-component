@@ -17,8 +17,13 @@
 
     .panel{
         border: 0.125rem /* 2px */ solid #e8e8e8;
-        border-radius: 5px;
         background: #fff;
+    }
+    .panel-corner-circle{
+        border-radius: 5px;
+    }
+    .panel-corner-square{
+        border-radius: 0;
     }
     .panel-auto{
         width: auto;

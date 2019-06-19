@@ -9,8 +9,7 @@
     </div>
 </template>
 <script>
-    // import Button from '../../src/scripts/components/button/button.vue';
-    import FComponents from '../../src/scripts/vue-component';
+    import FComponents from '../../src/main';
     export default {
         components:{
             'v-button': FComponents.Button

@@ -1,5 +1,5 @@
 <template>
-    <div class="cover">
+    <div class="cover" :class="coverClass">
         <img class="img" :src="src"/>
         <div v-show="showInfo" :class="coverInfoClass" class="cover-info">
             <slot></slot>
@@ -9,7 +9,6 @@
 
 <script>
     import Option from './cover';
-
     export default Option;
 </script>
 
@@ -21,7 +20,7 @@
         display: inline-block;
         position: relative;
         overflow:hidden;
-        border-radius: 0.5rem; /* 8px<*/
+
     }
     .img{
         float: left;
@@ -29,6 +28,14 @@
         position: relative;
         /*z-index: -1;*/
     }
+
+    .cover-corner-circle{
+        border-radius: 0.5rem; /* 8px<*/
+    }
+    .cover-corner-square{
+        border-radius: 0;
+    }
+
     .cover-info{
         position: absolute;
         z-index:1;

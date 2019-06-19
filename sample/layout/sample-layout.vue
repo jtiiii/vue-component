@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-    import FComponents from '../../src/scripts/vue-component';
+    import FComponents from '../../src/main';
 
     export default {
         components:{
