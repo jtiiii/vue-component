@@ -13,7 +13,7 @@
         <div class="row" v-show="!row.hidden" v-for="row in table.rows">
             <div class="cell" v-for="(header, index) in table.headers"
                  :class="cellClass(index,row.cells[header.column])"
-                 v-cell="row.cells[header.column]">
+                 v-cell="[row.data,row.cells[header.column]]">
             </div>
         </div>
     </div>

@@ -17,10 +17,7 @@
         {column: 'username', text:'用户名', formatter: defaultFormatter},
         {column: 'admin', text: '是否为管理员', formatter: defaultFormatter,
             columnFormatter: ( data, row, cell ) => {
-                // let node = document.createElement('div');
-                FComponents.Button( ( c ) => {
-                    console.info(c);
-                });
+                console.info(data, row, cell);
                 // return FComponents.Button
                 return new Vue({
                     name: 'cell',

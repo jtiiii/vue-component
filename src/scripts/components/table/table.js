@@ -115,8 +115,7 @@ const Option = {
     directives:{
         'cell': {
             bind(el, binding, vnode){
-                let cell = binding.value;
-                let value = cell.format();
+                let value = binding.value[1].format(binding.value[0]);
                 if( typeof value === 'string' ){
                     el.innerHTML = value;
                 }
