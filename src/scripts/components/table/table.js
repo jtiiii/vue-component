@@ -1,3 +1,4 @@
+import CommonStore from '../../store/Common';
 
 class Table{
     constructor({ rows = [], headers , style, tableClass }){
@@ -96,10 +97,13 @@ const Option = {
 
     },
     props: {
-        option:{
-            type: Object,
+        type:{
+            type: String,
             required: false,
-            default: null,
+            default: 'default',
+            validator: function( value ){
+                return ['default','info','success','warning','danger'].indexOf( value ) !== -1;
+            }
         },
         headers:{
             type: Array,
@@ -152,23 +156,36 @@ const Option = {
                 rows: this.list || [],
                 headers: this.headers
             });
+        },
+        style(){
+            return CommonStore.state.style;
+        },
+        tableClass(){
+            let tableClass = this.table.tableClass || {};
+            tableClass['table-corner-'+this.style.corner] = true;
+            tableClass['table-type-'+this.type] = true;
+            return tableClass;
         }
     },
     methods: {
-        createTable(){
-            this.table = new Table({
-                rows: this.list || [],
-                headers: this.headers
-            });
-        },
-        cellClass(index ,cell){
-            let cellClass = cell? cell.cellClass : undefined;
-            let first = {'cell-first': true};
-            let notFirst = {'cell-notFirst': true};
-            if(index !== 0){
-                return Object.assign( notFirst, cellClass);
+        rowClass(index, row){
+            let rowClass = row? row.rowClass || {} : {};
+            if(index % 2 === 1){
+                rowClass['row-line'] = true;
             }
-            return Object.assign( first, cellClass);
+            console.info(rowClass);
+            return rowClass;
+        },
+
+        cellClass(index ,cell){
+            let cellClass = cell
+                ? cell.cellClass || {}
+                : {};
+
+            if(index === 0){
+                cellClass['cell-first'] = true;
+            }
+            return cellClass;
         },
         formatCell( cell, row ){
             return cell instanceof Cell? cell.format( row ): '';
