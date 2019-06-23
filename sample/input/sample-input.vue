@@ -7,6 +7,7 @@
         &nbsp;
         <input-file @select="notice">Select Files</input-file>
         &nbsp;
+        <input-switch v-model="checked"></input-switch>
     </div>
 </template>
 <script>
@@ -15,11 +16,13 @@
     export default {
         components: {
             'input-text': Input.Text,
-            'input-file': Input.File
+            'input-file': Input.File,
+            'input-switch': Input.Switch
         },
         data(){
             return {
-                text: ''
+                text: '',
+                checked: false
             };
         },
         methods:{

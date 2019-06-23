@@ -25,10 +25,12 @@
         left: 0;
     }
     .modal{
-        box-shadow: 1px 1px 5px 1px #000;
+        box-shadow: 0 0 0.5rem 0 #ccc;
         position: absolute;
         display: flex;
+        box-sizing: border-box;
         flex-direction: column;
+        border: 0.0625rem solid #ddd;
     }
     .modal-position-top{
         top: 0.25rem; /* 4px */

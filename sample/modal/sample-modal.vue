@@ -15,7 +15,7 @@
             <v-button @click="position ='under-left'">under-left</v-button>
             <v-button @click="position ='under-right'">under-right</v-button>
             <hr/>
-            <v-button :type="'info'" @click="hasMask = !hasMask"> Open / Close the mask.</v-button>
+            <v-button :type="'info'" @click="changeHasMask"> Open / Close the mask.</v-button>
             <hr/>
             Change type to:
             <br/>
@@ -48,6 +48,9 @@
             };
         },
         methods:{
+            changeHasMask(){
+                this.hasMask = !this.hasMask;
+            }
         }
     }
 </script>

@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <v-button >default button</v-button>
-        <v-button :type="'info'" >info button</v-button>
-        <v-button :type="'warning'" >warning button</v-button>
-        <v-button :type="'danger'">danger button</v-button>
-        <v-button :type="'success'" >success button</v-button>
+    <div class="sample-button">
+        <v-button :size="'smaller'">button</v-button>
+        <v-button :size="'small'" :type="'info'" >button</v-button>
+        <v-button :size="'medium'" :type="'warning'" >button</v-button>
+        <v-button :size="'large'" :type="'danger'">button</v-button>
+        <v-button :size="'larger'" :type="'success'" >button</v-button>
         <v-button disabled >disabled button</v-button>
     </div>
 </template>
@@ -27,7 +27,10 @@
     }
 </script>
 <style scoped>
-    /*div > button{*/
-    /*    margin: 0 5px;*/
-    /*}*/
+    .sample-button{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-end;
+        justify-content: left;
+    }
 </style>

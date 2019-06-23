@@ -1,11 +1,10 @@
 <script>
     import Option from './navigator';
-
     export default Option;
 </script>
 <template>
     <nav :class="navClass">
-        <a v-for="tab in items" :class="{ 'select': tab.select }" :href="tab.link" @click="click(tab)">{{ tab.text }}</a>
+        <a v-for="tab in items" :key="tab.key" :class="{ 'select': tab.select }" :href="tab.link" @click="click(tab)">{{ tab.text }}</a>
     </nav>
 </template>
 <style scoped>

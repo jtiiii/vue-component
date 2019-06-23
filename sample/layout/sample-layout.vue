@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-navigator :tabs="tabs" :direction="direction" @a-click="select"></v-navigator>
+        <v-navigator :tabs="tabs" v-model="selected" :direction="direction" @a-click="singleSelect"></v-navigator>
     </div>
 </template>
 <script>
@@ -23,13 +23,26 @@
                     {text:'tab-8'}
 
                 ],
-                direction: 'row'
+                direction: 'row',
+                selected: [3]
             };
         },
         methods:{
-            select(tab, select){
-                console.info(tab,select);
-                select(tab);
+            select(tab, tabKey){
+                if(this.selected.indexOf(tabKey) === -1){
+                    this.selected.push(tabKey);
+                }else{
+                    this.selected.splice(this.selected.indexOf(tabKey),1);
+                }
+                console.info(tab);
+            },
+            singleSelect(tab, tabKey){
+                if(this.selected.indexOf(tabKey) === -1){
+                    this.selected.pop();
+                }else{
+                    return;
+                }
+                this.selected.push(tabKey);
             }
         }
     };

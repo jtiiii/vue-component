@@ -5,7 +5,7 @@
 </script>
 <template>
     <div v-show="show" :style="panelStyle" :class="panelClass">
-        <div v-if="hasTitle" class="panel-title">
+        <div v-if="hasTitle" class="panel-title" :class="panelTitleClass">
             <slot name="title"></slot>
             <button v-if="canClose" class="close-button" type="button" @click="close">x</button>
         </div>
@@ -20,7 +20,7 @@
         background: #fff;
     }
     .panel-corner-circle{
-        border-radius: 5px;
+        border-radius: 0.5rem;
     }
     .panel-corner-square{
         border-radius: 0;
@@ -28,6 +28,14 @@
     .panel-auto{
         width: auto;
         height: auto;
+    }
+    .panel-title-corner-circle{
+        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
+    }
+    .panel-title-corner-suare{
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
     }
     .panel-smaller{
         width: 9.375rem; /* 150px */

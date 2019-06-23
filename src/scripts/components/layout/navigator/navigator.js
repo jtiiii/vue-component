@@ -1,8 +1,8 @@
 import CommonStore from '../../../store/Common';
 
-function TabItem({text,select = false, __tab}){
-    this.text = text;
+function TabItem({text,select = false, __tab}, key){
     this.select = select;
+    this.key = key;
     this.__tab = __tab || arguments[0];
     Object.defineProperty(this,'text',{
         set(value){
@@ -12,6 +12,7 @@ function TabItem({text,select = false, __tab}){
             return this.__tab.text;
         }
     });
+    this.text = text;
 }
 TabItem.prototype = {
     constructor: TabItem,
@@ -19,7 +20,7 @@ TabItem.prototype = {
         return this.__tab;
     }
 };
-TabItem.of = obj => obj instanceof TabItem? obj: new TabItem(obj);
+TabItem.of = (obj, key) => obj instanceof TabItem? obj: new TabItem(obj, key);
 TabItem.ofs = arr => {
     let result = [];
     arr.forEach( item => result.push(item));
@@ -27,7 +28,22 @@ TabItem.ofs = arr => {
 };
 
 const Option = {
+    model:{
+        prop: 'selects',
+        event: 'select'
+    },
     props:{
+        mapKey:{
+            type: String,
+            required: false,
+            default: '_index_'
+        },
+        selects: {
+            type: Array,
+            required: false,
+            default: () => []
+        },
+
         tabs: {
             type: Array,
             required: false,
@@ -44,45 +60,84 @@ const Option = {
     },
     data(){
         return {
-            selected: null,
             items: [],
+            keyMap:{},
+            selectSet: new Set([]),
         };
+    },
+    watch:{
+        selects( values ) {
+            this.setSelects(values);
+        }
     },
     methods:{
         initTabs(){
-            // this.items = TabItem.ofs(this.tabs);
-            this.tabs.forEach( tab => {
-                this.items.push(TabItem.of(tab));
+            let index = 0;
+            let flag = this.useAutoKey;
+            this.keyMap = {};
+            this.items = this.tabs.map(tab => {
+                let item = flag
+                    ? TabItem.of(tab, index++ )
+                    : TabItem.of(tab, tab[this.mapKey]);
+                this.keyMap[item.key] = item;
+                return item;
             });
         },
-        click( tab ){
-            this.$emit('a-click',tab,this.select.bind(this));
+        setSelects( selectArr ){
+            let n = new Set(selectArr);
+            let unSelects = [...this.selectSet].filter( select => {
+                if(n.has(select)){
+                    n.delete(select);
+                    return false;
+                }
+                return true;
+            });
+            this.unselect( unSelects );
+            this.select([ ...n ]);
         },
-        select( tab ){
-            if(this.selected){
-                this.selected.select = false
-            }
-            this.selected = tab;
-            if(tab){
-                tab.select = true;
-            }
+        click( tabItem ){
+            this.$emit('a-click', tabItem.get(), tabItem.key );
+        },
+        select( tabKeys ){
+            this.filterExistsTab(tabKeys)
+                .forEach( tabKey => {
+                    this.keyMap[tabKey].select = true;
+                    this.selectSet.add(tabKey);
+                });
+        },
+        unselect( tabKeys ){
+            this.filterExistsTab(tabKeys).forEach( tabKey => {
+                this.keyMap[tabKey].select = false;
+                this.selectSet.delete(tabKey);
+            });
+        },
+        filterExistsTab( tabKeys ){
+            return tabKeys.filter( tabKey => {
+                let tabItem = this.keyMap[tabKey];
+                return !(tabItem === undefined || tabItem == null) && (tabItem instanceof TabItem);
+            });
         }
     },
     computed:{
+        useAutoKey(){
+            return this.mapKey === '_index_';
+        },
         style(){
             return CommonStore.state.style;
         },
-        navClass(){
-            let result={};
-            result['nav-direction-'+this.direction] = true;
-            if(this.direction !== 'row') {
-                result['nav-corner-'+this.style.corner] = true;
+        navClass() {
+            let result = {};
+            result['nav-direction-' + this.direction] = true;
+            if (this.direction !== 'row') {
+                result['nav-corner-' + this.style.corner] = true;
             }
             return result;
         }
-    },
+    }
+    ,
     created(){
         this.initTabs();
+        this.setSelects(this.selects);
     }
 };
 export default Option;

@@ -78,6 +78,11 @@ export const Option ={
             result['panel-'+this.type] = true;
             return result;
         },
+        panelTitleClass(){
+            let result = {};
+            result['panel-title-corner-'+this.style.corner] = true;
+            return result;
+        },
         hasTitle: function(){
             return Boolean(this.$slots.title);
         },
