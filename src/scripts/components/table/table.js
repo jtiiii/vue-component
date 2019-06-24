@@ -130,6 +130,7 @@ function cellUpdating( el, binding, vnode){
         //将vue对象绑定到el上
         if(el._cell_vue_){
             el._cell_vue_.$destroy();
+            el.innerHtml = '';
         }
         el._cell_vue_ = value;
     }
@@ -170,6 +171,7 @@ const Option = {
                 if(el._cell_vue_){
                     el._cell_vue_.$destroy();
                 }
+                el.innerHtml = '';
             }
         }
     },
