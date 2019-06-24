@@ -23,7 +23,6 @@ export const Option = {
     },
     methods: {
         searchChange(e){
-            console.info('search change');
             this.$emit('input',e);
         }
     }

@@ -138,7 +138,6 @@ export const Option={
             this.previewImg.show = false;
         },
         preview: function( img ){
-            console.info('preview');
             this.previewImg.src = img.src;
             this.previewImg.show = true;
         },

@@ -90,10 +90,55 @@ class Cell{
     }
 }
 
+function cellBinding( el, binding, vnode){
+    let value = binding.value[1].format(binding.value[0]);
+    if( typeof value === 'string' ){
+        // vnode.text = value;
+        el.innerHTML = value;
+    }
+    //判断是否为为vue对象
+    else if( value && value._isVue ){
+        //创建一个新的div来挂载回传的vue对象
+        let node = document.createElement('div');
+        el.appendChild( node );
+        //将Vue对象挂载到node节点上
+        value.$mount(node);
+        //互相赋予父子值
+        value.$parent = vnode.context;
+        vnode.context.$children.push(value);
+        //将vue对象绑定到el上
+        el._cell_vue_ = value;
+    }
+}
+
+function cellUpdating( el, binding, vnode){
+    let value = binding.value[1].format(binding.value[0]);
+    if( typeof value === 'string' ){
+        // vnode.text = value;
+        el.innerHTML = value;
+    }
+    //判断是否为为vue对象
+    else if( value && value._isVue ){
+        //创建一个新的div来挂载回传的vue对象
+        let node = document.createElement('div');
+        el.appendChild( node );
+        //将Vue对象挂载到node节点上
+        value.$mount(node);
+        //互相赋予父子值
+        value.$parent = vnode.context;
+        vnode.context.$children.push(value);
+        //将vue对象绑定到el上
+        if(el._cell_vue_){
+            el._cell_vue_.$destroy();
+        }
+        el._cell_vue_ = value;
+    }
+}
+
 
 const Option = {
     created(){
-        // this.createTable();
+        this.tableTemp = this.createTable( this.list );
 
     },
     props: {
@@ -118,25 +163,8 @@ const Option = {
     },
     directives:{
         'cell': {
-            bind(el, binding, vnode){
-                let value = binding.value[1].format(binding.value[0]);
-                if( typeof value === 'string' ){
-                    el.innerHTML = value;
-                }
-                //判断是否为为vue对象
-                else if( value && value._isVue ){
-                    //创建一个新的div来挂载回传的vue对象
-                    let node = document.createElement('div');
-                    el.appendChild( node );
-                    //将Vue对象挂载到node节点上
-                    value.$mount(node);
-                    //互相赋予父子值
-                    value.$parent = vnode.context;
-                    vnode.context.$children.push(value);
-                    //将vue对象绑定到el上
-                    el._cell_vue_ = value;
-                }
-            },
+            bind: cellBinding,
+            update: cellUpdating,
             unbind(el){
                 //解绑的时候销毁vue对象
                 if(el._cell_vue_){
@@ -147,15 +175,22 @@ const Option = {
     },
     data(){
         return {
-            // table: null
+            tableTemp: null
         };
     },
+    watch:{
+        list( value ){
+            this.tableTemp = this.createTable( value );
+        }
+    },
     computed: {
-        table(){
-            return new Table({
-                rows: this.list || [],
-                headers: this.headers
-            });
+        table:{
+            get(){
+                return this.tableTemp;
+            },
+            set( value ){
+                this.tableTemp = value;
+            }
         },
         style(){
             return CommonStore.state.style;
@@ -173,7 +208,6 @@ const Option = {
             if(index % 2 === 1){
                 rowClass['row-line'] = true;
             }
-            console.info(rowClass);
             return rowClass;
         },
 
@@ -192,6 +226,12 @@ const Option = {
         },
         formatHeader( header ){
             return header instanceof Header? header.format(): '';
+        },
+        createTable( list ){
+            return new Table({
+                rows: list || [],
+                headers: this.headers
+            });
         }
     }
 };

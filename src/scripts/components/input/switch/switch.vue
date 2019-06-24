@@ -22,7 +22,6 @@
         },
         methods:{
             checkedOrUnchecked(){
-                console.info('checked',this.checked)
                 this.$emit('click', !this.checked);
             }
         },
