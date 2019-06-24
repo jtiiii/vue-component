@@ -7,6 +7,25 @@
 <script>
     import Table from '../../src/scripts/components/table/table.vue';
     import FComponents from '../../src/main';
+    import Vue from 'vue/dist/vue.common';
+
+    const getTextComponentFormatter = function(data, row){
+        console.info(data,row);
+        return new Vue({
+            template:'<div><v-cell-text v-model="text"></v-cell-text></div>',
+            components: {
+                'v-cell-text': FComponents.Input.Text
+            },
+            data(){
+                return {
+                    text: data
+                }
+            },
+        });
+
+        // console.info(data,row);
+        // return 'test';
+    };
 
     const sampleHarbour = [
         {
@@ -45,7 +64,7 @@
                 headersSample: [
                     { column: 'id', text: 'ID', formatter: getTextFormatter},
                     // { column: 'code', text: '编码', formatter: getTextFormatter},
-                    { column: 'name', text: '名称', formatter: getTextFormatter},
+                    { column: 'name', text: '名称', formatter: getTextFormatter, columnFormatter: getTextComponentFormatter},
                     // { column: 'remark', text: '说明', formatter: getTextFormatter},
                     { column: 'operation', text: '操作', formatter: getTextFormatter}
                 ],

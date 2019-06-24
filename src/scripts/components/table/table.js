@@ -119,6 +119,11 @@ function cellUpdating( el, binding, vnode){
     }
     //判断是否为为vue对象
     else if( value && value._isVue ){
+
+        if(el._cell_vue_){
+            el._cell_vue_.$destroy();
+            el.innerHTML = '';
+        }
         //创建一个新的div来挂载回传的vue对象
         let node = document.createElement('div');
         el.appendChild( node );
@@ -128,10 +133,6 @@ function cellUpdating( el, binding, vnode){
         value.$parent = vnode.context;
         vnode.context.$children.push(value);
         //将vue对象绑定到el上
-        if(el._cell_vue_){
-            el._cell_vue_.$destroy();
-            el.innerHtml = '';
-        }
         el._cell_vue_ = value;
     }
 }
