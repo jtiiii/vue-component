@@ -68,15 +68,17 @@ const Option = {
     watch:{
         selects( values ) {
             this.setSelects(values);
+        },
+        tabs(){
+            this.initTabs();
         }
     },
     methods:{
         initTabs(){
             let index = 0;
-            let flag = this.useAutoKey;
             this.keyMap = {};
             this.items = this.tabs.map(tab => {
-                let item = flag
+                let item = this.useAutoKey
                     ? TabItem.of(tab, index++ )
                     : TabItem.of(tab, tab[this.mapKey]);
                 this.keyMap[item.key] = item;
