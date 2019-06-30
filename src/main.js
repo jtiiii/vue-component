@@ -21,7 +21,7 @@ import ThumbnailModel from './scripts/components/thumbnail/ThumbnailModel';
 import TreeNodeModel from "./scripts/components/tree/TreeNode";
 
 
-const vueComponents = { TreeNode, Button, Panel, Modal, Search, Input, Upload, Thumbnail, Editor, Dropdown, Layout, Cover, Table};
+const vueComponents = { TreeNode, Button, Panel, Modal, Search, Input, Upload, Thumbnail, Editor, Dropdown, Layout, Cover, Table, Selector};
 const Model = {
     TreeNode: TreeNodeModel,
     Thumbnail: ThumbnailModel
