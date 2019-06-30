@@ -15,6 +15,7 @@ const Thumbnail = resolve => require(['./scripts/components/thumbnail/thumbnail.
 const Dropdown = resolve => require(['./scripts/components/dropdown/dropdown.vue'], resolve);
 const Cover = resolve => require(['./scripts/components/cover/cover.vue'], resolve);
 const Table = resolve => require(['./scripts/components/table/table.vue'], resolve);
+const Selector = resolve => require(['./scripts/components/selector/selector.vue'],resolve);
 
 import ThumbnailModel from './scripts/components/thumbnail/ThumbnailModel';
 import TreeNodeModel from "./scripts/components/tree/TreeNode";

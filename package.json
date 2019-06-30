@@ -1,6 +1,6 @@
 {
   "name": "f-vue-components",
-  "version": "0.0.47",
+  "version": "0.0.49",
   "description": "参考了bootstrap样式而自己开发的vue组件",
   "main": "src/main.js",
   "directories": {
@@ -43,11 +43,11 @@
     "vuex": "^3.1.1",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.3.1",
+    "vue": "^2.6.10"
   },
   "dependencies": {
     "quill": "^1.3.6",
-    "spark-md5": "^3.0.0",
-    "vue": "^2.6.10"
+    "spark-md5": "^3.0.0"
   }
 }

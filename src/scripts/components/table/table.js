@@ -119,7 +119,6 @@ function cellUpdating( el, binding, vnode){
     }
     //判断是否为为vue对象
     else if( value && value._isVue ){
-
         if(el._cell_vue_){
             el._cell_vue_.$destroy();
             el.innerHTML = '';
