@@ -2,11 +2,11 @@ import Navigator from '../layout/navigator/navigator.vue';
 import Dropdown from '../dropdown/dropdown.vue';
 import Text from  '../input/text/text.vue';
 import Button from '../button/button.vue';
-import DropdownIconDefault from '@/images/drop_down_default.png';
-import DropdownIconSuccess from '@/images/drop_down_success.png';
-import DropdownIconWarning from '@/images/drop_down_warning.png';
-import DropdownIconInfo from '@/images/drop_down_info.png';
-import DropdownIconDanger from '@/images/drop_down_danger.png';
+import DropdownIconDefault from '../../../images/drop_down_default.png';
+import DropdownIconSuccess from '../../../images/drop_down_success.png';
+import DropdownIconWarning from '../../../images/drop_down_warning.png';
+import DropdownIconInfo from '../../../images/drop_down_info.png';
+import DropdownIconDanger from '../../../images/drop_down_danger.png';
 
 
 
