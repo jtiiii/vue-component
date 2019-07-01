@@ -1,9 +1,8 @@
 <template>
-    <input @input="textChange" :value="text" :placeholder="placeholder" type ="text"/>
+    <input @input="textChange" :value="text" @keydown="$emit('keydown')" @keyup="keyup" @keypress="$emit('keypress')" @focusout="$emit('focusout')" @focusin="$emit('focusin')" :placeholder="placeholder" type ="text"/>
 </template>
 <script>
     import {Option} from './text';
-
     export default Option;
 </script>
 <style scoped>

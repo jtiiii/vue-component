@@ -23,8 +23,6 @@
             },
         });
 
-        // console.info(data,row);
-        // return 'test';
     };
 
     const sampleHarbour = [

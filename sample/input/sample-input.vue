@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input-text v-model="text"></input-text>
+        <input-text v-model="text" @enter="enter"></input-text>
         <br/>
         {{ text }}
         <br/>
@@ -32,6 +32,9 @@
                     names.push(file.name);
                 });
                 alert('Selected files: \n\r' +names);
+            },
+            enter(){
+                alert('Enter event - text: '+this.text);
             }
         }
     }

@@ -26,6 +26,12 @@ export const Option={
     methods: {
         textChange: function(e){
             this.$emit('input',e.target.value)
+        },
+        keyup(e){
+            if(e.key === 'Enter'){
+                this.$emit('enter');
+            }
+            this.$emit('keyup');
         }
     }
 };
