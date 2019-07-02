@@ -6,7 +6,7 @@
 <template>
     <div class="searchBox">
         <img class="searchLogo" :src="searchIcon">
-        <v-input @input="searchChange" :text="search" class="searchInput"></v-input>
+        <v-input @input="searchChange" @keyup="keyup" :text="search" class="searchInput"></v-input>
     </div>
 </template>
 <style scoped>

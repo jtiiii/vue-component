@@ -9,7 +9,7 @@ import layout from './layout/app';
 // import Selector from './selector/app';
 // import modal from './modal/app';
 // import panel from './panel/app';
-// import search from './search/app';
+import search from './search/app';
 // import table from './table/app';
 // import thumbnail from './thumbnail/app';
 // import tree from './tree/app';

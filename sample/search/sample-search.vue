@@ -1,7 +1,10 @@
 <template>
     <div>
-        <search v-model="text" :height="'20px'"></search>
+        <search @keyup="showText" v-model="text" :delay="500"></search>
         {{ text }}
+        <br/>
+        delay:
+        {{ delayText }}
     </div>
 </template>
 <script>
@@ -13,8 +16,14 @@
         },
         data(){
             return {
-                text: ''
+                text: '',
+                delayText: ''
             };
+        },
+        methods:{
+            showText( text ){
+                this.delayText = text;
+            }
         }
     }
 </script>
