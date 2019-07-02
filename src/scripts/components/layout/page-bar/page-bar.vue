@@ -55,10 +55,10 @@
                 return this.current === this.all;
             },
             nextMore(){
-                return this.current < this.all - this.showLength/2;
+                return this.current < this.all - this.length/2;
             },
             preMore(){
-                return this.current > this.showLength/2;
+                return this.current > this.length/2;
             },
             showLength(){
                 return this.all >= this.length? this.length: this.all;

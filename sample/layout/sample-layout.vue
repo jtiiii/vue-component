@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-navigator :tabs="tabs" v-model="selected" :direction="direction" @a-click="singleSelect"></v-navigator>
-        <v-page-bar :type="'default'" :all="15" :length="4" :current="currentPage" @goto="goto" />
+        <v-page-bar :type="'default'" :all="1" :length="4" :current="currentPage" @goto="goto" />
         <v-page-bar :type="'info'" :all="15" :length="4" :current="currentPage" @goto="goto" />
         <v-page-bar :type="'success'" :all="15" :length="4" :current="currentPage" @goto="goto" />
         <v-page-bar :type="'warning'" :all="15" :length="4" :current="currentPage" @goto="goto" />
