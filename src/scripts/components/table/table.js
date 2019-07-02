@@ -160,6 +160,11 @@ const Option = {
             type: Array,
             required: false,
             default: null
+        },
+        canRowClick:{
+            type:Boolean,
+            required: false,
+            default: false
         }
     },
     directives:{
@@ -210,6 +215,9 @@ const Option = {
             if(index % 2 === 1){
                 rowClass['row-line'] = true;
             }
+            if(this.canRowClick){
+                rowClass['row-click'] = true;
+            }
             return rowClass;
         },
 
@@ -234,6 +242,11 @@ const Option = {
                 rows: list || [],
                 headers: this.headers
             });
+        },
+        rowClick( rowNum, row){
+            if(this.canRowClick){
+                this.$emit('rowClick',{index:rowNum, data: row.data});
+            }
         }
     }
 };

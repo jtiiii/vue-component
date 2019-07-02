@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-button @click="changeList">Change Data</v-button>
-        <v-table :list="listSample" :headers="headers" :type="tableType" ></v-table>
+        <v-table :list="listSample" :headers="headers" :type="tableType" :canRowClick="true" @rowClick="handler"></v-table>
     </div>
 </template>
 <script>
@@ -85,6 +85,9 @@
                 }else{
                     this.listSample = sampleHarbour;
                 }
+            },
+            handler( row ){
+                console.info(row);
             }
         }
     };

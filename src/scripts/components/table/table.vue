@@ -14,6 +14,7 @@
              v-for="(row, rowNum) in table.rows"
              v-show="!row.hidden"
              :class="rowClass(rowNum, row)"
+             @click="rowClick(rowNum, row)"
         >
             <div class="cell" v-for="(header, index) in table.headers"
                  :class="cellClass(index,row.cells[header.column])"
@@ -51,6 +52,10 @@
         flex-flow: row wrap;
         border-top: 0.125rem solid;
         border-color: inherit;
+    }
+    .row.row-click:hover{
+        cursor: pointer;
+        background-color: #99ccff33;
     }
 
     .table-type-success{
