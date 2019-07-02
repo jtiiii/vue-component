@@ -1,7 +1,10 @@
 <template>
-    <div class="hint" :class="hintClass" >
+    <label class="hint-box" >
         <slot></slot>
-    </div>
+        <div v-show="show" class="hint" :class="hintClass" >
+            <slot name="message"></slot>
+        </div>
+    </label>
 </template>
 <script>
     import Store from '../../store/Common';
@@ -16,6 +19,16 @@
                 validator( value ){
                     return ['default', 'success', 'info', 'warning', 'danger'].indexOf( value ) !== -1;
                 }
+            },
+            position:{
+                type: String,
+                required: false,
+                default: 'top-left'
+            },
+            show:{
+                type: Boolean,
+                required: false,
+                default: true
             }
         },
         computed:{
@@ -26,7 +39,20 @@
                 let result = {};
                 result['hint-type-'+this.type] = true;
                 result['hint-corner-'+this.style.corner] = true;
+                result['hint-hover'] = this.hasHover;
+
+                this.position.split('-').forEach( p => {
+                    result['hint-hover-'+p] = true;
+                });
                 return result;
+            },
+            hasHover(){
+                return this.$slots.default !== undefined && this.$slots.default !== null;
+            }
+        },
+        methods:{
+            mouseenter(){
+                this.$emit('mouseenter');
             }
         }
     }
@@ -40,6 +66,28 @@
         display: inline-block;
         opacity: .9;
     }
+    .hint-box{
+        position: relative;
+        display: inline-block;
+        width: auto;
+        height: auto;
+    }
+    .hint-hover{
+        position: absolute;
+    }
+    .hint-hover-left{
+        left: 0.625rem;
+    }
+    .hint-hover-right{
+        right: 0.625rem;
+    }
+    .hint-hover-top{
+        bottom: 100%;
+    }
+    .hint-hover-bottom{
+        top: 100%;
+    }
+
     .hint-type-default{
         background-color: #000000cc;
     }
@@ -50,10 +98,10 @@
         background-color: #31708fcc;
     }
     .hint-type-warning{
-        background-color: #8a6d3bcc;
+        background-color: #de8d00cc;
     }
     .hint-type-danger{
-        background-color: #ff0000cc;
+        background-color: #da0000cc;
     }
 
     .hint-corner-circle{

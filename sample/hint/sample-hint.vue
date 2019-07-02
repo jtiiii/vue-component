@@ -1,10 +1,25 @@
 <template>
     <div>
-        <hint>Hint</hint>
-        <hint :type="'success'">Hint</hint>
-        <hint :type="'info'">Hint</hint>
-        <hint :type="'warning'">Hint</hint>
-        <hint :type="'danger'">Hint</hint>
+        <hint>
+            <template #message>Hint</template>
+        </hint>
+        <hint :type="'success'">
+            <template #message>Hint</template>
+        </hint>
+        <hint :type="'info'">
+            <template #message>Hint</template>
+        </hint>
+        <hint :type="'warning'">
+            <template #message>Hint</template>
+        </hint>
+        <hint :type="'danger'">
+            <template #message>Hint</template>
+        </hint>
+
+        <hint :type="'default'" :show="hintShow" :position="'bottom-left'">
+            <template #message>It's a message.</template>
+            <v-button @mouseenter.native="hintShow = true" @mouseleave.native="hintShow = false"  :size="'small'" :type="'info'">Hover show hint.</v-button>
+        </hint>
     </div>
 </template>
 <script>
@@ -12,7 +27,13 @@
     export default {
         name: 'sample-hint',
         components:{
-            'hint': FComponents.Hint
+            'hint': FComponents.Hint,
+            'v-button': FComponents.Button
+        },
+        data(){
+            return{
+                hintShow: false
+            };
         }
     }
 </script>
