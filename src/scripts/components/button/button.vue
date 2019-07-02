@@ -9,7 +9,7 @@
 <style scoped>
     button{
         outline: none;
-        border: none;
+        border: 2px solid;
         cursor: pointer;
         display: inline-block;
         text-align: center;
@@ -27,7 +27,7 @@
             box-shadow: 0 0 2px #000;
         }
         button:hover{
-            opacity: 0.8;
+            opacity: 0.7;
         }
     }
     @media screen and (max-width:480px){
@@ -42,12 +42,17 @@
 
     }
     button:disabled{
-        background: #ccc;
+        background: #e8e8e8;
         border: none;
         color: #fff;
         box-shadow: 0 0;
+        opacity: .6;
         cursor: not-allowed;
     }
+    button:disabled:hover{
+        opacity: .6;
+    }
+
 
     .button-size-smaller{
         font-size: 0.625rem;
@@ -95,25 +100,51 @@
         border-radius: 1.25rem; /* 10px */
     }
 
+    button.pressed{
+        color: #fff;
+    }
+
+    .button-type-default.pressed{
+        background-color: #888;
+    }
+
+
     .button-type-default{
         color: #000;
-        border: 2px solid #e8e8e8;
+        border-color: #e8e8e8;
         background: #e8e8e8;
+    }
+    .button-type-success.pressed{
+        color: #d6e9c6;
+        background-color: #3c763d;
     }
     .button-type-success{
         color: #3c763d;
         background-color: #d6e9c6;
         border-color: #d6e9c6;
     }
+
+    .button-type-warning.pressed{
+        background-color: #8a6d3b;
+        color: #faebcc;
+    }
     .button-type-warning{
         color: #8a6d3b;
         background-color: #faebcc;
         border-color: #faebcc;
     }
+    .button-type-info.pressed{
+        background-color: #31708f;
+        color: #bce8f1;
+    }
     .button-type-info{
         color: #31708f;
         background-color: #bce8f1;
         border-color: #bce8f1;
+    }
+    .button-type-danger.pressed{
+        background-color: #a94442;
+        color: #ebccd1;
     }
     .button-type-danger{
         color: #a94442;

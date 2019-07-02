@@ -16,12 +16,13 @@ const Dropdown = resolve => require(['./scripts/components/dropdown/dropdown.vue
 const Cover = resolve => require(['./scripts/components/cover/cover.vue'], resolve);
 const Table = resolve => require(['./scripts/components/table/table.vue'], resolve);
 const Selector = resolve => require(['./scripts/components/selector/selector.vue'],resolve);
+const Hint = resolve => require(['./scripts/components/hint/hint.vue'],resolve );
 
 import ThumbnailModel from './scripts/components/thumbnail/ThumbnailModel';
 import TreeNodeModel from "./scripts/components/tree/TreeNode";
 
 
-const vueComponents = { TreeNode, Button, Panel, Modal, Search, Input, Upload, Thumbnail, Editor, Dropdown, Layout, Cover, Table, Selector};
+const vueComponents = { TreeNode, Button, Panel, Modal, Search, Input, Upload, Thumbnail, Editor, Dropdown, Layout, Cover, Table, Selector, Hint};
 const Model = {
     TreeNode: TreeNodeModel,
     Thumbnail: ThumbnailModel

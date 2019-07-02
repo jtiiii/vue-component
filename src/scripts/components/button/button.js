@@ -18,6 +18,11 @@ const Option = {
             validator: function( value ){
                 return ['default','info','success','warning','danger'].indexOf( value ) !== -1;
             }
+        },
+        pressed:{
+            type: Boolean,
+            required: false,
+            default: false
         }
     },
     data(){
@@ -26,6 +31,7 @@ const Option = {
     computed:{
         buttonClass(){
             let result = {};
+            result['pressed'] = this.pressed;
             result['button-size-'+ this.size] = true;
             result['button-corner-'+ CommonStore.state.style.corner] = true;
             result['button-type-'+ this.type ] = true;
