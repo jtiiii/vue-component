@@ -57,7 +57,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
     .hint{
         color: #fff;
         font-size: 0.875rem;

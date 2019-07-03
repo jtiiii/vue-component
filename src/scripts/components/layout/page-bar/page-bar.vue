@@ -93,7 +93,7 @@
     }
 
 </script>
-<style>
+<style scoped>
     .page-bar{
         display: flex;
         flex-flow: row wrap;
