@@ -41,6 +41,10 @@ export default {
             type: Object,
             required: false,
             default: () => {}
+        },
+        toolbar:{
+            required: false,
+            default: undefined
         }
     },
     data(){
@@ -102,6 +106,9 @@ export default {
         },
         initEditor(){
             this.option.placeholder = this.placeholder;
+            if(this.toolbar){
+                this.option.modules.toolbar = this.toolbar;
+            }
             this.editor = new Quill(this.$refs['editor'],this.option);
             this.$emit('init', this.editor);
         },
