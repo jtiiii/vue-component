@@ -6,7 +6,7 @@
                 <a v-if="canClick" @click="nodeClick" >{{ node.text }}</a>
                 <span v-else="canClick">{{ text }}</span>
             </div>
-            <div class="node-extensions" v-show="node.extensions">{{ node.extensions  }}</div>
+            <div class="node-extensions" v-show="node.extensions" v-html="node.extensions"></div>
         </div>
         <div v-show="expandStatus" v-if="hasChildren" class="indentation">
             <tree-node @node-click="sonClick" @expand="sonExpand" v-for="child in children" :key="child.id" :node = "child" :parent="node" :generation=" generation + 1 "></tree-node>
