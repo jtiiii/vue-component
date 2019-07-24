@@ -1,6 +1,13 @@
 <template>
     <div v-if="node.id" class="node">
-        <div class="title-image" :class="{'node-expanded': expandStatus }"><img class="expand" @click="expand" :class="{'expanded': expandStatus, 'expand-able': node.canOpen, 'expand-unable': !node.canOpen}" :src="expandIcon"><div :title="node.id" :class="classType" class="title" ><a v-if="canClick" @click="nodeClick" >{{ node.text }}</a><span v-else="canClick">{{ text }}</span></div></div>
+        <div class="node-item" :class="{'node-expanded': expandStatus }">
+            <img class="expand" @click="expand" :class="{'expanded': expandStatus, 'expand-able': node.canOpen, 'expand-unable': !node.canOpen}" :src="expandIcon" />
+            <div :title="node.id" :class="classType" class="title" >
+                <a v-if="canClick" @click="nodeClick" >{{ node.text }}</a>
+                <span v-else="canClick">{{ text }}</span>
+            </div>
+            <div class="node-extensions" v-show="node.extensions">{{ node.extensions  }}</div>
+        </div>
         <div v-show="expandStatus" v-if="hasChildren" class="indentation">
             <tree-node @node-click="sonClick" @expand="sonExpand" v-for="child in children" :key="child.id" :node = "child" :parent="node" :generation=" generation + 1 "></tree-node>
         </div>
@@ -29,6 +36,11 @@
         transform: rotate(270deg);
         cursor: pointer;
     }
+    .node-item{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+    }
     @media screen and (min-width:480px){
         a{
             text-decoration: none;
@@ -38,10 +50,11 @@
             list-style-type: none;
         }
         .indentation{
-            padding-left: 10px;
+            padding-left: 1.2rem;
         }
         .title{
-            display: inline-block;
+            display: flex;
+            flex-flow: row nowrap;
             border-radius: 5px;
             padding: 3px;
             margin: 1px 0;
@@ -54,7 +67,7 @@
         .title > a:hover{
             opacity: .7;
         }
-        .title-image{
+        .title{
             display: inline-block;
         }
         .node{
@@ -75,21 +88,24 @@
         .node-expanded{
             display: none;
         }
-        .title-image{
+        .title{
             flex: 1;
             height: 2rem;
         }
-        .title-image > img{
+        .title > img{
             float: left;
         }
-        .title-image > a {
+        .title > a {
             float: left;
         }
-        .title-image > span{
+        .title > span{
             float: left;
         }
     }
 
+    .node-extensions{
+        margin-left: 1rem;
+    }
     .select{
         color: #fff;
         font-weight: bolder;

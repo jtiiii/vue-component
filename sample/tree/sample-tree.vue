@@ -9,7 +9,7 @@
 
     const sampleData =
         {
-            id: '1' ,text:"root",children:[
+            id: '1' ,text:"root",extensions: 'extensions',children:[
                 {
                     id: '1-1', text: "1-1", children: [
                         {id: '1-1-1',text: "1-1-1"},

@@ -1,10 +1,11 @@
-function TreeNode({id, type , text = '', children = [], canClick = true, canOpen = false, select = false}){
+function TreeNode({id, type , text = '', children = [],extensions = undefined, canClick = true, canOpen = false, select = false}){
     this.id = id;
     this.text =text;
     this.resetChildren(children);
-    this.type = type? 'default': type;
+    this.type = type || 'default';
     this.canClick = canClick;
     this.select = select;
+    this.extensions = extensions;
     this.canOpen = canOpen? canOpen: this.children.length !== 0;
     this.parent = null;
 }

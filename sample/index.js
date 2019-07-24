@@ -12,10 +12,10 @@
 // import search from './search/app';
 // import table from './table/app';
 // import thumbnail from './thumbnail/app';
-// import tree from './tree/app';
+import tree from './tree/app';
 // import upload from './upload/app';
 // import cover from './cover/app';
-import Hint from './hint/app';
+// import Hint from './hint/app';
 // window.Vue = Vue;
 
 import CommonStore from '../src/scripts/store/Common';

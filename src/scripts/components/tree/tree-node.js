@@ -51,6 +51,9 @@ export const Option = {
     },
     methods: {
         expand(){
+            if(!this.node.canOpen){
+                return;
+            }
             this.expandStatus = !this.expandStatus;
             if(this.expandStatus){
                 this.$emit('expand',this.node);

@@ -7,7 +7,7 @@
 
     let list = [
         {text:'123'},
-        {text: 'sdfsdf'}
+        {text: 'sdfsdfsdfsdfsdfsdfsdfsdfs'}
     ];
 
     export default {
