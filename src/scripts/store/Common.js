@@ -5,7 +5,7 @@ Vue.use(Vuex);
 const CommonStore = new Vuex.Store({
     state:{
         style:{
-            color: 'bootstrap',
+            emotion: 'bootstrap',
             corner: 'circle',
             /**
              * 配色

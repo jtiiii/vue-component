@@ -1,16 +1,16 @@
 <template>
     <div class="sample-button">
         <v-button :size="'smaller'">button</v-button>
-        <v-button :size="'small'" :type="'info'" >button</v-button>
-        <v-button :size="'medium'" :type="'warning'" >button</v-button>
-        <v-button :size="'large'" :type="'danger'">button</v-button>
-        <v-button :size="'larger'" :type="'success'" >button</v-button>
+        <v-button :size="'small'" :emotion="'info'" >button</v-button>
+        <v-button :size="'medium'" :emotion="'warning'" >button</v-button>
+        <v-button :size="'large'" :emotion="'danger'">button</v-button>
+        <v-button :size="'larger'" :emotion="'success'"  >button</v-button>
         <v-button disabled >disabled button</v-button>
         <v-button :pressed="true" :size="'smaller'">pressed button</v-button>
-        <v-button :pressed="true" :size="'small'" :type="'info'" >pressed button</v-button>
-        <v-button :pressed="true" :size="'medium'" :type="'warning'" >pressed button</v-button>
-        <v-button :pressed="true" :size="'large'" :type="'danger'">pressed button</v-button>
-        <v-button :pressed="true" :size="'larger'" :type="'success'" >pressed button</v-button>
+        <v-button :pressed="true" :size="'small'" :emotion="'info'" >pressed button</v-button>
+        <v-button :pressed="true" :size="'medium'" :emotion="'warning'" >pressed button</v-button>
+        <v-button :pressed="true" :size="'large'" :emotion="'danger'">pressed button</v-button>
+        <v-button :pressed="true" :size="'larger'" :emotion="'success'" >pressed button</v-button>
     </div>
 </template>
 <script>

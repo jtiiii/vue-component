@@ -1,5 +1,100 @@
 @import './base.less';
 
-.button-emotion-@{emotion}{
 
+@emotion: default;
+
+.button-emotion(@background-color; @color;){
+  background-color: @background-color;
+  border: 1px solid darken(@background-color, 10%);
+  background-image: linear-gradient(to bottom, @background-color 0%, darken(@background-color, 8%));
+  color: @color;
 }
+.button-size(@font-size; @min-height; @padding){
+  font-size: @font-size;
+  min-height: @min-height;
+  padding: @padding;
+}
+
+.button {
+  &.emotion {
+    &-default {
+      .button-emotion(@default-light; @default);
+
+      &:active,&.pressed {
+        .button-emotion(@default; @default-light)
+      }
+    }
+
+    &-info {
+      .button-emotion(@info-light; @info);
+
+      &:active,&.pressed {
+        .button-emotion(@info; @info-light);
+      }
+    }
+
+    &-success {
+      .button-emotion(@success-light; @success);
+
+      &:active,&.pressed {
+        .button-emotion(@success; @success-light);
+      }
+    }
+
+    &-warning {
+      .button-emotion(@warning-light; @warning);
+
+      &:active,&.pressed {
+        .button-emotion(@warning; @warning-light);
+      }
+    }
+
+    &-danger {
+      .button-emotion(@danger-light; @danger);
+      &:active,&.pressed {
+        .button-emotion(@danger; @danger-light);
+      }
+    }
+  }
+
+  &.size{
+    .medium(@multiple){
+      .button-size(@multiple * 1.25rem; @multiple * 2.25rem; @multiple * 0.5rem);
+      border-radius: @multiple * 0.3125rem;
+    }
+    &-smaller{
+      .medium(0.5);
+    }
+    &-small{
+      .medium(0.75);
+    }
+    &-medium{
+      .medium(1);
+    }
+    &-large{
+      .medium(1.5);
+    }
+    &-larger{
+      .medium(2);
+    }
+  }
+
+  &:disabled{
+    background: #e8e8e8;
+    border: none;
+    color: #fff;
+    box-shadow: 0 0;
+    opacity: .6;
+    cursor: not-allowed;
+  }
+  &.pressed:hover{
+    opacity: 1;
+  }
+  &:hover{
+    opacity: .7;
+  }
+  outline: none;
+  cursor: pointer;
+}
+
+

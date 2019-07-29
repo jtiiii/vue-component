@@ -1,13 +1,13 @@
 {
   "name": "f-vue-components",
-  "version": "0.0.59",
+  "version": "0.1.0",
   "description": "参考了bootstrap样式而自己开发的vue组件",
   "main": "src/main.js",
   "directories": {
     "example": "use 'npm run start' to show sample."
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack --config vue.config.js",
     "start": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,7 +26,7 @@
     "url": "https://github.com/jtiiii/vue-component/issues"
   },
   "files": [
-    "package.json",
+    "package-bak.json",
     "README",
     "src"
   ],

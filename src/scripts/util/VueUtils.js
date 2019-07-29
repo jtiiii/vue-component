@@ -1,3 +1,5 @@
+import CommonStore from '../store/Common';
+
 const VueUtils = {
     directives:{
         outsideClick:{
@@ -21,6 +23,29 @@ const VueUtils = {
                 document.removeEventListener("click", el._outsideclick_);
                 delete el._outsideclick_;
             }
+        }
+    },
+    props:{
+        emotion:{
+            type: String,
+            required: false,
+            default: 'default',
+            validator: function( value ){
+                return ['default','info','success','warning','danger'].indexOf( value ) !== -1;
+            }
+        },
+        size:{
+            type: String,
+            required: false,
+            default: 'medium',
+            validator: function( size ){
+                return ['unlimited','auto','smaller','small','medium','large','larger'].indexOf( size ) !== -1;
+            }
+        }
+    },
+    computed:{
+        style(){
+            return CommonStore.state.style;
         }
     }
 };

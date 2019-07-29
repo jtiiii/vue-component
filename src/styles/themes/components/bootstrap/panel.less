@@ -1,0 +1,82 @@
+@import "base.less";
+
+.panel{
+  border: 0.125rem solid #e8e8e8;
+  border-radius: 0.375rem;
+  background: #fff;
+  .pane-title-emotion(@background-color; @color){
+    background-color: @background-color;
+    color: @color;
+  }
+
+  .panel-emotion(@background-color; @color; @border-color; @panel-emotion){
+    &-@{panel-emotion}{
+      border-color: @border-color;
+      .panel-title{
+        .pane-title-emotion(@background-color; @color);
+      }
+    }
+  }
+
+  &.emotion{
+    .panel-emotion(@default-light; @default; @default-light; default);
+    .panel-emotion(@success-light; @success; @success-light; success);
+    .panel-emotion(@info-light; @info; @info-light; info);
+    .panel-emotion(@warning-light; @warning; @warning-light; warning);
+    .panel-emotion(@danger-light; @danger; @danger-light; danger);
+  }
+
+  &.size{
+    .medium( @multiple ){
+      width: @multiple * 30rem;
+      height: @multiple * 15.6rem;
+    };
+
+    &-smaller{
+      .medium( 0.5 );
+    }
+    &-small{
+      .medium( 0.75 );
+    }
+    &-medium{
+      .medium( 1 );
+    }
+    &-large{
+      .medium( 1.25 );
+    }
+    &-larger{
+      .medium( 2 );
+    }
+  }
+  & &-title{
+    padding: 0.375rem;
+    font-weight: bolder;
+    height: 1.875rem;
+    line-height: 1.875rem;
+
+    .close-button{
+      float: right;
+      color: #000;
+      outline: none;
+      text-shadow: 0 1px 0 #fff;
+      opacity: .2;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: inherit;
+      cursor: pointer;
+    }
+  }
+
+  & &-body{
+    padding: 0.375rem;
+    width: calc(100% - 0.75rem);
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  &-footer{
+
+  }
+
+}

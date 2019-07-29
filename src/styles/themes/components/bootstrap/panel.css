@@ -1,0 +1,85 @@
+.panel {
+  border: 0.125rem solid #e8e8e8;
+  border-radius: 0.375rem;
+  background: #fff;
+}
+.panel.emotion-default {
+  border-color: #e8e8e8;
+}
+.panel.emotion-default .panel-title {
+  background-color: #e8e8e8;
+  color: #000000cc;
+}
+.panel.emotion-success {
+  border-color: #d6e9c6;
+}
+.panel.emotion-success .panel-title {
+  background-color: #d6e9c6;
+  color: #3c763d;
+}
+.panel.emotion-info {
+  border-color: #bce8f1;
+}
+.panel.emotion-info .panel-title {
+  background-color: #bce8f1;
+  color: #31708f;
+}
+.panel.emotion-warning {
+  border-color: #faebcc;
+}
+.panel.emotion-warning .panel-title {
+  background-color: #faebcc;
+  color: #8a6d3b;
+}
+.panel.emotion-danger {
+  border-color: #ebccd1;
+}
+.panel.emotion-danger .panel-title {
+  background-color: #ebccd1;
+  color: #a94442;
+}
+.panel.size-smaller {
+  width: 15rem;
+  height: 7.8rem;
+}
+.panel.size-small {
+  width: 22.5rem;
+  height: 11.7rem;
+}
+.panel.size-medium {
+  width: 30rem;
+  height: 15.6rem;
+}
+.panel.size-large {
+  width: 37.5rem;
+  height: 19.5rem;
+}
+.panel.size-larger {
+  width: 60rem;
+  height: 31.2rem;
+}
+.panel .panel-title {
+  padding: 0.375rem;
+  font-weight: bolder;
+  height: 1.875rem;
+  line-height: 1.875rem;
+}
+.panel .panel-title .close-button {
+  float: right;
+  color: #000;
+  outline: none;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.2;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: inherit;
+  cursor: pointer;
+}
+.panel .panel-body {
+  padding: 0.375rem;
+  width: calc(100% - 0.75rem);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+/*# sourceMappingURL=panel.css.map */

@@ -1,16 +1,9 @@
-import CommonStore from '../../store/Common';
+import VueUtils from '../../util/VueUtils';
 
 const Option = {
     name: 'v-button',
     props: {
-        size:{
-            type: String,
-            required: false,
-            default: 'medium',
-            validator: function( size ){
-                return ['unlimited','auto','smaller','small','medium','large','larger'].indexOf( size ) !== -1;
-            }
-        },
+        size: VueUtils.props.size,
         type:{
             type: String,
             required: false,
@@ -23,20 +16,24 @@ const Option = {
             type: Boolean,
             required: false,
             default: false
-        }
+        },
+        emotion: VueUtils.props.emotion
     },
     data(){
         return { };
     },
-    computed:{
-        buttonClass(){
+    computed: {
+        buttonClass() {
             let result = {};
+            result['emotion-' + this.emotion] = true;
+            result['size-'+this.size] = true;
             result['pressed'] = this.pressed;
-            result['button-size-'+ this.size] = true;
-            result['button-corner-'+ CommonStore.state.style.corner] = true;
-            result['button-type-'+ this.type ] = true;
+            // result['button-size-' + this.size] = true;
+            // result['button-corner-' + this.style.corner] = true;
+            // result['button-type-'+ this.type ] = true;
             return result;
-        }
+        },
+        style: VueUtils.computed.style
     },
     methods:{
         click: function(){

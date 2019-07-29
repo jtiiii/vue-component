@@ -1,4 +1,5 @@
 import CommonStore from '../../store/Common';
+import VueUtils from '../../util/VueUtils';
 
 export const Option ={
     name: 'panel',
@@ -13,22 +14,8 @@ export const Option ={
             required: false,
             default: undefined
         },
-        size: {
-            type: String,
-            required: false,
-            default: 'auto',
-            validator: function( size ){
-                return ['unlimited','auto','smaller','small','medium','large','larger'].indexOf( size ) !== -1;
-            }
-        },
-        type:{
-            type: String,
-            required: false,
-            default: 'default',
-            validator: function( type ){
-                return ['default','info','success','warning','danger'].indexOf(type) !== -1;
-            }
-        },
+        size: VueUtils.props.size,
+        emotion: VueUtils.props.emotion,
         canClose:{
             type: Boolean,
             required: false,
@@ -65,22 +52,20 @@ export const Option ={
             return Object.assign(size,this.customStyle);
         },
         panelClass: function(){
-            let result = {'panel': true};
-            switch (this.size) {
-                case 'unlimited':
-                    result['panel-auto'] = true;
-                    break;
-                default:
-                    result['panel-'+this.size] = true;
-                    result['panel-limit'] = true;
+            let result = {};
+            if (this.size === 'unlimited') {
+                result['panel-auto'] = true;
+            } else {
+                result['size-'+this.size] = true;
+                result['size-limit'] = true;
             }
-            result['panel-corner-'+this.style.corner] = true;
-            result['panel-'+this.type] = true;
+            // result['panel-corner-'+this.style.corner] = true;
+            result['emotion-'+this.emotion] = true;
             return result;
         },
         panelTitleClass(){
             let result = {};
-            result['panel-title-corner-'+this.style.corner] = true;
+            // result['panel-title-corner-'+this.style.corner] = true;
             return result;
         },
         hasTitle: function(){
