@@ -12,3 +12,6 @@ node_modules
 
 
 package-lock.json
+
+#由less生成的map文件
+*.css.map
