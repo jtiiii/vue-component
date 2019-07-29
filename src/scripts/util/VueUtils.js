@@ -41,7 +41,16 @@ const VueUtils = {
             validator: function( size ){
                 return ['unlimited','auto','smaller','small','medium','large','larger'].indexOf( size ) !== -1;
             }
-        }
+        },
+        position:{
+            type: String,
+            required: false,
+            default: 'center',
+            validator: function( position ){
+                let arr = ['top','bottom','right','left','center','under','above'];
+                return position.split("-").every( p => arr.includes(p));
+            }
+        },
     },
     computed:{
         style(){

@@ -2,7 +2,7 @@
     import VueUtils from '../../util/VueUtils';
 
     export default {
-        name: 'v-button',
+        name: 'f-v-button',
         props: {
             size: VueUtils.props.size,
             type:{

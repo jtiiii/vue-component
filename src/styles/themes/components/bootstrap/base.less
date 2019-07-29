@@ -17,3 +17,30 @@
 @danger-light: #ebccd1;
 @danger: #a94442;
 @danger-deep: #da0000cc;
+
+.position(@offset){
+  &-top{
+    top: @offset;
+  }
+  &-left{
+    left: @offset;
+  }
+  &-bottom{
+    bottom: @offset;
+  }
+  &-right{
+    right: @offset;
+  }
+  &-under{
+    top: calc( 100% + @offset );
+  }
+  &-above{
+    bottom: calc( 100% + @offset );
+  }
+  &-verticalCenter{
+    top: 50%;
+  }
+  &-alignCenter{
+    left: 50%;
+  }
+}

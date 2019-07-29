@@ -1,6 +1,6 @@
 <template>
     <div class="modal-container">
-        <modal :show="show" :position="position" :canClose="canClose" :hasMask="hasMask" :type="type" @close="show = false">
+        <modal :show="show" :size="'large'" :position="position" :canClose="canClose" :hasMask="hasMask" :emotion="type" @close="show = false">
             <template #title v-if="title"> This is a modal title.</template>
             Change position to the inside:
             <br/>
@@ -9,21 +9,27 @@
             <v-button @click="position ='bottom-right'">bottom-right</v-button>
             <v-button @click="position ='bottom-left'">bottom-left</v-button>
             <v-button @click="position ='center'">center</v-button>
+            <v-button @click="position ='top-center'">top-center</v-button>
+            <v-button @click="position ='bottom-center'">bottom-center</v-button>
+            <v-button @click="position ='left-center'">left-center</v-button>
+            <v-button @click="position ='right-center'">right-center</v-button>
             <br/>
             Change position to the outside:
             <br/>
             <v-button @click="position ='under-left'">under-left</v-button>
             <v-button @click="position ='under-right'">under-right</v-button>
+            <v-button @click="position ='above-left'">above-left</v-button>
+            <v-button @click="position ='above-right'">above-right</v-button>
             <hr/>
-            <v-button :type="'info'" @click="changeHasMask"> Open / Close the mask.</v-button>
+            <v-button :emotion="'info'" @click="changeHasMask"> Open / Close the mask.</v-button>
             <hr/>
-            Change type to:
+            Change emotion to:
             <br/>
             <v-button @click="type = 'default'"> default</v-button>
-            <v-button :type="'warning'" @click="type = 'warning'">warning</v-button>
-            <v-button :type="'danger'" @click="type = 'danger'">danger</v-button>
-            <v-button :type="'success'" @click="type = 'success'">success</v-button>
-            <v-button :type="'info'" @click="type = 'info'">info</v-button>
+            <v-button :emotion="'warning'" @click="type = 'warning'">warning</v-button>
+            <v-button :emotion="'danger'" @click="type = 'danger'">danger</v-button>
+            <v-button :emotion="'success'" @click="type = 'success'">success</v-button>
+            <v-button :emotion="'info'" @click="type = 'info'">info</v-button>
         </modal>
         <v-button @click="show = true">show modal</v-button>
     </div>
