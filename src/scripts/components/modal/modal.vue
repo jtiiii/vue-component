@@ -110,7 +110,7 @@
     };
 </script>
 <template>
-    <div v-show="show" class="container">
+    <div v-show="show" class="modal-container">
         <div v-if="hasMask" @click="maskClick" class="mask" ref="mask">
         </div>
         <panel class="modal" :class="modalClass" ref="modal" :style="modalStyleComputed" :emotion="emotion" :width="width" :size="size" :height="height" :canClose="canClose" @close="closeEvent">

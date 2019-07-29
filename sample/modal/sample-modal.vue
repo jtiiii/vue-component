@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-container">
+    <div class="sample-modal-container">
         <modal :show="show" :size="'large'" :position="position" :canClose="canClose" :hasMask="hasMask" :emotion="type" @close="show = false">
             <template #title v-if="title"> This is a modal title.</template>
             Change position to the inside:
@@ -62,7 +62,7 @@
 </script>
 
 <style scoped>
-    .modal-container{
+    .sample-modal-container{
         float: left;
         position: relative;
         width: 100%;

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <dropdown v-model="d1.show">
+        <dropdown v-model="d1.show" :emotion="'info'">
             <div style="width:500px;">
                 hello thank you very much;
             </div>
