@@ -1,6 +1,7 @@
 <template>
     <div>
         <input-text v-model="text" @enter="enter"></input-text>
+        <input-text v-model="text" :type="'password'" @enter="enter"></input-text>
         <br/>
         {{ text }}
         <br/>

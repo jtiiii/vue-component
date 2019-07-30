@@ -13,6 +13,11 @@ export const Option={
             type: String,
             required: false,
             default: ''
+        },
+        type:{
+            type: String,
+            required: false,
+            default: 'text'
         }
     },
     data(){

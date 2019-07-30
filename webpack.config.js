@@ -36,10 +36,10 @@ module.exports = {
             },
         ]
     },
-    // devServer: {
-    //     port: 8080,
-    //     host: '192.168.1.101'
-    // },
+    devServer: {
+        port: 8082,
+        host: 'localhost'
+    },
     resolve: {
         alias: {
             '$vue': 'vue/dist/vue.esm.js',

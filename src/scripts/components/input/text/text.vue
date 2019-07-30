@@ -1,5 +1,13 @@
 <template>
-    <input @input="textChange" :value="text" @keydown="$emit('keydown')" @keyup="keyup" @keypress="$emit('keypress')" @focusout="$emit('focusout')" @focusin="$emit('focusin')" :placeholder="placeholder" type ="text"/>
+    <input @input="textChange"
+           :value="text"
+           :type="type"
+           @keydown="$emit('keydown')"
+           @keyup="keyup"
+           @keypress="$emit('keypress')"
+           @focusout="$emit('focusout')"
+           @focusin="$emit('focusin')" :placeholder="placeholder"
+    />
 </template>
 <script>
     import {Option} from './text';
