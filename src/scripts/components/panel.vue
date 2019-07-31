@@ -1,6 +1,6 @@
 <script type="text/javascript">
-    import CommonStore from '../../store/Common';
-    import VueUtils from '../../util/VueUtils';
+    import CommonStore from '../store/Common';
+    import VueUtils from '../util/VueUtils';
 
     export default {
         name: 'f-v-panel',
@@ -94,5 +94,5 @@
     </div>
 </template>
 <style>
-    @import url("../../../styles/themes/bootstrap/panel.css");
+    @import url("../../styles/themes/bootstrap/panel.css");
 </style>

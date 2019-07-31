@@ -14,7 +14,7 @@
     </div>
 </template>
 <script>
-    import Dropdown from '../../src/scripts/components/dropdown/dropdown.vue';
+    import Dropdown from '@/scripts/components/dropdown.vue';
 
     export default {
         components: {

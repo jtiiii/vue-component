@@ -1,6 +1,6 @@
 <script type="text/javascript">
-    import Panel from '../panel/panel.vue';
-    import VueUtils from '../../util/VueUtils';
+    import Panel from './panel.vue';
+    import VueUtils from '../util/VueUtils';
     export default {
         name: 'f-v-modal',
         components:{
@@ -120,5 +120,5 @@
     </div>
 </template>
 <style>
-    @import url("../../../styles/themes/bootstrap/modal.css");
+    @import url("../../styles/themes/bootstrap/modal.css");
 </style>

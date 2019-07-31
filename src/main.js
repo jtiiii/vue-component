@@ -7,12 +7,12 @@ import CommonStore from './scripts/store/Common';
 
 
 const TreeNode = resolve => require(['./scripts/components/tree/tree-node.vue'], resolve);
-const Panel = resolve => require(['./scripts/components/panel/panel.vue'], resolve);
-const Button = resolve => require(['./scripts/components/button/button.vue'], resolve);
-const Modal = resolve => require(['./scripts/components/modal/modal.vue'], resolve);
+const Panel = resolve => require(['./scripts/components/panel.vue'], resolve);
+const Button = resolve => require(['./scripts/components/button.vue'], resolve);
+const Modal = resolve => require(['./scripts/components/modal.vue'], resolve);
 const Search = resolve => require(['./scripts/components/search/search.vue'], resolve);
 const Thumbnail = resolve => require(['./scripts/components/thumbnail/thumbnail.vue'], resolve);
-const Dropdown = resolve => require(['./scripts/components/dropdown/dropdown.vue'], resolve);
+const Dropdown = resolve => require(['./scripts/components/dropdown.vue'], resolve);
 const Cover = resolve => require(['./scripts/components/cover/cover.vue'], resolve);
 const Table = resolve => require(['./scripts/components/table/table.vue'], resolve);
 const Selector = resolve => require(['./scripts/components/selector/selector.vue'],resolve);

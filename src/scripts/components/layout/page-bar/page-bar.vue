@@ -18,7 +18,7 @@
     </div>
 </template>
 <script>
-    import Button from '../../button/button.vue';
+    import Button from '../../button.vue';
 
     export default {
         name: 'v-page-bar',

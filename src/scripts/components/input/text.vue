@@ -14,7 +14,7 @@
     </div>
 </template>
 <script>
-    import VueUtils from '../../../util/VueUtils';
+    import VueUtils from '../../util/VueUtils';
 
     export default {
         name: 'input-text',
@@ -86,5 +86,5 @@
     };
 </script>
 <style>
-    @import url('../../../../styles/themes/bootstrap/input-text.css');
+    @import url('../../../styles/themes/bootstrap/input-text.css');
 </style>

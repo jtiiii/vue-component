@@ -35,8 +35,8 @@
     </div>
 </template>
 <script>
-    import Modal from '../../src/scripts/components/modal/modal.vue';
-    import Button from '../../src/scripts/components/button/button.vue';
+    import Modal from '@/scripts/components/modal.vue';
+    import Button from '@/scripts/components/button.vue';
 
     export default {
         components:{

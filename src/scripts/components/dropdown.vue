@@ -1,8 +1,8 @@
 <script>
-    import Button from '../button/button.vue';
-    import Modal from '../modal/modal.vue';
-    import VueUtils from '../../util/VueUtils';
-    import WindowUtils from '../../util/WindowUtils';
+    import Button from './button.vue';
+    import Modal from './modal.vue';
+    import VueUtils from '../util/VueUtils';
+    import WindowUtils from '../util/WindowUtils';
 
     export default {
         model:{
@@ -85,5 +85,5 @@
     </div>
 </template>
 <style scoped>
-    @import url("../../../styles/themes/bootstrap/dropdown.css");
+    @import url("../../styles/themes/bootstrap/dropdown.css");
 </style>

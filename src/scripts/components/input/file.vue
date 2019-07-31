@@ -11,8 +11,8 @@
     </div>
 </template>
 <script type="text/javascript">
-    import Button from '../../button/button.vue';
-    import VueUtils from '../../../util/VueUtils';
+    import Button from '../button.vue';
+    import VueUtils from '../../util/VueUtils';
     export default {
         props:{
             emotion: VueUtils.props.emotion,
@@ -68,5 +68,5 @@
     };
 </script>
 <style>
-    @import url('../../../../styles/themes/bootstrap/input-file.css');
+    @import url('../../../styles/themes/bootstrap/input-file.css');
 </style>

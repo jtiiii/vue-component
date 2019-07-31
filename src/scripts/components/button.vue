@@ -1,5 +1,5 @@
 <script>
-    import VueUtils from '../../util/VueUtils';
+    import VueUtils from '../util/VueUtils';
 
     export default {
         name: 'f-v-button',
@@ -44,5 +44,5 @@
     <button class="button" :actived="pressed" :class="buttonClass" type="button" @click="click"><slot></slot></button>
 </template>
 <style>
-    @import url("../../../styles/themes/bootstrap/button.css");
+    @import url("../../styles/themes/bootstrap/button.css");
 </style>

@@ -29,7 +29,7 @@
 </template>
 
 <script>
-    import Panel from '../../src/scripts/components/panel/panel.vue';
+    import Panel from '@/scripts/components/panel.vue';
 
     export default {
         components:{
