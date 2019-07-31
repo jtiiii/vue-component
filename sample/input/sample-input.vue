@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <input-text v-model="text" @enter="enter"></input-text>
-        <br/>
-        {{ text }}
-        <br/>
-        &nbsp;
-        <input-file @select="notice">Select Files</input-file>
-        &nbsp;
+    <div class="input-sample-box">
+        <input-text v-model="text" :label="'用户名'" @enter="enter" :placeholder="'Please press any key'"></input-text>
+        <input-text v-model="text" :label="'用户名'" :labelPosition="'right'" :emotion="'success'" @enter="enter" :placeholder="'Please press any key'"></input-text>
+        <input-text v-model="text" :label="'用户名'" :labelPosition="'top'" :emotion="'info'" @enter="enter" :placeholder="'Please press any key'"></input-text>
+        <input-text v-model="text" :label="'用户名'" :labelPosition="'bottom'" :emotion="'warning'" @enter="enter" :placeholder="'Please press any key'"></input-text>
+        <input-text v-model="text" :label="'用户名'" :emotion="'danger'" @enter="enter" :placeholder="'Please press any key'"></input-text>
+        <input-text v-model="text" @enter="enter" :placeholder="'Please press any key'"></input-text>
+        <input-file @select="notice" :size="'small'" :emotion="'info'">Select Files</input-file>
         <input-switch v-model="checked"></input-switch>
     </div>
 </template>
@@ -40,4 +40,7 @@
     }
 </script>
 <style scoped>
+    .input-sample-box > div{
+        margin-top: 0.625rem;
+    }
 </style>

@@ -1,10 +1,10 @@
 // import Vue from 'vue';
 
 
-// import button from './button/app';
-import dropdown from './dropdown/app';
+import button from './button/app';
+// import dropdown from './dropdown/app';
 // import editor from './editor/app';
-// import input from './input/app';
+import input from './input/app';
 // import layout from './layout/app';
 // import Selector from './selector/app';
 // import modal from './modal/app';

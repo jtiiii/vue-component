@@ -85,5 +85,5 @@
     </div>
 </template>
 <style scoped>
-    @import url("../../../styles/themes/components/bootstrap/dropdown.css");
+    @import url("../../../styles/themes/bootstrap/dropdown.css");
 </style>

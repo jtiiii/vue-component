@@ -3,48 +3,48 @@
   cursor: pointer;
 }
 .button.emotion-default {
-  background-color: #e8e8e8;
-  border: 1px solid #cfcfcf;
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #d4d4d4);
-  color: #000000cc;
+  background-color: #e2e3e5;
+  border: 1px solid #c7c9cd;
+  background-image: linear-gradient(to bottom, #e2e3e5 0%, #ccced2);
+  color: #383d41;
 }
 .button.emotion-default:active,
 .button.emotion-default.pressed {
-  background-color: #000000cc;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  background-image: linear-gradient(to bottom, #000000cc 0%, rgba(0, 0, 0, 0.8));
-  color: #e8e8e8;
+  background-color: #383d41;
+  border: 1px solid #202326;
+  background-image: linear-gradient(to bottom, #383d41 0%, #25282b);
+  color: #e2e3e5;
 }
 .button.emotion-info {
-  background-color: #bce8f1;
-  border: 1px solid #92dae8;
-  background-image: linear-gradient(to bottom, #bce8f1 0%, #9adcea);
-  color: #31708f;
+  background-color: #d1ecf1;
+  border: 1px solid #aadce5;
+  background-image: linear-gradient(to bottom, #d1ecf1 0%, #b2dfe7);
+  color: #0c5460;
 }
 .button.emotion-info:active,
 .button.emotion-info.pressed {
-  background-color: #31708f;
-  border: 1px solid #245269;
-  background-image: linear-gradient(to bottom, #31708f 0%, #275871);
-  color: #bce8f1;
+  background-color: #0c5460;
+  border: 1px solid #062c33;
+  background-image: linear-gradient(to bottom, #0c5460 0%, #07343c);
+  color: #d1ecf1;
 }
 .button.emotion-success {
-  background-color: #d6e9c6;
-  border: 1px solid #bcdba1;
-  background-image: linear-gradient(to bottom, #d6e9c6 0%, #c1dea9);
-  color: #3c763d;
+  background-color: #d4edda;
+  border: 1px solid #b0debb;
+  background-image: linear-gradient(to bottom, #d4edda 0%, #b7e1c1);
+  color: #155724;
 }
 .button.emotion-success:active,
 .button.emotion-success.pressed {
-  background-color: #3c763d;
-  border: 1px solid #2b542c;
-  background-image: linear-gradient(to bottom, #3c763d 0%, #2e5b2f);
-  color: #d6e9c6;
+  background-color: #155724;
+  border: 1px solid #0b2e13;
+  background-image: linear-gradient(to bottom, #155724 0%, #0d3616);
+  color: #d4edda;
 }
 .button.emotion-warning {
-  background-color: #faebcc;
-  border: 1px solid #f5d99e;
-  background-image: linear-gradient(to bottom, #faebcc 0%, #f6dca7);
+  background-color: #fff3cd;
+  border: 1px solid #ffe79a;
+  background-image: linear-gradient(to bottom, #fff3cd 0%, #ffe9a4);
   color: #8a6d3b;
 }
 .button.emotion-warning:active,
@@ -52,12 +52,12 @@
   background-color: #8a6d3b;
   border: 1px solid #66512c;
   background-image: linear-gradient(to bottom, #8a6d3b 0%, #6d562f);
-  color: #faebcc;
+  color: #fff3cd;
 }
 .button.emotion-danger {
-  background-color: #ebccd1;
-  border: 1px solid #dda7b0;
-  background-image: linear-gradient(to bottom, #ebccd1 0%, #e0afb7);
+  background-color: #f8d7da;
+  border: 1px solid #f0acb2;
+  background-image: linear-gradient(to bottom, #f8d7da 0%, #f2b4ba);
   color: #a94442;
 }
 .button.emotion-danger:active,
@@ -65,7 +65,7 @@
   background-color: #a94442;
   border: 1px solid #843534;
   background-image: linear-gradient(to bottom, #a94442 0%, #8c3837);
-  color: #ebccd1;
+  color: #f8d7da;
 }
 .button.size-smaller {
   font-size: 0.625rem;
@@ -105,8 +105,8 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
-.button.pressed:hover {
-  opacity: 1;
+.button.pressed {
+  opacity: 0.7;
 }
 .button:hover {
   opacity: 0.7;

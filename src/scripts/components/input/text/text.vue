@@ -1,21 +1,90 @@
 <template>
-    <input @input="textChange" :value="text" @keydown="$emit('keydown')" @keyup="keyup" @keypress="$emit('keypress')" @focusout="$emit('focusout')" @focusin="$emit('focusin')" :placeholder="placeholder" type ="text"/>
+    <div class="input-text" :class="componentClass">
+        <label v-if="label">{{ label }}</label>
+        <input :value="text"
+               :placeholder="placeholder"
+               :type ="type"
+               @input="textChange"
+               @keydown="$emit('keydown')"
+               @keyup="keyup"
+               @keypress="$emit('keypress')"
+               @focusout="$emit('focusout')"
+               @focusin="$emit('focusin')"
+        />
+    </div>
 </template>
 <script>
-    import {Option} from './text';
-    export default Option;
+    import VueUtils from '../../../util/VueUtils';
+
+    export default {
+        name: 'input-text',
+        model:{
+            prop: 'text',
+            event: 'input'
+        },
+        props:{
+            placeholder:{
+                type: String,
+                required: false,
+                default: ''
+            },
+            text:{
+                type: [String, Number],
+                required: false,
+                default: ''
+            },
+            label:{
+                type: String,
+                required: false,
+                default: '',
+            },
+            type:{
+                type: String,
+                required: false,
+                default: 'text',
+                validator( value ){
+                    return ['text','password'].includes(value);
+                }
+            },
+            emotion: VueUtils.props.emotion,
+            labelPosition:{
+                type: String,
+                required: false,
+                default: 'left',
+                validator( value ){
+                    return  ['left', 'top', 'right', 'bottom'].includes(value);
+                }
+            }
+        },
+        data(){
+            return {};
+        },
+        watch:{
+            'text': function( value ){
+                this.$emit('change', value);
+            }
+        },
+        computed:{
+            componentClass(){
+                let result = {};
+                result['emotion-' + this.emotion] = true;
+                result['position-' + this.labelPosition] = true
+                return result;
+            }
+        },
+        methods: {
+            textChange: function(e){
+                this.$emit('input',e.target.value)
+            },
+            keyup(e){
+                if(e.key === 'Enter'){
+                    this.$emit('enter');
+                }
+                this.$emit('keyup');
+            }
+        }
+    };
 </script>
-<style scoped>
-    input{
-        font-size: 1rem;
-        outline:none;
-        border: 0.125rem /* 2px */ solid #e8e8e8;
-        box-sizing: border-box;
-        border-radius: 0.375rem; /* 6px */
-        padding: 0.375rem;
-        height: 2rem;
-    }
-    input::placeholder{
-        color: #8e8e8e;
-    }
+<style>
+    @import url('../../../../styles/themes/bootstrap/input-text.css');
 </style>

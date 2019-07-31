@@ -120,5 +120,5 @@
     </div>
 </template>
 <style>
-    @import url("../../../styles/themes/components/bootstrap/modal.css");
+    @import url("../../../styles/themes/bootstrap/modal.css");
 </style>

@@ -1,0 +1,123 @@
+.input-text {
+  display: flex;
+  align-items: center;
+  border: 0.125rem solid;
+  border-radius: 0.375rem;
+  /* 6px */
+  overflow: hidden;
+}
+.input-text.position-left {
+  flex-flow: row;
+}
+.input-text.position-right {
+  flex-flow: row-reverse;
+}
+.input-text.position-top {
+  flex-flow: column;
+  justify-content: left;
+}
+.input-text.position-top label,
+.input-text.position-top input {
+  display: block;
+  width: 100%;
+}
+.input-text.position-bottom {
+  flex-flow: column-reverse;
+  justify-content: left;
+}
+.input-text.position-bottom label,
+.input-text.position-bottom input {
+  display: block;
+  width: 100%;
+}
+.input-text label {
+  font-weight: bold;
+}
+.input-text input,
+.input-text label {
+  font-size: 1rem;
+  box-sizing: border-box;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+.input-text input {
+  outline: none;
+  flex: 1;
+  border: none;
+}
+.input-text input::placeholder {
+  color: #e8e8e8;
+}
+.input-text.emotion-default {
+  border-color: #e2e3e5;
+}
+.input-text.emotion-default label {
+  background-color: #e2e3e5;
+  color: #383d41;
+}
+.input-text.emotion-default input {
+  background-color: #fff;
+  color: #404040;
+}
+.input-text.emotion-default input::placeholder {
+  color: #e2e3e5;
+}
+.input-text.emotion-success {
+  border-color: #d4edda;
+}
+.input-text.emotion-success label {
+  background-color: #d4edda;
+  color: #155724;
+}
+.input-text.emotion-success input {
+  background-color: #fff;
+  color: #404040;
+}
+.input-text.emotion-success input::placeholder {
+  color: #d4edda;
+}
+.input-text.emotion-info {
+  border-color: #d1ecf1;
+}
+.input-text.emotion-info label {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+.input-text.emotion-info input {
+  background-color: #fff;
+  color: #404040;
+}
+.input-text.emotion-info input::placeholder {
+  color: #d1ecf1;
+}
+.input-text.emotion-warning {
+  border-color: #fff3cd;
+}
+.input-text.emotion-warning label {
+  background-color: #fff3cd;
+  color: #8a6d3b;
+}
+.input-text.emotion-warning input {
+  background-color: #fff;
+  color: #404040;
+}
+.input-text.emotion-warning input::placeholder {
+  color: #ffe79a;
+}
+.input-text.emotion-danger {
+  border-color: #f8d7da;
+}
+.input-text.emotion-danger label {
+  background-color: #f8d7da;
+  color: #a94442;
+}
+.input-text.emotion-danger input {
+  background-color: #fff;
+  color: #404040;
+}
+.input-text.emotion-danger input::placeholder {
+  color: #f8d7da;
+}
+/*# sourceMappingURL=input-text.css.map */

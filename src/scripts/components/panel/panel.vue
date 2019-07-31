@@ -94,5 +94,5 @@
     </div>
 </template>
 <style>
-    @import url("../../../styles/themes/components/bootstrap/panel.css");
+    @import url("../../../styles/themes/bootstrap/panel.css");
 </style>

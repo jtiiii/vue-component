@@ -44,5 +44,5 @@
     <button class="button" :actived="pressed" :class="buttonClass" type="button" @click="click"><slot></slot></button>
 </template>
 <style>
-    @import url("../../../styles/themes/components/bootstrap/button.css");
+    @import url("../../../styles/themes/bootstrap/button.css");
 </style>
