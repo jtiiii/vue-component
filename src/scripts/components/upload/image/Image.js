@@ -1,5 +1,5 @@
 import Modal from '../../modal.vue';
-import Input from '../../input/input';
+import Input from '../../input';
 import Button from '../../button.vue';
 import SizeUtils from '../../../util/SizeUtils';
 import loading from './loading.png';

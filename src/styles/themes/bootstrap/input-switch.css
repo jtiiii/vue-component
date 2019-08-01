@@ -1,0 +1,111 @@
+.switch {
+  position: relative;
+}
+.switch,
+.switch .dot {
+  box-sizing: border-box;
+  display: inline-block;
+}
+.switch .dot {
+  position: absolute;
+  float: left;
+}
+.switch.size-smaller {
+  width: 1.6rem;
+}
+.switch.size-smaller,
+.switch.size-smaller .dot {
+  height: 0.8rem;
+  border-radius: 0.8rem;
+}
+.switch.size-smaller .dot {
+  width: 0.8rem;
+}
+.switch.size-small {
+  width: 2.4rem;
+}
+.switch.size-small,
+.switch.size-small .dot {
+  height: 1.2rem;
+  border-radius: 1.2rem;
+}
+.switch.size-small .dot {
+  width: 1.2rem;
+}
+.switch.size-medium {
+  width: 3.2rem;
+}
+.switch.size-medium,
+.switch.size-medium .dot {
+  height: 1.6rem;
+  border-radius: 1.6rem;
+}
+.switch.size-medium .dot {
+  width: 1.6rem;
+}
+.switch.size-large {
+  width: 4.8rem;
+}
+.switch.size-large,
+.switch.size-large .dot {
+  height: 2.4rem;
+  border-radius: 2.4rem;
+}
+.switch.size-large .dot {
+  width: 2.4rem;
+}
+.switch.size-larger {
+  width: 6.4rem;
+}
+.switch.size-larger,
+.switch.size-larger .dot {
+  height: 3.2rem;
+  border-radius: 3.2rem;
+}
+.switch.size-larger .dot {
+  width: 3.2rem;
+}
+.switch.emotion-default,
+.switch.emotion-default .dot {
+  box-shadow: 0 0 0.125rem 0 #383d41;
+  background-color: #f8f8f8;
+}
+.switch.emotion-default[checked] {
+  background-color: #ccced2;
+}
+.switch.emotion-info,
+.switch.emotion-info .dot {
+  box-shadow: 0 0 0.125rem 0 #0c5460;
+  background-color: #f0f9fb;
+}
+.switch.emotion-info[checked] {
+  background-color: #b2dfe7;
+}
+.switch.emotion-success,
+.switch.emotion-success .dot {
+  box-shadow: 0 0 0.125rem 0 #155724;
+  background-color: #f1f9f3;
+}
+.switch.emotion-success[checked] {
+  background-color: #b7e1c1;
+}
+.switch.emotion-warning,
+.switch.emotion-warning .dot {
+  box-shadow: 0 0 0.125rem 0 #8a6d3b;
+  background-color: #fffdf6;
+}
+.switch.emotion-warning[checked] {
+  background-color: #ffe9a4;
+}
+.switch.emotion-danger,
+.switch.emotion-danger .dot {
+  box-shadow: 0 0 0.125rem 0 #a94442;
+  background-color: #fefafa;
+}
+.switch.emotion-danger[checked] {
+  background-color: #f2b4ba;
+}
+.switch .dot[checked] {
+  right: 0;
+}
+/*# sourceMappingURL=input-switch.css.map */

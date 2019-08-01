@@ -7,11 +7,15 @@
         <input-text v-model="text" :label="'用户名'" :emotion="'danger'" @enter="enter" :placeholder="'Please press any key'"></input-text>
         <input-text v-model="text" @enter="enter" :placeholder="'Please press any key'"></input-text>
         <input-file @select="notice" :size="'small'" :emotion="'info'">Select Files</input-file>
-        <input-switch v-model="checked"></input-switch>
+        <input-switch v-model="checked" :size="'smaller'"></input-switch>
+        <input-switch v-model="checked" :size="'small'" :emotion="'info'"></input-switch>
+        <input-switch v-model="checked" :size="'medium'" :emotion="'success'"></input-switch>
+        <input-switch v-model="checked" :size="'large'" :emotion="'warning'"></input-switch>
+        <input-switch v-model="checked" :size="'larger'" :emotion="'danger'"></input-switch>
     </div>
 </template>
 <script>
-    import Input from '../../src/scripts/components/input/input';
+    import Input from '@/scripts/components/input';
 
     export default {
         components: {

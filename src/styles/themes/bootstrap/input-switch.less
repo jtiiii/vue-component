@@ -1,0 +1,78 @@
+@import 'base.less';
+
+.switch{
+  position: relative;
+
+  &, .dot{
+    box-sizing: border-box;
+    display: inline-block;
+  }
+
+  .dot{
+    position: absolute;
+    float: left;
+  }
+
+  &.size{
+    .medium(@multiple){
+
+      width: 3.2rem * @multiple;
+      &, .dot{
+        height: 1.6rem * @multiple;
+        border-radius: 1.6rem * @multiple;
+      }
+      .dot{
+        width: 1.6rem * @multiple;
+      }
+    }
+
+    &-smaller{
+      .medium(0.5);
+    }
+    &-small{
+      .medium(0.75);
+    }
+    &-medium{
+      .medium(1);
+    }
+    &-large{
+      .medium(1.5);
+    }
+    &-larger{
+      .medium(2);
+    }
+
+  }
+
+  &.emotion{
+    .switch-emotion(@shadow-color; @checked-color){
+      &, .dot{
+        box-shadow: 0 0 0.125rem 0 @shadow-color;
+        background-color: lighten(@checked-color, 8%);
+      }
+      &[checked]{
+        background-color: darken(@checked-color, 8%);
+      }
+    }
+
+    &-default{
+      .switch-emotion(@default, @default-light);
+    }
+    &-info{
+      .switch-emotion(@info, @info-light);
+    }
+    &-success{
+      .switch-emotion(@success, @success-light);
+    }
+    &-warning{
+      .switch-emotion(@warning, @warning-light);
+    }
+    &-danger{
+      .switch-emotion(@danger, @danger-light);
+    }
+  }
+  .dot[checked]{
+    right:0;
+  }
+
+}
