@@ -1,0 +1,101 @@
+.table {
+  display: flex;
+  flex-flow: column nowrap;
+  box-sizing: border-box;
+  border: 0.125rem /* 2px */ solid;
+  border-radius: 0.625rem;
+}
+.table .row {
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+}
+.table .row .cell {
+  flex: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: left;
+  padding: 0.625rem /* 10px */;
+}
+.table .table-header {
+  font-weight: bolder;
+  border-top: none;
+}
+.table .table-header .row {
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+}
+.table .table-header .row .cell {
+  padding: 1.25rem /* 20px */ 0.625rem /* 10px */;
+}
+.table .table-body {
+  border-color: inherit;
+}
+.table .table-body .row {
+  border-top: 0.125rem solid;
+  border-color: inherit;
+}
+.table .table-body .row.row-click:hover {
+  cursor: pointer;
+  background-color: #99ccff33;
+}
+.table.emotion-default {
+  color: #383d41;
+  border-color: #e2e3e5;
+}
+.table.emotion-default .table-header {
+  color: #202326;
+  background-color: #e2e3e5;
+}
+.table.emotion-default .row-line {
+  background-color: #f8f8f8;
+}
+.table.emotion-info {
+  color: #0c5460;
+  border-color: #d1ecf1;
+}
+.table.emotion-info .table-header {
+  color: #062c33;
+  background-color: #d1ecf1;
+}
+.table.emotion-info .row-line {
+  background-color: #f0f9fb;
+}
+.table.emotion-success {
+  color: #155724;
+  border-color: #d4edda;
+}
+.table.emotion-success .table-header {
+  color: #0b2e13;
+  background-color: #d4edda;
+}
+.table.emotion-success .row-line {
+  background-color: #f1f9f3;
+}
+.table.emotion-warning {
+  color: #8a6d3b;
+  border-color: #ffedb3;
+}
+.table.emotion-warning .table-header {
+  color: #66512c;
+  background-color: #ffedb3;
+}
+.table.emotion-warning .row-line {
+  background-color: #fff7dc;
+}
+.table.emotion-danger {
+  color: #a94442;
+  border-color: #f8d7da;
+}
+.table.emotion-danger .table-header {
+  color: #843534;
+  background-color: #f8d7da;
+}
+.table.emotion-danger .row-line {
+  background-color: #fefafa;
+}
+/*# sourceMappingURL=table.css.map */

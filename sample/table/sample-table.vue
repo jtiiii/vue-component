@@ -1,39 +1,42 @@
 <template>
     <div>
-        <v-button @click="changeList">Change Data</v-button>
-        <v-table :list="listSample" :headers="headers" :type="tableType" :canRowClick="true" @rowClick="handler"></v-table>
+        <div class="tools">
+            <v-button @click="changeData" :size="'small'">Change Data</v-button>
+            <v-button @click="tableType = 'default'" :emotion="'default'" :size="'small'">Default</v-button>
+            <v-button @click="tableType = 'info'" :emotion="'info'" :size="'small'">Info</v-button>
+            <v-button @click="tableType = 'success'" :emotion="'success'" :size="'small'">Success</v-button>
+            <v-button @click="tableType = 'warning'" :emotion="'warning'" :size="'small'">Warning</v-button>
+            <v-button @click="tableType = 'danger'" :emotion="'danger'" :size="'small'">Danger</v-button>
+        </div>
+        <v-table :rowsSize="rowSize"
+                 :emotion="tableType"
+                 :headers="headers">
+            <template #header-id> 主键ID</template>
+            <template #header-code> 编码 </template>
+            <template #header-name> 名称 </template>
+            <template #header-operation> 操作 </template>
+
+            <template #row-id="{ header, index }">
+                {{ getText( header, index ) }}
+            </template>
+
+            <template #row-code="{ header, index }">
+                {{ getText( header, index ) }}
+            </template>
+
+            <template #row-name="{ header, index }">
+                {{ getText( header, index ) }}
+            </template>
+
+            <template #row-operation="{ header, index }">
+                <v-button :emotion="'danger'" :size="'small'" @click="deleteItem(index)" >删除</v-button>
+            </template>
+        </v-table>
     </div>
 </template>
 <script>
-    import Table from '../../src/scripts/components/table/table.vue';
+    import Table from '../../src/scripts/components/table.vue';
     import FComponents from '../../src/main';
-    import Vue from 'vue/dist/vue.common';
-
-    const getTextComponentFormatter = function(data, row){
-        console.info(data,row);
-        return new Vue({
-            template:'<div><v-cell-text v-model="text"></v-cell-text></div>',
-            components: {
-                'v-cell-text': FComponents.Input.Text
-            },
-            data(){
-                return {
-                    text: data
-                }
-            },
-        });
-
-    };
-
-    const sampleHarbour = [
-        {
-            id: '3',
-            code: 'harbour-ys',
-            name: '洋山',
-            remark: '洋山港口'
-        }
-    ];
-
     const sampleGoodsType = [
         { id: 4, code: 'goodsType-001' , name: '普货'},
         { id: 5, code: 'goodsType-002', name: '冷冻'},
@@ -46,11 +49,6 @@
         { id: 8, code: 'goodsSize-003', name: '4尺寸'}
     ];
 
-
-    const getTextFormatter = function( header ){
-        return header.text;
-    };
-
     export default {
         components:{
             'v-table': Table,
@@ -58,40 +56,35 @@
         },
         data(){
             return {
-                listSample: sampleHarbour,
-                headersSample: [
-                    { column: 'id', text: 'ID', formatter: getTextFormatter},
-                    // { column: 'code', text: '编码', formatter: getTextFormatter},
-                    { column: 'name', text: '名称', formatter: getTextFormatter, columnFormatter: getTextComponentFormatter},
-                    // { column: 'remark', text: '说明', formatter: getTextFormatter},
-                    { column: 'operation', text: '操作', formatter: getTextFormatter}
-                ],
-                flag: false,
-                tableType: 'success'
+                headers: ['id', 'code', 'name', 'operation'],
+                data: [sampleGoodsSize,sampleGoodsType],
+                tableType: 'default',
+                use: 0
             };
         },
         computed:{
-            headers(){
-                return this.headersSample;
+            rows(){
+                return this.data[this.use];
+            },
+            rowSize(){
+                return this.rows.length;
             }
         },
-        mounted(){
-        },
         methods: {
-            changeList(){
-                this.flag =!this.flag;
-                if(this.flag){
-                    this.listSample = sampleGoodsType;
-                }else{
-                    this.listSample = sampleHarbour;
-                }
+            changeData(){
+                this.use = this.use? 0: 1;
             },
-            handler( row ){
-                console.info(row);
+            getText( column, index ){
+                return this.rows[index][column];
+            },
+            deleteItem( index){
+                alert(this.rows[index].name);
             }
         }
     };
 </script>
 <style scoped>
-
+    .tools{
+        margin-bottom: 0.625rem;
+    }
 </style>

@@ -1,0 +1,79 @@
+@import "base.less";
+
+.table{
+  display: flex;
+  flex-flow: column nowrap;
+  box-sizing: border-box;
+  border: 0.125rem /* 2px */ solid;
+  border-radius: 0.625rem;
+
+
+  .row{
+    display: flex;
+    flex: 1;
+    flex-flow: row wrap;
+
+    .cell{
+      flex: 1;
+      overflow: hidden;
+      box-sizing: border-box;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: left;
+      padding: 0.625rem /* 10px */;
+    }
+  }
+
+  .table-header{
+    font-weight: bolder;
+    border-top: none;
+
+    .row{
+      display: flex;
+      flex: 1;
+      flex-flow: row wrap;
+      .cell{
+        padding: 1.25rem /* 20px */ 0.625rem /* 10px */;
+      }
+    }
+  }
+
+  .table-body{
+    border-color: inherit;
+
+    .row{
+      border-top: 0.125rem solid;
+      border-color: inherit;
+
+      &.row-click:hover{
+        cursor: pointer;
+        background-color: #99ccff33;
+      }
+    }
+
+  }
+
+  &.emotion{
+    .table-emotion(@color; @background-color; @emotion-type){
+      &-@{emotion-type}{
+        color: @color;
+        border-color: @background-color;
+
+        .table-header{
+          color: darken(@color, 10%);
+          background-color: @background-color;
+        }
+        .row-line{
+          background-color: lighten(@background-color, 8%);
+        }
+      }
+    }
+
+    .table-emotion(@default; @default-light; default);
+    .table-emotion(@info; @info-light; info);
+    .table-emotion(@success; @success-light; success);
+    .table-emotion(@warning; darken(@warning-light, 5%); warning);
+    .table-emotion(@danger; @danger-light; danger);
+  }
+}

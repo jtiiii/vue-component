@@ -1,5 +1,5 @@
 import Utils from './scripts/Utils';
-import Input from './scripts/components/input/input';
+import Input from './scripts/components/input';
 import Upload from './scripts/components/upload/Upload';
 import Layout from './scripts/components/layout/layout';
 import Editor from './scripts/components/editor/editor';
@@ -14,7 +14,7 @@ const Search = resolve => require(['./scripts/components/search/search.vue'], re
 const Thumbnail = resolve => require(['./scripts/components/thumbnail/thumbnail.vue'], resolve);
 const Dropdown = resolve => require(['./scripts/components/dropdown.vue'], resolve);
 const Cover = resolve => require(['./scripts/components/cover/cover.vue'], resolve);
-const Table = resolve => require(['./scripts/components/table/table.vue'], resolve);
+const Table = resolve => require(['./scripts/components/table.vue'], resolve);
 const Selector = resolve => require(['./scripts/components/selector/selector.vue'],resolve);
 const Hint = resolve => require(['./scripts/components/hint/hint.vue'],resolve );
 
