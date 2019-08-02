@@ -1,0 +1,14 @@
+.dropdown-icon {
+  width: 1rem;
+  height: 1rem;
+}
+.dropdown-icon .button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.button-text {
+  margin-right: 10px;
+}
+/*# sourceMappingURL=selector.css.map */

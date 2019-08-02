@@ -1,0 +1,100 @@
+@import "./base.less";
+
+.nav-box {
+  overflow: hidden;
+
+  .nav {
+    display: flex;
+    padding-top: 0.0625rem;
+
+    .item {
+      flex: 1;
+      position: relative;
+      cursor: pointer;
+      padding: 0.625rem;
+    }
+
+    &.direction {
+      &-row {
+        flex-flow: row;
+
+        .item {
+          border-radius: 0.3125rem 0.3125rem 0 0;
+          display: flex;
+          justify-content: center;
+          margin: 0 0.3125rem;
+        }
+      }
+
+      &-column {
+        flex-flow: column;
+        .item{
+          border-radius: 0.3125rem;
+          margin: 0.3125rem 0;
+        }
+      }
+
+    }
+
+    &.emotion {
+
+      .nav-emotion( @background-color; @color ; @emotion-type ) {
+        &-@{emotion-type} {
+          &.direction{
+            &-row{
+              background-color: lighten(@background-color, 8%);
+              border-bottom: 0.0625rem solid darken(@background-color, 10%);
+              .item {
+                color: lighten(@color, 20%);
+                &[active] {
+                  background-color: #fff;
+                  border: 0.0625rem solid darken(@background-color, 10%);
+                  border-bottom: none;
+                  top: 0.0625rem;
+                  box-shadow: 0 0 0.4rem 0 darken(@background-color, 10%);
+                  font-weight: bolder;
+                  color: @color;
+
+                  &:hover {
+                    background-color: #fff;
+                  }
+                }
+              }
+            }
+            &-column{
+              background-color: #fff;
+              .item{
+                color: @color;
+                &[active]{
+                  background-color: fadeout(darken(@color, 5%), 20%);
+                  color: #fff;
+                  &:hover{
+                    background-color: @color;
+                  }
+                }
+              }
+            }
+          }
+
+          .item:hover{
+            background-color: lighten(@background-color, 4%);
+          }
+
+        }
+      }
+
+      .item {
+        &[active] {
+          color: @default-light;
+        }
+      }
+
+      .nav-emotion(@default-light; @default-deep; default);
+      .nav-emotion(@info-light; @info-deep; info);
+      .nav-emotion(@success-light; @success-deep; success);
+      .nav-emotion(@warning-light; @warning-deep; warning);
+      .nav-emotion(@danger-light; @danger-deep; danger);
+
+    }
+  }
+}

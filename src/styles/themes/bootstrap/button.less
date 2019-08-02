@@ -18,7 +18,7 @@
 .button {
   &.emotion {
     &-default {
-      .button-emotion(@default-light; @default);
+      .button-emotion(darken(@default-light, 2%); @default);
 
       &:active,&.pressed {
         .button-emotion(@default; @default-light)

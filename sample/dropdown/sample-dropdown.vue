@@ -1,9 +1,10 @@
 <template>
     <div>
         <dropdown v-model="d1.show" :emotion="'info'">
-            <div style="width:500px;">
-                hello thank you very much;
-            </div>
+<!--            <button style="">-->
+                hello thank you very much;hello thank you very much;hello thank you very much;hello thank you very much;
+            hello thank you very much;
+<!--            </button>-->
         </dropdown>
         <dropdown>
             <template #button>
@@ -11,6 +12,11 @@
             </template>
             Are you ok?
         </dropdown>
+        <span>
+            <span>
+                <span>testsetsetsetse</span>
+            </span>
+        </span>
     </div>
 </template>
 <script>

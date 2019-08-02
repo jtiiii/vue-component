@@ -8,30 +8,32 @@
             <v-button @click="tableType = 'warning'" :emotion="'warning'" :size="'small'">Warning</v-button>
             <v-button @click="tableType = 'danger'" :emotion="'danger'" :size="'small'">Danger</v-button>
         </div>
-        <v-table :rowsSize="rowSize"
-                 :emotion="tableType"
-                 :headers="headers">
-            <template #header-id> 主键ID</template>
-            <template #header-code> 编码 </template>
-            <template #header-name> 名称 </template>
-            <template #header-operation> 操作 </template>
+        <div class="table-box">
+            <v-table :rowsSize="rowSize"
+                     :emotion="tableType"
+                     :headers="headers">
+                <template #header-id> 主键ID</template>
+                <template #header-code> 编码 </template>
+                <template #header-name> 名称 </template>
+                <template #header-operation> 操作 </template>
 
-            <template #row-id="{ header, index }">
-                {{ getText( header, index ) }}
-            </template>
+                <template #row-id="{ header, index }">
+                    {{ getText( header, index ) }}
+                </template>
 
-            <template #row-code="{ header, index }">
-                {{ getText( header, index ) }}
-            </template>
+                <template #row-code="{ header, index }">
+                    {{ getText( header, index ) }}
+                </template>
 
-            <template #row-name="{ header, index }">
-                {{ getText( header, index ) }}
-            </template>
+                <template #row-name="{ header, index }">
+                    {{ getText( header, index ) }}
+                </template>
 
-            <template #row-operation="{ header, index }">
-                <v-button :emotion="'danger'" :size="'small'" @click="deleteItem(index)" >删除</v-button>
-            </template>
-        </v-table>
+                <template #row-operation="{ header, index }">
+                    <v-button :emotion="'danger'" :size="'small'" @click="deleteItem(index)" >删除</v-button>
+                </template>
+            </v-table>
+        </div>
     </div>
 </template>
 <script>
@@ -39,8 +41,7 @@
     import FComponents from '../../src/main';
     const sampleGoodsType = [
         { id: 4, code: 'goodsType-001' , name: '普货'},
-        { id: 5, code: 'goodsType-002', name: '冷冻'},
-        { id: 5, code: 'goodsType-003', name: '超限'}
+        { id: 5, code: 'goodsType-002', name: '冷冻'}
     ];
 
     const sampleGoodsSize = [
@@ -83,8 +84,13 @@
         }
     };
 </script>
-<style scoped>
+<style>
     .tools{
         margin-bottom: 0.625rem;
+    }
+    .table-box .table > .table-body{
+        height: 80px;
+        overflow: hidden;
+        overflow-y: scroll;
     }
 </style>
