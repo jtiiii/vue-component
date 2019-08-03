@@ -3,8 +3,8 @@
         <nav class="nav" :class="navClass">
             <a class="item"
                v-for="index in length"
-               :active="isActive(index)"
-               @click="$emit('click', index)"
+               :active="isActive(index - 1)"
+               @click="$emit('click', index - 1)"
             >
                 <slot name="item" :index="index - 1"></slot>
             </a>

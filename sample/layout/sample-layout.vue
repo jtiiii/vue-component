@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-navigator :tabs="tabs" v-model="selected" :direction="direction" @a-click="singleSelect"></v-navigator>
+<!--        <v-navigator :tabs="tabs" v-model="selected" :direction="direction" @a-click="singleSelect"></v-navigator>-->
         <v-page-bar :type="'default'" :all="1" :length="4" :current="currentPage" @goto="goto" />
         <v-page-bar :type="'info'" :all="15" :length="4" :current="currentPage" @goto="goto" />
         <v-page-bar :type="'success'" :all="15" :length="4" :current="currentPage" @goto="goto" />
@@ -13,7 +13,7 @@
 
     export default {
         components:{
-            'v-navigator': FComponents.Layout.Navigator,
+            // 'v-navigator': FComponents.Layout.Navigator,
             'v-page-bar': FComponents.Layout.PageBar
         },
         data(){

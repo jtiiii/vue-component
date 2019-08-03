@@ -15,7 +15,7 @@ const Thumbnail = resolve => require(['./scripts/components/thumbnail/thumbnail.
 const Dropdown = resolve => require(['./scripts/components/dropdown.vue'], resolve);
 const Cover = resolve => require(['./scripts/components/cover/cover.vue'], resolve);
 const Table = resolve => require(['./scripts/components/table.vue'], resolve);
-const Selector = resolve => require(['./scripts/components/selector/selector.vue'],resolve);
+const Selector = resolve => require(['./scripts/components/selector.vue'],resolve);
 const Hint = resolve => require(['./scripts/components/hint/hint.vue'],resolve );
 
 import ThumbnailModel from './scripts/components/thumbnail/ThumbnailModel';
