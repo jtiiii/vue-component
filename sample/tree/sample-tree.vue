@@ -4,8 +4,8 @@
     </div>
 </template>
 <script>
-    import TreeNodeVue from '../../src/scripts/components/tree/tree-node.vue';
-    import TreeNode from '../../src/scripts/components/tree/tree-node';
+    import TreeNodeVue from '../../src/components/tree/tree-node.vue';
+    import TreeNode from '../../src/components/tree/tree-node';
 
     const sampleData =
         {

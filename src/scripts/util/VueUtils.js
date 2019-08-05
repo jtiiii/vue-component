@@ -1,4 +1,4 @@
-import CommonStore from '../store/Common';
+// import CommonStore from '../store/Common';
 
 const VueUtils = {
     directives:{
@@ -47,14 +47,35 @@ const VueUtils = {
             required: false,
             default: 'center',
             validator: function( position ){
-                let arr = ['top','bottom','right','left','center','under','above'];
+                let arr = ['top','bottom','right','left','center','inside','outside'];
                 return position.split("-").every( p => arr.includes(p));
             }
         },
     },
     computed:{
-        style(){
-            return CommonStore.state.style;
+        // style(){
+        //     return CommonStore.state.style;
+        // },
+        positionClass(){
+            let result = {};
+            let positions = this.position.split('-');
+            positions.forEach( p => {
+                result['position-'+p] = true;
+            });
+            if(this.position.includes('center')){
+                if(this.position.includes('left')
+                    || this.position.includes('right')){
+                    result['position-verticalCenter'] = true;
+                }else if( this.position.includes('top')
+                    || this.position.includes('bottom')
+                ){
+                    result['position-alignCenter'] = true;
+                }else{
+                    result['position-alignCenter'] = true;
+                    result['position-verticalCenter'] = true;
+                }
+            }
+            return result;
         }
     }
 };

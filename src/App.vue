@@ -1,0 +1,101 @@
+<template>
+  <div id="app">
+<!--    <sample-hint id="hint"></sample-hint>-->
+<!--    <hr/>-->
+<!--    <sample-input id="input"></sample-input>-->
+<!--    <hr/>-->
+<!--    <sample-navigator id="navigator"></sample-navigator>-->
+<!--    <hr/>-->
+<!--    <sample-search id="search"></sample-search>-->
+<!--    <hr/>-->
+<!--    <sample-button id="button"></sample-button>-->
+<!--    <hr/>-->
+<!--    <sample-panel id="panel"></sample-panel>-->
+<!--    <hr/>-->
+<!--    <sample-modal id="modal"></sample-modal>-->
+<!--    <hr/>-->
+    <sample-thumbnail id="thumbnail"></sample-thumbnail>
+    <hr/>
+<!--    <sample-dropdown id="dropdown"></sample-dropdown>-->
+<!--    <hr/>-->
+<!--    <sample-selector id="selector"></sample-selector>-->
+<!--    <hr/>-->
+<!--    <sample-upload id="upload"></sample-upload>-->
+<!--    <hr/>-->
+<!--    <sample-tree id="tree"></sample-tree>-->
+<!--    <hr/>-->
+<!--    <sample-table id="table"></sample-table>-->
+<!--    <hr/>-->
+<!--    <sample-editor id="editor"></sample-editor>-->
+<!--    <hr/>-->
+<!--    <sample-layout id="layout"></sample-layout>-->
+<!--    <hr/>-->
+<!--    <sample-cover id="cover"></sample-cover>-->
+    <hr/>
+  </div>
+</template>
+
+<script>
+  import SampleHint from '../sample/sample-hint.vue';
+  import SampleInput from '../sample/sample-input.vue';
+  import SampleNavigator from '../sample/sample-navigator.vue';
+  // import SampleSearch from '../sample/sample-search.vue';
+  import SampleButton from '../sample/sample-button.vue';
+  import SamplePanel from '../sample/sample-panel.vue';
+  import SampleModal from '../sample/sample-modal.vue';
+  import SampleThumbnail from '../sample/sample-thumbnail.vue';
+  import SampleDropdown from '../sample/sample-dropdown.vue';
+  import SampleSelector from '../sample/sample-selector.vue';
+  // import SampleUpload from '../sample/sample-upload.vue';
+  // import SampleTree from '../sample/sample-tree.vue';
+  import SampleTable from '../sample/sample-table.vue';
+  // import SampleEditor from '../sample/sample-editor.vue';
+  // import SampleLayout from '../sample/sample-layout.vue';
+  // import SampleCover from '../sample/sample-cover.vue';
+
+export default {
+  name: 'app',
+  components: {
+    SampleHint,
+    SampleInput,
+    SampleNavigator,
+    // SampleSearch,
+    SampleButton,
+    SamplePanel,
+    SampleModal,
+    SampleThumbnail,
+    SampleDropdown,
+    SampleSelector,
+    // SampleUpload,
+    // SampleTree,
+    SampleTable,
+    // SampleEditor,
+    // SampleLayout,
+    // SampleCover,
+  }
+}
+</script>
+
+<style>
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif, alibaba;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+  }
+  hr{
+    margin-top: 10px;
+    clear: both;
+  }
+
+  @font-face {
+    font-family: 'alibaba';
+    font-display: swap;
+    src: url('//at.alicdn.com/t/webfont_vqswb7vrm5l.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/webfont_vqswb7vrm5l.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/webfont_vqswb7vrm5l.woff2') format('woff2'),
+    url('//at.alicdn.com/t/webfont_vqswb7vrm5l.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/webfont_vqswb7vrm5l.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/webfont_vqswb7vrm5l.svg#Alibaba-PuHuiTi-Regular') format('svg'); /* iOS 4.1- */
+  }
+</style>

@@ -1,0 +1,58 @@
+@import "../size.less";
+
+@default-light: #e2e3e5;
+@default:  #383d41;
+@default-deep: #000;
+
+@success-light: #d4edda;
+@success: #155724;
+@success-deep: #3c763dcc;
+
+@info-light: #d1ecf1;
+@info: #0c5460;
+@info-deep: #31708fcc;
+
+@warning-light: #fff3cd;
+@warning: #8a6d3b;
+@warning-deep: #de8d00cc;
+
+@danger-light: #f8d7da;
+@danger: #a94442;
+@danger-deep: #da0000cc;
+
+.position(@offset){
+  &-inside{
+    &.position-top{
+      top: @offset;
+    }
+    &.position-left{
+      left: @offset;
+    }
+    &.position-bottom{
+      bottom: @offset;
+    }
+    &.position-right{
+      right: @offset;
+    }
+  }
+  &-outside{
+    &.position-top{
+      bottom: calc( 100% + @offset );
+    }
+    &.position-left{
+      right: calc( 100% + @offset );
+    }
+    &.position-bottom{
+      top: calc( 100% + @offset );
+    }
+    &.position-right{
+      left: calc( 100% + @offset);
+    }
+  }
+  &-verticalCenter{
+    top: 50%;
+  }
+  &-alignCenter{
+    left: 50%;
+  }
+}

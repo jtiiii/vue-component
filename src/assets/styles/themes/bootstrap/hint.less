@@ -1,0 +1,46 @@
+@import "base.less";
+
+.hint-box{
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+
+  .hint{
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding: 0.125rem 0.25rem;
+    display: inline-block;
+    border-radius: 0.3125rem;
+    opacity: .9;
+    &.emotion{
+      .hint-emotion(@background-color, @emotion-type){
+        &-@{emotion-type}{
+          background-color: @background-color;
+        }
+      }
+
+      .hint-emotion(@default-deep, default);
+      .hint-emotion(@info-deep, info);
+      .hint-emotion(@success-deep, success);
+      .hint-emotion(@warning-deep, warning);
+      .hint-emotion(@danger-deep, danger);
+    }
+  }
+}
+.hint-hover{
+  position: absolute;
+}
+.hint-hover-left{
+  left: 0.625rem;
+}
+.hint-hover-right{
+  right: 0.625rem;
+}
+.hint-hover-top{
+  bottom: 100%;
+}
+.hint-hover-bottom{
+  top: 100%;
+}

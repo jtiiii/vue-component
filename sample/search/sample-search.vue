@@ -8,7 +8,7 @@
     </div>
 </template>
 <script>
-    import Search from '../../src/scripts/components/search/search.vue';
+    import Search from '../../src/components/search/search.vue';
 
     export default {
         components:{

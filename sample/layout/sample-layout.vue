@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-    import FComponents from '../../src/main';
+    import FComponents from '@/vue-components';
 
     export default {
         components:{
@@ -44,7 +44,6 @@
                 }else{
                     this.selected.splice(this.selected.indexOf(tabKey),1);
                 }
-                console.info(tab);
             },
             singleSelect(tab, tabKey){
                 if(this.selected.indexOf(tabKey) === -1){

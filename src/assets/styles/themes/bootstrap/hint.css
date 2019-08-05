@@ -1,0 +1,46 @@
+.hint-box {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+.hint-box .hint {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.125rem 0.25rem;
+  display: inline-block;
+  border-radius: 0.3125rem;
+  opacity: 0.9;
+}
+.hint-box .hint.emotion-default {
+  background-color: #000;
+}
+.hint-box .hint.emotion-info {
+  background-color: #31708fcc;
+}
+.hint-box .hint.emotion-success {
+  background-color: #3c763dcc;
+}
+.hint-box .hint.emotion-warning {
+  background-color: #de8d00cc;
+}
+.hint-box .hint.emotion-danger {
+  background-color: #da0000cc;
+}
+.hint-hover {
+  position: absolute;
+}
+.hint-hover-left {
+  left: 0.625rem;
+}
+.hint-hover-right {
+  right: 0.625rem;
+}
+.hint-hover-top {
+  bottom: 100%;
+}
+.hint-hover-bottom {
+  top: 100%;
+}
+/*# sourceMappingURL=hint.css.map */

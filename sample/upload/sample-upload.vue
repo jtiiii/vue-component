@@ -8,7 +8,7 @@
     </div>
 </template>
 <script type="text/javascript">
-    import Upload from '../../src/scripts/components/upload/Upload';
+    import Upload from '../../src/components/upload/Upload';
 
     export default {
         components:{

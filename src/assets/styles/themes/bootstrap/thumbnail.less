@@ -1,0 +1,35 @@
+@import "base.less";
+
+.thumbnail{
+  display: inline-block;
+  margin: 0.3125rem;
+  width: 10rem;
+
+  &-img{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    canvas {
+      max-width: 100%;
+      max-height : 100%;
+      &:hover{
+        box-shadow: 0 0 0.4rem #000;
+      }
+    }
+  }
+
+  &-info{
+    margin-top: 0.3125rem;
+    background: #eee;
+    text-align: center;
+    width: 100%;
+    border-bottom-left-radius: 0.3125rem;
+    border-bottom-right-radius: 0.3125rem;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+}
