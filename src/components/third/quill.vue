@@ -1,7 +1,6 @@
 <template>
-    <div>
-        <div ref="toolbar"></div>
-        <div class="editor" :style="editorStyle" ref="editor">
+    <div class="quill" :class="quillClass" >
+        <div ref="editor">
         </div>
         <div v-show="hasFooter" class="footer">
             <slot name="footer"></slot>
@@ -11,6 +10,7 @@
 <script type="text/javascript">
     import Quill from 'quill';
     import 'quill/dist/quill.snow.css';
+    import VueUtils from '../../scripts/util/VueUtils.js';
 
     export default {
         model:{
@@ -28,16 +28,6 @@
                 required: false,
                 default: 'Enter words here....'
             },
-            width:{
-                type: String,
-                required: false,
-                default: '100%'
-            },
-            height:{
-                type: String,
-                required: false,
-                default: 'auto'
-            },
             content:{
                 type: Object,
                 required: false,
@@ -48,15 +38,11 @@
                 required: false,
                 default: () => []
             },
-            customStyle:{
-                type: Object,
-                required: false,
-                default: () => {}
-            },
             toolbar:{
                 required: false,
                 default: undefined
-            }
+            },
+            emotion:VueUtils.props.emotion
         },
         data(){
             return {
@@ -78,7 +64,7 @@
                             [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
                             [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
                             [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-                            [{ 'font': [] }],
+                            // [{ 'font': [] }],
                             [{ 'align': [] }],
                             ['image','link','video'],
                             ['clean']                                         // remove formatting button
@@ -92,11 +78,9 @@
             hasFooter(){
                 return Boolean(this.$slots.footer);
             },
-            editorStyle(){
-                let result = { 'width':this.width, 'height': this.height};
-                if( this.style ){
-                    Object.assign(result,this.customStyle);
-                }
+            quillClass(){
+                let result = {};
+                result['emotion-'+this.emotion] = true;
                 return result;
             }
         },
@@ -147,16 +131,6 @@
         }
     };
 </script>
-<style scoped>
-    .editor{
-        /*border-bottom-left-radius: 5px;*/
-        /*border-bottom-right-radius: 5px;*/
-    }
-    .footer{
-        width: 100%;
-        min-height: 35px;
-        border: 1px solid #ccc;
-        border-top: none;
-        box-sizing: border-box;
-    }
+<style>
+    @import url('../../assets/styles/themes/bootstrap/third/quill.css');
 </style>

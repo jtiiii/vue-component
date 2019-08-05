@@ -1,0 +1,39 @@
+@import "../base.less";
+
+.quill{
+  border: 0.125rem solid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .footer{
+    width: 100%;
+    min-height: 35px;
+    border: 1px solid #ccc;
+    border-top: none;
+    box-sizing: border-box;
+  }
+
+  &.emotion{
+    .quill-emotion(@border-color; @background-color; @emotion-type){
+      &-@{emotion-type}{
+        border-color: darken(@border-color, 5%);
+        .ql-toolbar{
+          background-color: darken(@background-color, 5%);
+          //border-bottom: 0.0625rem solid @border-color;
+        }
+      }
+    }
+    .quill-emotion(@default-light; @default-light; default);
+    .quill-emotion(@success-light; @success-light; success);
+    .quill-emotion(@info-light; @info-light; info);
+    .quill-emotion(@warning-light; @warning-light; warning);
+    .quill-emotion(@danger-light; @danger-light; danger);
+  }
+
+  .ql-toolbar{
+    border: none;
+  }
+  .ql-container{
+    border: none;
+  }
+}

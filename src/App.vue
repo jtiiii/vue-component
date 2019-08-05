@@ -28,12 +28,12 @@
 <!--    <hr/>-->
 <!--    <sample-table id="table"></sample-table>-->
 <!--    <hr/>-->
-<!--    <sample-editor id="editor"></sample-editor>-->
-<!--    <hr/>-->
+    <sample-quill id="quill"></sample-quill>
+    <hr/>
 <!--    <sample-layout id="layout"></sample-layout>-->
 <!--    <hr/>-->
-    <sample-cover id="cover"></sample-cover>
-    <hr/>
+<!--    <sample-cover id="cover"></sample-cover>-->
+<!--    <hr/>-->
   </div>
 </template>
 
@@ -52,7 +52,7 @@
   // import SampleUpload from '../sample/sample-upload.vue';
   // import SampleTree from '../sample/sample-tree.vue';
   import SampleTable from '../sample/sample-table.vue';
-  // import SampleEditor from '../sample/sample-editor.vue';
+  import SampleQuill from '../sample/sample-quill.vue';
   // import SampleLayout from '../sample/sample-layout.vue';
   import SampleCover from '../sample/sample-cover.vue';
 
@@ -73,7 +73,7 @@ export default {
     // SampleUpload,
     // SampleTree,
     SampleTable,
-    // SampleEditor,
+    SampleQuill,
     // SampleLayout,
     SampleCover,
   }

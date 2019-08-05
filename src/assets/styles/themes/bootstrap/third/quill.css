@@ -1,0 +1,49 @@
+.quill {
+  border: 0.125rem solid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.quill .footer {
+  width: 100%;
+  min-height: 35px;
+  border: 1px solid #ccc;
+  border-top: none;
+  box-sizing: border-box;
+}
+.quill.emotion-default {
+  border-color: #d5d6d9;
+}
+.quill.emotion-default .ql-toolbar {
+  background-color: #d5d6d9;
+}
+.quill.emotion-success {
+  border-color: #c2e5cb;
+}
+.quill.emotion-success .ql-toolbar {
+  background-color: #c2e5cb;
+}
+.quill.emotion-info {
+  border-color: #bde4eb;
+}
+.quill.emotion-info .ql-toolbar {
+  background-color: #bde4eb;
+}
+.quill.emotion-warning {
+  border-color: #ffedb3;
+}
+.quill.emotion-warning .ql-toolbar {
+  background-color: #ffedb3;
+}
+.quill.emotion-danger {
+  border-color: #f4c1c6;
+}
+.quill.emotion-danger .ql-toolbar {
+  background-color: #f4c1c6;
+}
+.quill .ql-toolbar {
+  border: none;
+}
+.quill .ql-container {
+  border: none;
+}
+/*# sourceMappingURL=quill.css.map */
