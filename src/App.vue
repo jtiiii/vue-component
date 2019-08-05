@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-<!--    <sample-hint id="hint"></sample-hint>-->
-<!--    <hr/>-->
+    <sample-hint id="hint"></sample-hint>
+    <hr/>
 <!--    <sample-input id="input"></sample-input>-->
 <!--    <hr/>-->
 <!--    <sample-navigator id="navigator"></sample-navigator>-->

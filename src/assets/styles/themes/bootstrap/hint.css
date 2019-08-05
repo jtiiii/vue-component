@@ -8,7 +8,7 @@
   color: #fff;
   font-size: 0.875rem;
   font-weight: bold;
-  padding: 0.125rem 0.25rem;
+  padding: 0.125rem 0.5rem;
   display: inline-block;
   border-radius: 0.3125rem;
   opacity: 0.9;
@@ -27,6 +27,36 @@
 }
 .hint-box .hint.emotion-danger {
   background-color: #da0000cc;
+}
+.hint-box .hint.position-inside.position-top {
+  top: 0.3125rem;
+}
+.hint-box .hint.position-inside.position-left {
+  left: 0.3125rem;
+}
+.hint-box .hint.position-inside.position-bottom {
+  bottom: 0.3125rem;
+}
+.hint-box .hint.position-inside.position-right {
+  right: 0.3125rem;
+}
+.hint-box .hint.position-outside.position-top {
+  bottom: calc(100% + 0.3125rem);
+}
+.hint-box .hint.position-outside.position-left {
+  right: calc(100% + 0.3125rem);
+}
+.hint-box .hint.position-outside.position-bottom {
+  top: calc(100% + 0.3125rem);
+}
+.hint-box .hint.position-outside.position-right {
+  left: calc(100% + 0.3125rem);
+}
+.hint-box .hint.position-verticalCenter {
+  top: 50%;
+}
+.hint-box .hint.position-alignCenter {
+  left: 50%;
 }
 .hint-hover {
   position: absolute;

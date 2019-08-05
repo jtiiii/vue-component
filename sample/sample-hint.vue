@@ -1,25 +1,28 @@
 <template>
-    <div>
+    <div class="hint-list">
         <hint>
-            <template #message>Hint</template>
+            <template #message>Attention please.</template>
         </hint>
         <hint :emotion="'success'">
-            <template #message>Hint</template>
+            <template #message>Attention please.</template>
         </hint>
         <hint :emotion="'info'">
-            <template #message>Hint</template>
+            <template #message>Attention please.</template>
         </hint>
         <hint :emotion="'warning'">
-            <template #message>Hint</template>
+            <template #message>Attention please.</template>
         </hint>
         <hint :emotion="'danger'">
-            <template #message>Hint</template>
+            <template #message>Attention please.</template>
         </hint>
 
-        <hint :emotion="'default'" :show="hintShow" :position="'bottom-left'">
-            <template #message>It's a message.</template>
-            <v-button @mouseenter.native="hintShow = true" @mouseleave.native="hintShow = false"  :size="'small'" :emotion="'info'">Hover show hint.</v-button>
-        </hint>
+        <div>
+            <hint :emotion="'default'" :show="hintShow" :position="'center-right'">
+                <template #message>It's a message.</template>
+                <v-button @mouseenter.native="hintShow = true" @mouseleave.native="hintShow = false"  :size="'small'" :emotion="'info'">Hover show hint.</v-button>
+            </hint>
+        </div>
+
     </div>
 </template>
 <script>
@@ -38,6 +41,12 @@
         }
     }
 </script>
-<style>
-
+<style scoped>
+    .hint-list{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .hint-list > *{
+        margin-top: 0.3125rem;
+    }
 </style>

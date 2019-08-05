@@ -58,6 +58,7 @@
             maskClick: function(){
                 this.$emit('mask-click',this);
             },
+            positionStyles: VueUtils.methods.positionStyles,
             resetPosition: function(){
                 if(!this.show){
                     return;
@@ -67,16 +68,9 @@
             }
         },
         computed:{
-            modalClass: VueUtils.computed.positionClass ,
-            modalStyleComputed: function(){
-                let result = {};
-                if(this.modalClass['position-verticalCenter']) {
-                    result['margin-top'] = -this.styles.modal.height / 32 + 'rem';
-                }
-                if(this.modalClass['position-alignCenter']){
-                    result['margin-left'] = -this.styles.modal.width / 32 + 'rem';
-                }
-                return Object.assign(result,this.modalStyle);
+            modalClass: VueUtils.computed.positionClass,
+            modalStyleComputed(){
+                return this.positionStyles(this.modalClass, this.styles.modal.width, this.styles.modal.height);
             }
         },
         updated: function(){

@@ -77,6 +77,18 @@ const VueUtils = {
             }
             return result;
         }
+    },
+    methods:{
+        positionStyles( positionClass, width, height ){
+            let result = {};
+            if(positionClass['position-verticalCenter']) {
+                result['margin-top'] = -height / 32 + 'rem';
+            }
+            if(positionClass['position-alignCenter']){
+                result['margin-left'] = -width / 32 + 'rem';
+            }
+            return result;
+        }
     }
 };
 export default VueUtils;

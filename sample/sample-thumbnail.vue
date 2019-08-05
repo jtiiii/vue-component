@@ -29,6 +29,5 @@
 <style scoped>
     .thumbnail-list{
         width: 100%;
-        height: 500px;
     }
 </style>
