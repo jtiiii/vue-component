@@ -1,0 +1,45 @@
+.cover {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  /* 8px<*/
+}
+.cover,
+.cover .img {
+  position: relative;
+}
+.cover .img {
+  float: left;
+  max-width: 100%;
+  position: relative;
+  /*z-index: -1;*/
+}
+.cover .cover-info {
+  position: absolute;
+  z-index: 1;
+  background: #00000066;
+  color: #fff;
+  overflow: hidden;
+}
+.cover .cover-info.position-top {
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.cover .cover-info.position-left {
+  height: 100%;
+  left: 0;
+}
+.cover .cover-info.position-bottom {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.cover .cover-info.position-right {
+  height: 100%;
+  right: 0;
+}
+/*# sourceMappingURL=cover.css.map */

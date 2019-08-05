@@ -7,7 +7,7 @@
 </template>
 <script>
     import FComponents,{Utils} from '@/vue-components';
-    import Image from './QQ20181229-1.jpg';
+    import Image from './assets/QQ20181229-1.jpg';
 
     export default {
         components:{

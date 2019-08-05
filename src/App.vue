@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <sample-hint id="hint"></sample-hint>
-    <hr/>
+<!--    <sample-hint id="hint"></sample-hint>-->
+<!--    <hr/>-->
 <!--    <sample-input id="input"></sample-input>-->
 <!--    <hr/>-->
 <!--    <sample-navigator id="navigator"></sample-navigator>-->
 <!--    <hr/>-->
 <!--    <sample-search id="search"></sample-search>-->
 <!--    <hr/>-->
-    <sample-button id="button"></sample-button>
-    <hr/>
+<!--    <sample-button id="button"></sample-button>-->
+<!--    <hr/>-->
 <!--    <sample-panel id="panel"></sample-panel>-->
 <!--    <hr/>-->
 <!--    <sample-modal id="modal"></sample-modal>-->
 <!--    <hr/>-->
-    <sample-thumbnail id="thumbnail"></sample-thumbnail>
-    <hr/>
-    <sample-page-bar id="page-bar"></sample-page-bar>
-    <hr/>
+<!--    <sample-thumbnail id="thumbnail"></sample-thumbnail>-->
+<!--    <hr/>-->
+<!--    <sample-page-bar id="page-bar"></sample-page-bar>-->
+<!--    <hr/>-->
 <!--    <sample-dropdown id="dropdown"></sample-dropdown>-->
 <!--    <hr/>-->
 <!--    <sample-selector id="selector"></sample-selector>-->
@@ -32,7 +32,7 @@
 <!--    <hr/>-->
 <!--    <sample-layout id="layout"></sample-layout>-->
 <!--    <hr/>-->
-<!--    <sample-cover id="cover"></sample-cover>-->
+    <sample-cover id="cover"></sample-cover>
     <hr/>
   </div>
 </template>
@@ -54,7 +54,7 @@
   import SampleTable from '../sample/sample-table.vue';
   // import SampleEditor from '../sample/sample-editor.vue';
   // import SampleLayout from '../sample/sample-layout.vue';
-  // import SampleCover from '../sample/sample-cover.vue';
+  import SampleCover from '../sample/sample-cover.vue';
 
 export default {
   name: 'app',
@@ -75,7 +75,7 @@ export default {
     SampleTable,
     // SampleEditor,
     // SampleLayout,
-    // SampleCover,
+    SampleCover,
   }
 }
 </script>

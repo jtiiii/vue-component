@@ -69,7 +69,6 @@
                 }else if( start > this.all - this.showLength){
                     start = this.all - this.showLength;
                 }
-                // let end = start + this.showLength;
                 let arr = [];
                 for( let i = start; i <= start + this.showLength ; i++){
                     arr.push(i);
