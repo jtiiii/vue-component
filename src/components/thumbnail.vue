@@ -1,7 +1,7 @@
 <template>
     <div class="thumbnail">
         <div class="thumbnail-img">
-            <canvas ref="canvas" ></canvas>
+            <canvas ref="canvas" @click="imageClick" ></canvas>
         </div>
         <div class="thumbnail-info">
             <slot :src="src"></slot>

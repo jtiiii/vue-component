@@ -1,9 +1,7 @@
 import Utils from './scripts/Utils';
-import Input from './components/input';
-import Upload from './components/upload/Upload';
-// import Editor from './components/editor/editor';
 
-
+const UploadImage = resolve => require(['./components/upload-image.vue'], resolve);
+const ThirdQuill = resolve => require(['./components/third/quill.vue'], resolve);
 const PageBar = resolve => require(['./components/page-bar.vue'], resolve);
 const TreeNode = resolve => require(['./components/tree/tree-node.vue'], resolve);
 const Panel = resolve => require(['./components/panel.vue'], resolve);
@@ -16,6 +14,9 @@ const Cover = resolve => require(['./components/cover.vue'], resolve);
 const Table = resolve => require(['./components/table.vue'], resolve);
 const Selector = resolve => require(['./components/selector.vue'],resolve);
 const Hint = resolve => require(['./components/hint.vue'],resolve );
+const Text = resolve => require(['./components/input-text.vue'],resolve);
+const File = resolve => require(['./components/input-file.vue'],resolve);
+const Switch = resolve => require(['./components/input-switch.vue'],resolve);
 
 import TreeNodeModel from "./components/tree/TreeNode";
 
@@ -26,10 +27,10 @@ const vueComponents = {
     Panel,
     Modal,
     Search,
-    Input,
-    Upload,
+    Input:{ Text, File, Switch},
+    Upload:{ Image: UploadImage},
     Thumbnail,
-    // Editor,
+    Third:{ Quill: ThirdQuill},
     Dropdown,
     PageBar,
     Cover,

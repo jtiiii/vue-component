@@ -1,18 +1,15 @@
 <template>
-    <div class="upload-sample">
-        <upload-image :show="true" @close="close">
-            <template #select-button> Select </template>
-            <template #reset-button> Reset </template>
-            <template #submit-button> Submit </template>
+    <div class="sample-upload-image">
+        <upload-image :show="true" @close="close" :emotion="'default'">
         </upload-image>
     </div>
 </template>
 <script type="text/javascript">
-    import Upload from '../../src/components/upload/Upload';
+    import UploadImage from '../src/components/upload-Image.vue';
 
     export default {
         components:{
-            "upload-image": Upload.Image
+            "upload-image": UploadImage
         },
         data(){
             return {};
@@ -25,7 +22,7 @@
     };
 </script>
 <style scoped>
-    .upload-sample{
+    .sample-upload-image{
         width: 100%;
         height: 800px;
         position: relative;

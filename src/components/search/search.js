@@ -1,4 +1,4 @@
-import Input from '../input/text.vue';
+import Input from '../input-text.vue';
 import SearchIcon from './images/search.png';
 import _ from 'lodash';
 

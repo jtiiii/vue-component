@@ -43,7 +43,7 @@
                 return this.list.length;
             },
             selectedText(){
-                return this.list[this.selects[0]].text;
+                return this.list[this.selects[0]].input;
             }
         },
         methods:{

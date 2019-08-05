@@ -1,3 +1,13 @@
+<template>
+    <div v-show="show" class="modal-container">
+        <div v-if="hasMask" @click="maskClick" class="mask" ref="mask">
+        </div>
+        <panel class="modal" :class="modalClass" ref="modal" :style="modalStyleComputed" :emotion="emotion" :width="width" :size="size" :height="height" :canClose="canClose" @close="closeEvent">
+            <template #title><slot name="title"></slot></template>
+            <slot></slot>
+        </panel>
+    </div>
+</template>
 <script type="text/javascript">
     import Panel from './panel.vue';
     import VueUtils from '../scripts/util/VueUtils';
@@ -81,16 +91,6 @@
         }
     };
 </script>
-<template>
-    <div v-show="show" class="modal-container">
-        <div v-if="hasMask" @click="maskClick" class="mask" ref="mask">
-        </div>
-        <panel class="modal" :class="modalClass" ref="modal" :style="modalStyleComputed" :emotion="emotion" :width="width" :size="size" :height="height" :canClose="canClose" @close="closeEvent">
-            <template #title><slot name="title"></slot></template>
-            <slot></slot>
-        </panel>
-    </div>
-</template>
 <style>
     @import url("../assets/styles/themes/bootstrap/modal.css");
 </style>

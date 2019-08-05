@@ -1,6 +1,7 @@
 <template>
     <div v-if="node.id" class="node">
-        <div class="title-image" :class="{'node-expanded': expandStatus }"><img class="expand" @click="expand" :class="{'expanded': expandStatus, 'expand-able': node.canOpen, 'expand-unable': !node.canOpen}" :src="expandIcon"><div :title="node.id" :class="classType" class="title" ><a v-if="canClick" @click="nodeClick" >{{ node.text }}</a><span v-else="canClick">{{ text }}</span></div></div>
+        <div class="title-image" :class="{'node-expanded': expandStatus }"><img class="expand" @click="expand" :class="{'expanded': expandStatus, 'expand-able': node.canOpen, 'expand-unable': !node.canOpen}" :src="expandIcon"><div :title="node.id" :class="classType" class="title" ><a v-if="canClick" @click="nodeClick" >{{
+            node.input-text }}</a><span v-else="canClick">{{ input-text }}</span></div></div>
         <div v-show="expandStatus" v-if="hasChildren" class="indentation">
             <tree-node @node-click="sonClick" @expand="sonExpand" v-for="child in children" :key="child.id" :node = "child" :parent="node" :generation=" generation + 1 "></tree-node>
         </div>

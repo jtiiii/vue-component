@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import VueUtils from '../../scripts/util/VueUtils';
+    import VueUtils from '../scripts/util/VueUtils';
 
     export default {
         name: "f-input-switch",
@@ -39,5 +39,5 @@
 </script>
 
 <style>
-    @import url('../../assets/styles/themes/bootstrap/input-switch.css');
+    @import url('../assets/styles/themes/bootstrap/input-switch.css');
 </style>

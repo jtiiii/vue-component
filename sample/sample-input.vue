@@ -15,14 +15,16 @@
     </div>
 </template>
 <script>
-    import Input from '../src/components/input';
+    import InputText from '../src/components/input-text.vue';
+    import InputFile from '../src/components/input-file.vue';
+    import InputSwitch from '../src/components/input-switch.vue';
 
     export default {
         name: 'sample-input',
         components: {
-            'input-text': Input.Text,
-            'input-file': Input.File,
-            'input-switch': Input.Switch
+            'input-text': InputText,
+            'input-file': InputFile,
+            'input-switch': InputSwitch
         },
         data(){
             return {

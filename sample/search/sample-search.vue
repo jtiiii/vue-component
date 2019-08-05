@@ -1,7 +1,7 @@
 <template>
     <div>
-        <search @keyup="showText" v-model="text" :delay="500"></search>
-        {{ text }}
+        <search @keyup="showText" v-model="input-text" :delay="500"></search>
+        {{ input-text }}
         <br/>
         delay:
         {{ delayText }}

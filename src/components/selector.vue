@@ -1,7 +1,7 @@
 <template>
     <f-v-dropdown class="selector"
                   :emotion="emotion"
-                  :text="text"
+                  :text="input-text"
                   :show="listShow"
                   @openOrClose="listShoChange">
         <template #button>

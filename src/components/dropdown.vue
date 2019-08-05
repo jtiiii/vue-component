@@ -77,7 +77,8 @@
 </script>
 <template>
     <div class="dropdown"  v-outsideClick="closeMenu" >
-        <v-button v-if="!hasCustomButton" ref="button" :size="size" :emotion="emotion" @click="openMenu">{{ text }}</v-button>
+        <v-button v-if="!hasCustomButton" ref="button" :size="size" :emotion="emotion" @click="openMenu">{{ input-text
+            }}</v-button>
         <div v-else  ref="button" @click="openMenu" ><slot name="button"></slot></div>
         <v-modal ref="menu"
                  class="menu"
