@@ -1,7 +1,9 @@
 <template>
     <div>
         <cover :position="'top'" :showInfo="show" :src="image">
-            <div style="height: 30px;"></div>
+            <div style="padding: 0.5rem;">
+                这里没准是什么什么奇怪的信息。
+            </div>
         </cover>
     </div>
 </template>

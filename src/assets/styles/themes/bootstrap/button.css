@@ -98,7 +98,7 @@
   border-radius: 0.875rem;
 }
 .button:disabled {
-  background: #e8e8e8;
+  background-color: #e8e8e8;
   border: none;
   color: #fff;
   box-shadow: 0 0;

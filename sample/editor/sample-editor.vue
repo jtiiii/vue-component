@@ -4,7 +4,7 @@
     </div>
 </template>
 <script type="text/javascript">
-    import Editor from '../../src/components/editor/quill/quill.vue';
+    import Editor from '../../src/components/third/quill.vue';
 
     export default {
         components:{

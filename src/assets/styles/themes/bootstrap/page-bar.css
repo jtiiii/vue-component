@@ -8,6 +8,12 @@
   justify-content: center;
   align-items: center;
 }
+.page-bar button.button:disabled {
+  background-color: #e8e8e8;
+  color: #fff;
+  text-shadow: 0 0 0.125rem #000;
+  border-color: #e8e8e8;
+}
 .page-bar .button {
   text-align: center;
   border-radius: 0;
@@ -20,6 +26,7 @@
 }
 .page-bar .button.emotion-default.pressed {
   background-color: #6d717a;
+  border: 1px solid #6d717a;
   color: #fff;
 }
 .page-bar .button.emotion-info {
@@ -30,6 +37,7 @@
 }
 .page-bar .button.emotion-info.pressed {
   background-color: #359aad;
+  border: 1px solid #359aad;
   color: #fff;
 }
 .page-bar .button.emotion-success {
@@ -40,6 +48,7 @@
 }
 .page-bar .button.emotion-success.pressed {
   background-color: #429e58;
+  border: 1px solid #429e58;
   color: #fff;
 }
 .page-bar .button.emotion-warning {
@@ -50,6 +59,7 @@
 }
 .page-bar .button.emotion-warning.pressed {
   background-color: #ecb300;
+  border: 1px solid #ecb300;
   color: #fff;
 }
 .page-bar .button.emotion-danger {
@@ -60,6 +70,7 @@
 }
 .page-bar .button.emotion-danger.pressed {
   background-color: #cb2433;
+  border: 1px solid #cb2433;
   color: #fff;
 }
 .page-bar .button.size {

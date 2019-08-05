@@ -1,7 +1,7 @@
 import Utils from './scripts/Utils';
 import Input from './components/input';
 import Upload from './components/upload/Upload';
-import Editor from './components/editor/editor';
+// import Editor from './components/editor/editor';
 
 
 const PageBar = resolve => require(['./components/page-bar.vue'], resolve);
@@ -29,7 +29,7 @@ const vueComponents = {
     Input,
     Upload,
     Thumbnail,
-    Editor,
+    // Editor,
     Dropdown,
     PageBar,
     Cover,

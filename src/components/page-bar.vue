@@ -1,7 +1,6 @@
 <template>
     <div class="page-bar">
-        <v-button class="first-btn" @click="goto(current - 1)" :size="size" :emotion="emotion" :disabled="first"> < </v-button>
-
+        <v-button class="first-btn" @click="goto(current - 1)" :size="size" :emotion="emotion" :disabled="first">&lt;</v-button>
         <div class="btn-list">
             <v-button class="number-btn" :emotion="emotion" :size="size"
                       v-show="preMore" @click="goto( current - length)" >...</v-button>
@@ -13,8 +12,7 @@
             <v-button class="number-btn" :emotion="emotion" :size="size"
                       v-show="nextMore" @click="goto( current + length)" >...</v-button>
         </div>
-
-        <v-button class="end-btn" :emotion="emotion" @click="goto(current + 1)" :disabled="end" :size="size" > > </v-button>
+        <v-button class="end-btn" :emotion="emotion" @click="goto(current + 1)" :disabled="end" :size="size" >&gt;</v-button>
     </div>
 </template>
 <script>
