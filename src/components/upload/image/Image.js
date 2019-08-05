@@ -5,7 +5,7 @@ import SizeUtils from '../../../scripts/util/SizeUtils';
 import loading from './loading.png';
 import SparkMd5 from 'spark-md5';
 
-import Thumbnail from '../../thumbnail/thumbnail.vue';
+import Thumbnail from '../../thumbnail.vue';
 
 function UploadImage(file){
     this.file = file;

@@ -10,7 +10,7 @@
     </div>
 </template>
 <script type="text/javascript">
-    import SizeUtils from '../../scripts/util/SizeUtils';
+    import SizeUtils from '../scripts/util/SizeUtils';
     export default {
         props:{
             src:{
@@ -60,5 +60,5 @@
     };
 </script>
 <style>
-    @import url('../../assets/styles/themes/bootstrap/thumbnail.css');
+    @import url('../assets/styles/themes/bootstrap/thumbnail.css');
 </style>
