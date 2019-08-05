@@ -1,24 +1,25 @@
 <template>
     <div class="page-bar">
-        <v-button class="first-btn" @click="goto(current - 1)" :type="type" :disabled="first" :size="'small'"> < </v-button>
+        <v-button class="first-btn" @click="goto(current - 1)" :size="size" :emotion="emotion" :disabled="first"> < </v-button>
 
         <div class="btn-list">
-            <v-button class="number-btn" :type="type" :size="'small'"
+            <v-button class="number-btn" :emotion="emotion" :size="size"
                       v-show="preMore" @click="goto( current - length)" >...</v-button>
-            <v-button class="number-btn" :type="type" :size="'small'"
+            <v-button class="number-btn" :emotion="emotion" :size="size"
                       v-show =" num <= all && num >= 1"
-                      v-for="num in showPageArray" :key="num" :pressed="current === num"
+                      v-for="num in showPageArray" :key="num" :class="{pressed: current === num }"
                       @click="goto( num )"
             >{{ num }}</v-button>
-            <v-button class="number-btn" :type="type" :size="'small'"
+            <v-button class="number-btn" :emotion="emotion" :size="size"
                       v-show="nextMore" @click="goto( current + length)" >...</v-button>
         </div>
 
-        <v-button class="end-btn" :type="type" @click="goto(current + 1)" :disabled="end" :size="'small'" > > </v-button>
+        <v-button class="end-btn" :emotion="emotion" @click="goto(current + 1)" :disabled="end" :size="size" > > </v-button>
     </div>
 </template>
 <script>
-    import Button from '../../button.vue';
+    import Button from './button.vue';
+    import VueUtils from '../scripts/util/VueUtils';
 
     export default {
         name: 'v-page-bar',
@@ -41,11 +42,8 @@
                 required: false,
                 default: 6
             },
-            type:{
-                type: String,
-                required: false,
-                default: 'default'
-            }
+            emotion:VueUtils.props.emotion,
+            size: VueUtils.props.size,
         },
         computed:{
             first(){
@@ -81,7 +79,6 @@
         },
         methods:{
             goto( num ){
-                console.log('goto',num);
                 if(num > this.all){
                     num = this.all;
                 }else if( num < 1){
@@ -93,29 +90,6 @@
     }
 
 </script>
-<style scoped>
-    .page-bar{
-        display: flex;
-        flex-flow: row wrap;
-    }
-    .btn-list{
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-    }
-    .btn-list .number-btn{
-        flex:1;
-        margin: 0;
-        width: 2.25rem;
-        max-height: 2.25rem;
-    }
-    .first-btn{
-        width: 2.25rem;
-        height: 2.25rem;
-    }
-    .end-btn{
-        width: 2.25rem;
-        height: 2.25rem;
-    }
+<style>
+    @import url('../assets/styles/themes/bootstrap/page-bar.css');
 </style>

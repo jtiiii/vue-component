@@ -1,0 +1,127 @@
+.page-bar,
+.page-bar .btn-list {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.page-bar .btn-list .button {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.page-bar .button {
+  border-radius: 0;
+}
+.page-bar .button.emotion-default {
+  background-color: #e5e6e7;
+  border: 1px solid #dadbde;
+  background-image: none;
+  color: #000;
+}
+.page-bar .button.emotion-default.pressed {
+  background-color: #6d717a;
+  color: #fff;
+}
+.page-bar .button.emotion-info {
+  background-color: #d5eef2;
+  border: 1px solid #c5e7ed;
+  background-image: none;
+  color: #31708fcc;
+}
+.page-bar .button.emotion-info.pressed {
+  background-color: #359aad;
+  color: #fff;
+}
+.page-bar .button.emotion-success {
+  background-color: #d8efdd;
+  border: 1px solid #c9e8d1;
+  background-image: none;
+  color: #3c763dcc;
+}
+.page-bar .button.emotion-success.pressed {
+  background-color: #429e58;
+  color: #fff;
+}
+.page-bar .button.emotion-warning {
+  background-color: #fff4d2;
+  border: 1px solid #ffefbe;
+  background-image: none;
+  color: #de8d00cc;
+}
+.page-bar .button.emotion-warning.pressed {
+  background-color: #ecb300;
+  color: #fff;
+}
+.page-bar .button.emotion-danger {
+  background-color: #f9dbde;
+  border: 1px solid #f6cace;
+  background-image: none;
+  color: #da0000cc;
+}
+.page-bar .button.emotion-danger.pressed {
+  background-color: #cb2433;
+  color: #fff;
+}
+.page-bar .button.size {
+  margin: 0;
+}
+.page-bar .button.size-smaller {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+.page-bar .button.size-smaller.first-btn {
+  border-top-left-radius: 0.21875rem;
+  border-bottom-left-radius: 0.21875rem;
+}
+.page-bar .button.size-smaller.end-btn {
+  border-top-right-radius: 0.21875rem;
+  border-bottom-right-radius: 0.21875rem;
+}
+.page-bar .button.size-small {
+  width: 1.6875rem;
+  height: 1.6875rem;
+}
+.page-bar .button.size-small.first-btn {
+  border-top-left-radius: 0.328125rem;
+  border-bottom-left-radius: 0.328125rem;
+}
+.page-bar .button.size-small.end-btn {
+  border-top-right-radius: 0.328125rem;
+  border-bottom-right-radius: 0.328125rem;
+}
+.page-bar .button.size-medium {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.page-bar .button.size-medium.first-btn {
+  border-top-left-radius: 0.4375rem;
+  border-bottom-left-radius: 0.4375rem;
+}
+.page-bar .button.size-medium.end-btn {
+  border-top-right-radius: 0.4375rem;
+  border-bottom-right-radius: 0.4375rem;
+}
+.page-bar .button.size-large {
+  width: 3.375rem;
+  height: 3.375rem;
+}
+.page-bar .button.size-large.first-btn {
+  border-top-left-radius: 0.65625rem;
+  border-bottom-left-radius: 0.65625rem;
+}
+.page-bar .button.size-large.end-btn {
+  border-top-right-radius: 0.65625rem;
+  border-bottom-right-radius: 0.65625rem;
+}
+.page-bar .button.size-larger {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+.page-bar .button.size-larger.first-btn {
+  border-top-left-radius: 0.875rem;
+  border-bottom-left-radius: 0.875rem;
+}
+.page-bar .button.size-larger.end-btn {
+  border-top-right-radius: 0.875rem;
+  border-bottom-right-radius: 0.875rem;
+}
+/*# sourceMappingURL=page-bar.css.map */

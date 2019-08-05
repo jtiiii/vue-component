@@ -8,13 +8,15 @@
 <!--    <hr/>-->
 <!--    <sample-search id="search"></sample-search>-->
 <!--    <hr/>-->
-<!--    <sample-button id="button"></sample-button>-->
-<!--    <hr/>-->
+    <sample-button id="button"></sample-button>
+    <hr/>
 <!--    <sample-panel id="panel"></sample-panel>-->
 <!--    <hr/>-->
 <!--    <sample-modal id="modal"></sample-modal>-->
 <!--    <hr/>-->
     <sample-thumbnail id="thumbnail"></sample-thumbnail>
+    <hr/>
+    <sample-page-bar id="page-bar"></sample-page-bar>
     <hr/>
 <!--    <sample-dropdown id="dropdown"></sample-dropdown>-->
 <!--    <hr/>-->
@@ -39,6 +41,7 @@
   import SampleHint from '../sample/sample-hint.vue';
   import SampleInput from '../sample/sample-input.vue';
   import SampleNavigator from '../sample/sample-navigator.vue';
+  import SamplePageBar from '../sample/sample-page-bar.vue';
   // import SampleSearch from '../sample/sample-search.vue';
   import SampleButton from '../sample/sample-button.vue';
   import SamplePanel from '../sample/sample-panel.vue';
@@ -59,6 +62,7 @@ export default {
     SampleHint,
     SampleInput,
     SampleNavigator,
+    SamplePageBar,
     // SampleSearch,
     SampleButton,
     SamplePanel,

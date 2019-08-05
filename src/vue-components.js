@@ -1,10 +1,11 @@
 import Utils from './scripts/Utils';
 import Input from './components/input';
 import Upload from './components/upload/Upload';
-import Layout from './components/layout/layout';
+
 import Editor from './components/editor/editor';
 
 
+const PageBar = resolve => require(['./components/page-bar.vue'], resolve);
 const TreeNode = resolve => require(['./components/tree/tree-node.vue'], resolve);
 const Panel = resolve => require(['./components/panel.vue'], resolve);
 const Button = resolve => require(['./components/button.vue'], resolve);
@@ -20,7 +21,7 @@ const Hint = resolve => require(['./components/hint.vue'],resolve );
 import TreeNodeModel from "./components/tree/TreeNode";
 
 
-const vueComponents = { TreeNode, Button, Panel, Modal, Search, Input, Upload, Thumbnail, Editor, Dropdown, Layout, Cover, Table, Selector, Hint};
+const vueComponents = { TreeNode, Button, Panel, Modal, Search, Input, Upload, Thumbnail, Editor, Dropdown, PageBar, Cover, Table, Selector, Hint};
 const Model = {
     TreeNode: TreeNodeModel
 };
