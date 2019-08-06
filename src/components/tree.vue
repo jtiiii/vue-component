@@ -5,9 +5,8 @@
                 <div class="tree-node" @click="childClick( list[index] )">
                     <slot name="item" :index="index" :item="list[index]"></slot>
                 </div>
-                <f-v-tree v-show="show" v-if="list[index][childKey].length"
+                <f-v-tree v-show="list[index].show" v-if="list[index][childKey].length"
                           :emotion="list[index].emotion || emotion"
-                          :show="(list[index].show instanceof Boolean)? list[index].show: false"
                           :list="list[index][childKey]"
                           @itemClick="childClick"
                 >
@@ -38,11 +37,6 @@
                 required: false,
                 default: () => []
             },
-            show:{
-                type: Boolean,
-                required: false,
-                default: false,
-            },
             childKey:{
                 type: String,
                 required: false,
@@ -61,7 +55,6 @@
         },
         methods:{
             childClick( item ){
-                // console.info(item);
                 this.$emit('itemClick', item);
             }
         }
