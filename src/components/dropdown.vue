@@ -94,5 +94,4 @@
     </div>
 </template>
 <style>
-    @import url("../assets/styles/themes/bootstrap/dropdown.css");
 </style>

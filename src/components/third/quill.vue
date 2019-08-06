@@ -132,5 +132,4 @@
     };
 </script>
 <style>
-    @import url('../../assets/styles/themes/bootstrap/third/quill.css');
 </style>

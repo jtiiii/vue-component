@@ -173,5 +173,4 @@
     };
 </script>
 <style>
-    @import url("../assets/styles/themes/bootstrap/upload-image.css");
 </style>

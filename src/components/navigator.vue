@@ -55,5 +55,4 @@
 </script>
 
 <style>
-    @import url('../assets/styles/themes/bootstrap/navigator.css');
 </style>

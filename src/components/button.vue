@@ -42,5 +42,4 @@
     };
 </script>
 <style>
-    @import url("../assets/styles/themes/bootstrap/button.css");
 </style>

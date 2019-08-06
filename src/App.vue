@@ -1,39 +1,37 @@
 <template>
   <div id="app">
-<!--    <sample-hint id="hint"></sample-hint>-->
-<!--    <hr/>-->
-<!--    <sample-input id="input"></sample-input>-->
-<!--    <hr/>-->
-<!--    <sample-navigator id="navigator"></sample-navigator>-->
-<!--    <hr/>-->
+    <sample-hint id="hint"></sample-hint>
+    <hr/>
+    <sample-input id="input"></sample-input>
+    <hr/>
+    <sample-navigator id="navigator"></sample-navigator>
+    <hr/>
 <!--    <sample-search id="search"></sample-search>-->
 <!--    <hr/>-->
-<!--    <sample-button id="button"></sample-button>-->
-<!--    <hr/>-->
-<!--    <sample-panel id="panel"></sample-panel>-->
-<!--    <hr/>-->
-<!--    <sample-modal id="modal"></sample-modal>-->
-<!--    <hr/>-->
-<!--    <sample-thumbnail id="thumbnail"></sample-thumbnail>-->
-<!--    <hr/>-->
-<!--    <sample-page-bar id="page-bar"></sample-page-bar>-->
-<!--    <hr/>-->
-<!--    <sample-dropdown id="dropdown"></sample-dropdown>-->
-<!--    <hr/>-->
-<!--    <sample-selector id="selector"></sample-selector>-->
-<!--    <hr/>-->
-<!--    <sample-upload-image id="upload-image"></sample-upload-image>-->
-<!--    <hr/>-->
+    <sample-button id="button"></sample-button>
+    <hr/>
+    <sample-panel id="panel"></sample-panel>
+    <hr/>
+    <sample-modal id="modal"></sample-modal>
+    <hr/>
+    <sample-thumbnail id="thumbnail"></sample-thumbnail>
+    <hr/>
+    <sample-page-bar id="page-bar"></sample-page-bar>
+    <hr/>
+    <sample-dropdown id="dropdown"></sample-dropdown>
+    <hr/>
+    <sample-selector id="selector"></sample-selector>
+    <hr/>
+    <sample-upload-image id="upload-image"></sample-upload-image>
+    <hr/>
     <sample-tree id="tree"></sample-tree>
     <hr/>
-<!--    <sample-table id="table"></sample-table>-->
-<!--    <hr/>-->
-<!--    <sample-quill id="quill"></sample-quill>-->
-<!--    <hr/>-->
-<!--    <sample-layout id="layout"></sample-layout>-->
-<!--    <hr/>-->
-<!--    <sample-cover id="cover"></sample-cover>-->
-<!--    <hr/>-->
+    <sample-table id="table"></sample-table>
+    <hr/>
+    <sample-quill id="quill"></sample-quill>
+    <hr/>
+    <sample-cover id="cover"></sample-cover>
+    <hr/>
   </div>
 </template>
 
@@ -79,6 +77,7 @@ export default {
 </script>
 
 <style>
+    @import url("vue-components.css");
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif, alibaba;
     -webkit-font-smoothing: antialiased;

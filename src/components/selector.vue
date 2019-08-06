@@ -83,5 +83,4 @@
 </script>
 
 <style>
-    @import url("../assets/styles/themes/bootstrap/selector.css");
 </style>

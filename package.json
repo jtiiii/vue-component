@@ -26,11 +26,7 @@
   "bugs": {
     "url": "https://github.com/jtiiii/vue-component/issues"
   },
-  "files": [
-    "package-bak.json",
-    "README",
-    "src"
-  ],
+  "files": ["*"],
   "eslintConfig": {
     "root": true,
     "env": {

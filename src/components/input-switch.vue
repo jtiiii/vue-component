@@ -39,5 +39,4 @@
 </script>
 
 <style>
-    @import url('../assets/styles/themes/bootstrap/input-switch.css');
 </style>

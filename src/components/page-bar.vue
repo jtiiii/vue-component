@@ -88,5 +88,4 @@
 
 </script>
 <style>
-    @import url('../assets/styles/themes/bootstrap/page-bar.css');
 </style>

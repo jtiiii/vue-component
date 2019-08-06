@@ -70,6 +70,4 @@
     }
 </script>
 <style>
-    @import url('../assets/styles/themes/bootstrap/hint.css');
-
 </style>

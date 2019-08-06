@@ -68,5 +68,4 @@
     };
 </script>
 <style>
-    @import url('../assets/styles/themes/bootstrap/input-file.css');
 </style>

@@ -61,5 +61,4 @@
 </script>
 
 <style>
-    @import url('../assets/styles/themes/bootstrap/table.css');
 </style>
