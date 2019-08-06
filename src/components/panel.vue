@@ -1,5 +1,4 @@
 <script type="text/javascript">
-    // import CommonStore from '../scripts/store/Common';
     import VueUtils from '../scripts/util/VueUtils';
 
     export default {
@@ -39,9 +38,6 @@
             };
         },
         computed: {
-            style(){
-                return CommonStore.state.style;
-            },
             panelStyle: function(){
                 let size = {};
                 if(this.width){

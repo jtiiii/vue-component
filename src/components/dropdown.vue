@@ -1,3 +1,21 @@
+<template>
+    <div class="dropdown"  v-outsideClick="closeMenu" >
+        <v-button v-if="!hasCustomButton" ref="button" :size="size" :emotion="emotion" @click="openMenu">
+            {{ text }}</v-button>
+        <div v-else ref="button" @click="openMenu" ><slot name="button"></slot></div>
+        <v-modal ref="menu"
+                 class="menu"
+                 :size="'unlimited'"
+                 :emotion="emotion"
+                 :hasMask="modal.hasMask"
+                 :position="modal.position"
+                 :show="show === undefined? modal.show : show"
+                 @mask-click="closeMenu"
+        >
+            <slot></slot>
+        </v-modal>
+    </div>
+</template>
 <script>
     import Button from './button.vue';
     import Modal from './modal.vue';
@@ -29,7 +47,7 @@
             position: {
                 type: String,
                 required: false,
-                default: 'outside-bottom-left'
+                default: 'outside-bottom-center'
             }
         },
         directives:{
@@ -75,23 +93,5 @@
         }
     };
 </script>
-<template>
-    <div class="dropdown"  v-outsideClick="closeMenu" >
-        <v-button v-if="!hasCustomButton" ref="button" :size="size" :emotion="emotion" @click="openMenu">{{ input-text
-            }}</v-button>
-        <div v-else  ref="button" @click="openMenu" ><slot name="button"></slot></div>
-        <v-modal ref="menu"
-                 class="menu"
-                 :size="'unlimited'"
-                 :emotion="emotion"
-                 :hasMask="modal.hasMask"
-                 :position="modal.position"
-                 :show="show === undefined? modal.show : show"
-                 @mask-click="closeMenu"
-        >
-            <slot></slot>
-        </v-modal>
-    </div>
-</template>
 <style>
 </style>

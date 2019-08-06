@@ -1,19 +1,21 @@
 <template>
-<!--    <selector :size="'small'"-->
-<!--              :emotion="'warning'"-->
-<!--              :selects="selects"-->
-<!--              :text="selectedText"-->
-<!--              :length="length"-->
-<!--              v-model="listShow"-->
-<!--              @itemClick="select"-->
-<!--    >-->
-<!--        <template #button>-->
-<!--            <v-button :emotion="'warning'">{{selectedText}} <i class="v-iconfont v-icon-down" ></i></v-button>-->
-<!--        </template>-->
-<!--        <template #item="{index}">-->
-<!--            {{ list[index].text }}-->
-<!--        </template>-->
-<!--    </selector>-->
+    <div>
+        <selector :size="'small'"
+                  :emotion="'warning'"
+                  :selects="selects"
+                  :text="selectedText"
+                  :length="length"
+                  v-model="listShow"
+                  @itemClick="select"
+        >
+            <template #button>
+                <v-button class="selector-button" :emotion="'warning'">{{selectedText}} <i class="v-iconfont v-icon-down" ></i></v-button>
+            </template>
+            <template #item="{index}">
+                {{ list[index].text }}
+            </template>
+        </selector>
+    </div>
 </template>
 
 <script>
@@ -43,21 +45,23 @@
                 return this.list.length;
             },
             selectedText(){
-                return this.list[this.selects[0]].input;
+                return this.list[this.selects[0]].text;
             }
         },
         methods:{
             select( index ){
+                console.info(index);
                 this.selects.pop();
                 this.selects.push(index);
                 this.listShow = false;
 
             }
-
         }
     }
 </script>
 
-<style>
-
+<style scoped>
+    .selector-button{
+        min-width: 6rem;
+    }
 </style>

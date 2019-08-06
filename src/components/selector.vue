@@ -1,8 +1,9 @@
 <template>
     <f-v-dropdown class="selector"
                   :emotion="emotion"
-                  :text="input-text"
+                  :text="text"
                   :show="listShow"
+                  :size="size"
                   @openOrClose="listShoChange">
         <template #button>
             <slot name="button"></slot>
@@ -22,17 +23,12 @@
 <script>
     import Navigator from './navigator.vue';
     import Dropdown from './dropdown.vue';
-    import Button from './button.vue';
     import VueUtils from '../scripts/util/VueUtils';
-
-
-
     export default {
         name: "f-v-selector",
         components: {
             'f-v-navigator': Navigator,
             'f-v-dropdown': Dropdown,
-            'f-v-button': Button
         },
         model:{
             prop: 'listShow',

@@ -4,6 +4,7 @@
             <a class="item"
                v-for="index in length"
                :active="isActive(index - 1)"
+               :key="index"
                @click="$emit('click', index - 1)"
             >
                 <slot name="item" :index="index - 1"></slot>

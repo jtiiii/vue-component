@@ -77,12 +77,15 @@ export default {
 </script>
 
 <style>
-    @import url("vue-components.css");
+  @import url("vue-components.css");
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif, alibaba;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+  }
+  #app > div{
+    min-height: 10rem;
   }
   hr{
     margin-top: 10px;

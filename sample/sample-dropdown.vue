@@ -1,14 +1,14 @@
 <template>
     <div>
-<!--        <dropdown v-model="d1.show" :emotion="'info'">-->
-<!--            hello thank you very much;-->
-<!--        </dropdown>-->
-<!--        <dropdown>-->
-<!--            <template #button>-->
-<!--                <button class="btn" type="button">test</button>-->
-<!--            </template>-->
-<!--            Are you ok?-->
-<!--        </dropdown>-->
+        <dropdown v-model="d1.show" :position="'outside-bottom-center'" :emotion="'info'">
+            hello thank you very much;
+        </dropdown>
+        <dropdown>
+            <template #button>
+                <button class="btn" type="button">custom dropdown</button>
+            </template>
+            Are you ok?
+        </dropdown>
     </div>
 </template>
 <script>
