@@ -1,0 +1,33 @@
+.tree.emotion-default .tree-node:hover {
+  background-color: #383d41;
+  color: #fff;
+}
+.tree.emotion-info .tree-node:hover {
+  background-color: #0c5460;
+  color: #fff;
+}
+.tree.emotion-success .tree-node:hover {
+  background-color: #155724;
+  color: #fff;
+}
+.tree.emotion-warning .tree-node:hover {
+  background-color: #8a6d3b;
+  color: #fff;
+}
+.tree.emotion-danger .tree-node:hover {
+  background-color: #a94442;
+  color: #fff;
+}
+.tree .tree-node {
+  border-radius: 0.3125rem;
+  padding-left: 0.1875rem;
+}
+.tree .nav-box .nav {
+  padding-top: 0;
+}
+.tree .nav-box .nav.direction-column .item {
+  margin: 0;
+  padding: 0 0 0.0625rem 0.125rem;
+  border-radius: 0;
+}
+/*# sourceMappingURL=tree.css.map */

@@ -1,6 +1,6 @@
 <template>
     <div class="sample-upload-image">
-        <upload-image :show="true" @close="close" :emotion="'default'">
+        <upload-image :show="true" :size="'large'" @close="close" :emotion="'default'">
         </upload-image>
     </div>
 </template>

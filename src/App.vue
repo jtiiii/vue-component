@@ -12,8 +12,8 @@
 <!--    <hr/>-->
 <!--    <sample-panel id="panel"></sample-panel>-->
 <!--    <hr/>-->
-    <sample-modal id="modal"></sample-modal>
-    <hr/>
+<!--    <sample-modal id="modal"></sample-modal>-->
+<!--    <hr/>-->
 <!--    <sample-thumbnail id="thumbnail"></sample-thumbnail>-->
 <!--    <hr/>-->
 <!--    <sample-page-bar id="page-bar"></sample-page-bar>-->
@@ -22,10 +22,10 @@
 <!--    <hr/>-->
 <!--    <sample-selector id="selector"></sample-selector>-->
 <!--    <hr/>-->
-    <sample-upload-image id="upload-image"></sample-upload-image>
-    <hr/>
-<!--    <sample-tree id="tree"></sample-tree>-->
+<!--    <sample-upload-image id="upload-image"></sample-upload-image>-->
 <!--    <hr/>-->
+    <sample-tree id="tree"></sample-tree>
+    <hr/>
 <!--    <sample-table id="table"></sample-table>-->
 <!--    <hr/>-->
 <!--    <sample-quill id="quill"></sample-quill>-->
@@ -50,7 +50,7 @@
   import SampleDropdown from '../sample/sample-dropdown.vue';
   import SampleSelector from '../sample/sample-selector.vue';
   import SampleUploadImage from '../sample/sample-upload-image.vue';
-  // import SampleTree from '../sample/sample-tree.vue';
+  import SampleTree from '../sample/sample-tree.vue';
   import SampleTable from '../sample/sample-table.vue';
   import SampleQuill from '../sample/sample-quill.vue';
   import SampleCover from '../sample/sample-cover.vue';
@@ -70,7 +70,7 @@ export default {
     SampleDropdown,
     SampleSelector,
     SampleUploadImage,
-    // SampleTree,
+    SampleTree,
     SampleTable,
     SampleQuill,
     SampleCover,

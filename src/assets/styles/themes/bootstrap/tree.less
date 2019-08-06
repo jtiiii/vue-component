@@ -1,0 +1,36 @@
+@import "base.less";
+
+.tree{
+  &.emotion{
+    .emotion-tree(@background-color, @emotion-type){
+      &-@{emotion-type}{
+        .tree-node:hover{
+          background-color: @background-color;
+          color: #fff;
+        }
+      }
+    }
+    .emotion-tree(@default, default);
+    .emotion-tree(@info, info);
+    .emotion-tree(@success, success);
+    .emotion-tree(@warning, warning);
+    .emotion-tree(@danger, danger);
+  }
+  .tree-node{
+    border-radius: 0.3125rem;
+    padding-left: 0.1875rem;
+  }
+
+  .nav-box{
+    .nav{
+      padding-top: 0;
+      &.direction-column{
+        .item{
+          margin: 0;
+          padding: 0 0 0.0625rem 0.125rem;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
