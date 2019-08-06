@@ -19,6 +19,7 @@
 </template>
 <script>
     import Button from '../../button/button.vue';
+    import _ from 'lodash';
 
     export default {
         name: 'v-page-bar',
@@ -64,7 +65,7 @@
                 return this.all >= this.length? this.length: this.all;
             },
             showPageArray(){
-                let half = this.showLength / 2;
+                let half = _.round(this.showLength / 2);
                 let start = this.current - half;
                 if(start < 1){
                     start = 1;
