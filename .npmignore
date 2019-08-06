@@ -43,3 +43,4 @@ sample/
 .gitignore/
 babel.config.js/
 package-lock.json/
+vue.config.js

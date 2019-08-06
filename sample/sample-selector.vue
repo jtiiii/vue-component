@@ -23,8 +23,8 @@
     import Button from '../src/components/button.vue';
 
     let list = [
-        {text:'123'},
-        {text: 'sdfsdf'}
+        {text:'测试1'},
+        {text: '测试2'}
     ];
 
     export default {

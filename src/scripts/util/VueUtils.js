@@ -1,5 +1,3 @@
-// import CommonStore from '../store/Common';
-
 const VueUtils = {
     directives:{
         outsideClick:{

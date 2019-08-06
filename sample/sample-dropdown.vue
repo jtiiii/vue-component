@@ -1,14 +1,15 @@
 <template>
     <div>
-        <dropdown v-model="d1.show" :position="'outside-bottom-center'" :emotion="'info'">
+        <v-dropdown v-model="d1.show" :position="'outside-bottom-center'" :emotion="'info'">
             hello thank you very much;
-        </dropdown>
-        <dropdown>
+        </v-dropdown>
+        <v-dropdown v-model="d2.show" :position="'outside-bottom-center'" :emotion="'info'">
             <template #button>
-                <button class="btn" type="button">custom dropdown</button>
+                <!-- todo 在我个人调试的环境下 如果"custom button" 改成 "custom dropdown" 会造成浏览器假死的古怪现象 -->
+                <button type="button">custom button</button>
             </template>
             Are you ok?
-        </dropdown>
+        </v-dropdown>
     </div>
 </template>
 <script>
@@ -16,12 +17,15 @@
 
     export default {
         components: {
-            'dropdown': Dropdown
+            'v-dropdown': Dropdown
         },
         data(){
             return {
                 d1:{
                     show: false
+                },
+                d2:{
+                    show: false,
                 }
             }
         }
