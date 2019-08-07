@@ -1,3 +1,4 @@
+@import "assets/styles/themes/bootstrap/loading-mask.css";
 .button {
   outline: none;
   cursor: pointer;

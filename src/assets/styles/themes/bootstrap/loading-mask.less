@@ -1,0 +1,22 @@
+.v-loading-mask{
+  position: fixed;
+  background-color: #00000055;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+
+  &.scoped{
+    position: absolute;
+  }
+  &.global{
+    position: fixed;
+  }
+
+  .loading-content{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+}
