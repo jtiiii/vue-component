@@ -8,12 +8,12 @@
     </div>
 </template>
 <script>
-    import Cover from '../src/components/cover.vue';
+    import FComponents from '../src/vue-components';
     import Image from './assets/QQ20181229-1.jpg';
 
     export default {
         components:{
-            'cover': Cover
+            'cover': FComponents.Cover
         },
         data(){
             return {

@@ -29,11 +29,11 @@
 </template>
 
 <script>
-    import Panel from '@/components/panel.vue';
+    import FComponents from '../src/vue-components';
 
     export default {
         components:{
-            'panel': Panel
+            'panel': FComponents.Panel
         },
         methods:{
             closeHandle: function( panel ){

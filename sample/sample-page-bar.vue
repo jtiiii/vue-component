@@ -9,12 +9,13 @@
 </template>
 
 <script>
-    import PageBar from '../src/components/page-bar.vue';
+
+    import FComponents from '../src/vue-components';
 
     export default {
         name: "sample-page-bar",
         components:{
-            'v-page-bar': PageBar
+            'v-page-bar': FComponents.PageBar
         },
         data(){
             return {

@@ -36,13 +36,13 @@
 </template>
 
 <script>
-    import Navigator from '../src/components/navigator.vue';
-    import Button from '../src/components/button.vue';
+    import FComponents from '../src/vue-components';
+
     export default {
         name: "sample-navigator",
         components:{
-            'v-navigator': Navigator,
-            'v-button': Button,
+            'v-navigator': FComponents.Navigator,
+            'v-button': FComponents.Button,
         },
         data(){
             return {

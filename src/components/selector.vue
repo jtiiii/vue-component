@@ -1,45 +1,43 @@
 <template>
-    <f-v-dropdown class="selector"
-                  :emotion="emotion"
-                  :text="text"
-                  :show="listShow"
-                  :size="size"
-                  @openOrClose="listShoChange">
-        <template #button>
-            <slot name="button"></slot>
-        </template>
-        <f-v-navigator :length="length"
-                       :selects="selects"
-                       :direction="'column'"
-                       :emotion="emotion"
-                       @click="itemClick"
+    <div class="selector">
+        <slot></slot>
+        <f-v-modal
+                 :size="modal.size"
+                 :emotion="emotion"
+                 :hasMask="modal.hasMask"
+                 :position="modal.position"
+                 :show="listShow"
+                 @mask-click="openOrClose(false)"
         >
-            <template #item="{index}">
-                <slot name="item" :index="index"></slot>
-            </template>
-        </f-v-navigator>
-    </f-v-dropdown>
+            <f-v-navigator :length="length"
+                           :selects="selects"
+                           :direction="'column'"
+                           :emotion="emotion"
+                           @click="itemClick"
+            >
+                <template #item="{index}">
+                    <slot name="item" :index="index"></slot>
+                </template>
+            </f-v-navigator>
+        </f-v-modal>
+    </div>
 </template>
 <script>
     import Navigator from './navigator.vue';
-    import Dropdown from './dropdown.vue';
+    import Modal from './modal.vue';
     import VueUtils from '../scripts/util/VueUtils';
+
     export default {
         name: "f-v-selector",
         components: {
             'f-v-navigator': Navigator,
-            'f-v-dropdown': Dropdown,
+            'f-v-modal': Modal
         },
         model:{
             prop: 'listShow',
             event: 'openOrClose'
         },
         props:{
-            text:{
-                type: [String, Number],
-                required: false,
-                default: ''
-            },
             listShow:{
                 type: Boolean,
                 required: false,
@@ -58,20 +56,21 @@
             emotion: VueUtils.props.emotion,
             size: VueUtils.props.size,
         },
-        methods:{
-            singleSelect( tab, tabKey){
-                if(this.selects.indexOf(tabKey) === -1){
-                    this.selects.pop();
-                    this.selects.push(tabKey);
+        data(){
+            return {
+                showSelect: false,
+                modal:{
+                    hasMask: false,
+                    position: 'outside-bottom',
+                    size: 'unlimited'
                 }
-                this.menuShow = false;
-                this.$emit('select', tab);
-
-            },
+            };
+        },
+        methods:{
             itemClick( index ){
                 this.$emit('itemClick', index);
             },
-            listShoChange( flag ){
+            openOrClose( flag ){
                 this.$emit('openOrClose', flag);
             }
         }

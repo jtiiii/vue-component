@@ -3,14 +3,12 @@
         <selector :size="'small'"
                   :emotion="'warning'"
                   :selects="selects"
-                  :text="selectedText"
                   :length="length"
-                  v-model="listShow"
+                  :listShow="listShow"
+                  @openOrClose="openOrClose"
                   @itemClick="select"
         >
-            <template #button>
-                <v-button class="selector-button" :emotion="'warning'">{{selectedText}} <i class="v-iconfont v-icon-down" ></i></v-button>
-            </template>
+            <v-button class="selector-button" :emotion="'success'" @click="listShow=true" >{{ selectedText }}</v-button>
             <template #item="{index}">
                 {{ list[index].text }}
             </template>
@@ -19,8 +17,7 @@
 </template>
 
 <script>
-    import Selector from '../src/components/selector.vue';
-    import Button from '../src/components/button.vue';
+    import FComponents from '../src/vue-components';
 
     let list = [
         {text:'测试1'},
@@ -37,8 +34,8 @@
             };
         },
         components:{
-            'selector': Selector,
-            'v-button': Button
+            'selector': FComponents.Selector,
+            'v-button': FComponents.Button
         },
         computed:{
             length(){
@@ -48,6 +45,11 @@
                 return this.list[this.selects[0]].text;
             }
         },
+        watch:{
+            listShow( nv ){
+                console.log('list-show: ', nv);
+            }
+        },
         methods:{
             select( index ){
                 console.info(index);
@@ -55,6 +57,10 @@
                 this.selects.push(index);
                 this.listShow = false;
 
+            },
+            openOrClose( flag ){
+                console.info(flag);
+                this.listShow = flag;
             }
         }
     }

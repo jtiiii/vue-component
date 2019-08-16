@@ -42,13 +42,12 @@
     </div>
 </template>
 <script>
-    import Modal from '@/components/modal.vue';
-    import Button from '@/components/button.vue';
+    import FComponents from '../src/vue-components';
 
     export default {
         components:{
-            'modal': Modal,
-            'v-button': Button
+            'modal': FComponents.Modal,
+            'v-button': FComponents.Button
         },
         data: function(){
             return {

@@ -9,13 +9,13 @@
     </div>
 </template>
 <script>
-    import Button from '../src/components/button.vue';
-    import Tree from '../src/components/tree.vue';
+    import FComponents from '../src/vue-components';
+
     export default {
         name: "sample-tree",
         components:{
-            "tree": Tree,
-            "v-button": Button,
+            "tree": FComponents.Tree,
+            "v-button": FComponents.Button,
         },
         data(){
             return {

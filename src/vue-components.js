@@ -1,7 +1,7 @@
 import Utils from './scripts/Utils';
 
-const UploadImage = resolve => require(['./components/upload-image.vue'], resolve);
 const ThirdQuill = resolve => require(['./components/third/quill.vue'], resolve);
+const Image = resolve => require(['./components/upload-image.vue'], resolve);
 const PageBar = resolve => require(['./components/page-bar.vue'], resolve);
 const Panel = resolve => require(['./components/panel.vue'], resolve);
 const Button = resolve => require(['./components/button.vue'], resolve);
@@ -16,7 +16,8 @@ const Text = resolve => require(['./components/input-text.vue'],resolve);
 const File = resolve => require(['./components/input-file.vue'],resolve);
 const Switch = resolve => require(['./components/input-switch.vue'],resolve);
 const Tree = resolve => require(['./components/tree.vue'],resolve);
-
+const Loading = resolve => require(['./components/loading-mask.vue'],resolve);
+const Navigator = resolve => require(['./components/navigator.vue'], resolve);
 
 const vueComponents = {
     Button,
@@ -24,14 +25,16 @@ const vueComponents = {
     Modal,
     Tree,
     Input:{ Text, File, Switch},
-    Upload:{ Image: UploadImage},
+    Upload:{ Image},
     Thumbnail,
     Third:{ Quill: ThirdQuill},
     Dropdown,
     PageBar,
     Cover,
     Table,
+    Loading,
     Selector,
+    Navigator,
     Hint
 };
 export {Utils};

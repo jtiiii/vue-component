@@ -5,11 +5,12 @@
 </template>
 
 <script>
-    import Loading from '../src/components/loading-mask.vue';
+    import FComponents from '../src/vue-components';
+
     export default {
         name: "sample-loading",
         components:{
-            'loading': Loading,
+            'loading': FComponents.Loading,
         },
         data(){
             return{

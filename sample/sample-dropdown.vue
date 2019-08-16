@@ -13,11 +13,11 @@
     </div>
 </template>
 <script>
-    import Dropdown from '../src/components/dropdown.vue';
+    import FComponents from '../src/vue-components';
 
     export default {
         components: {
-            'v-dropdown': Dropdown
+            'v-dropdown': FComponents.Dropdown
         },
         data(){
             return {

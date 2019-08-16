@@ -11,13 +11,12 @@
     </div>
 </template>
 <script type="text/javascript">
-    import Editor from '../src/components/third/quill.vue';
-    import Button from '../src/components/button.vue';
+    import FComponents from '../src/vue-components';
 
     export default {
         components:{
-            'v-editor': Editor,
-            'v-button': Button,
+            'v-editor': FComponents.Third.Quill,
+            'v-button': FComponents.Button,
         },
         data(){
             return {

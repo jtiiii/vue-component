@@ -26,13 +26,13 @@
     </div>
 </template>
 <script>
-    import Button from '../src/components/button.vue';
-    import Hint from '../src/components/hint.vue';
+    import FComponents from '../src/vue-components';
+
     export default {
         name: 'sample-hint',
         components:{
-            'hint': Hint,
-            'v-button': Button
+            'hint': FComponents.Hint,
+            'v-button': FComponents.Button
         },
         data(){
             return{

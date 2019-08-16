@@ -37,8 +37,8 @@
     </div>
 </template>
 <script>
-    import Table from '../src/components/table.vue';
-    import Button from '../src/components/button.vue';
+    import FComponents from '../src/vue-components';
+
     const sampleGoodsType = [
         { id: 4, code: 'goodsType-001' , name: '普货'},
         { id: 5, code: 'goodsType-002', name: '冷冻'}
@@ -52,8 +52,8 @@
 
     export default {
         components:{
-            'v-table': Table,
-            'v-button': Button
+            'v-table': FComponents.Table,
+            'v-button': FComponents.Button
         },
         data(){
             return {

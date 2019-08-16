@@ -8,14 +8,14 @@
     </div>
 </template>
 <script type="text/javascript">
-    import Thumbnail from '../src/components/thumbnail.vue';
+    import FComponents from '../src/vue-components';
     import img1 from './assets/40658121_p0.jpg';
     import img2 from './assets/54246592_p0.jpg';
     import img3 from './assets/54734161_p0.jpg';
 
     export default {
         components:{
-            'thumbnail' : Thumbnail
+            'thumbnail' : FComponents.Thumbnail
         },
         data() {
             return {

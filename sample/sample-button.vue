@@ -20,10 +20,11 @@
     </div>
 </template>
 <script>
-    import Button from '../src/components/button.vue';
+    import FComponents from '../src/vue-components';
+
     export default {
         components:{
-            'v-button': Button
+            'v-button': FComponents.Button
         },
         data(){
             return {

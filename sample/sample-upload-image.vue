@@ -5,11 +5,11 @@
     </div>
 </template>
 <script type="text/javascript">
-    import UploadImage from '../src/components/upload-Image.vue';
+    import FComponents from '../src/vue-components';
 
     export default {
         components:{
-            "upload-image": UploadImage
+            "upload-image": FComponents.Upload.Image
         },
         data(){
             return {};
