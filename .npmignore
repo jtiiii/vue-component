@@ -44,3 +44,5 @@ sample/
 babel.config.js/
 package-lock.json/
 vue.config.js
+# idea files
+.idea
