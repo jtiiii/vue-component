@@ -2,18 +2,25 @@
     <div class="tree" :class="treeClass">
         <f-v-navigator :length="childrenLength" :emotion="emotion" :direction="'column'">
             <template #item="{index}">
-                <div class="tree-node" @click="childClick( list[index] )">
-                    <slot name="item" :index="index" :item="list[index]"></slot>
+                <div class="tree-item">
+                    <div class="tree-switch" @click="switchClick( list[index] )">
+                        <slot name="switch" :index="index" :item="list[index]"></slot>
+                    </div>
+                    <div class="tree-node" @click="childClick( list[index] )">
+                        <slot name="item" :index="index" :item="list[index]"></slot>
+                    </div>
                 </div>
                 <f-v-tree v-show="list[index].show" v-if="list[index][childKey].length"
                           :emotion="list[index].emotion || emotion"
                           :list="list[index][childKey]"
                           @itemClick="childClick"
+                          @switchClick="switchClick"
                 >
+                    <template #switch="{ index, item}">
+                        <slot name="switch" :index="index" :item="item"></slot>
+                    </template>
                     <template #item="{ index, item }">
-                        <div class="tree-node">
-                            <slot name="item" :index="index" :item="item"></slot>
-                        </div>
+                        <slot name="item" :index="index" :item="item"></slot>
                     </template>
                 </f-v-tree>
             </template>
@@ -56,6 +63,9 @@
         methods:{
             childClick( item ){
                 this.$emit('itemClick', item);
+            },
+            switchClick( item ){
+                this.$emit('switchClick', item);
             }
         }
     }

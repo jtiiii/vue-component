@@ -16,10 +16,18 @@
     .emotion-tree(@warning, warning);
     .emotion-tree(@danger, danger);
   }
-  .tree-node{
-    border-radius: 0.3125rem;
-    padding-left: 0.1875rem;
+  .tree-item{
+    display: flex;
+    flex-flow: row;
+    .tree-switch{
+      display: inline-block;
+    }
+    .tree-node{
+      border-radius: 0.3125rem;
+      padding-left: 0.1875rem;
+    }
   }
+
 
   .nav-box{
     .nav{

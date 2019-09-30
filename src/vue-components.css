@@ -1131,7 +1131,14 @@
   background-color: #a94442;
   color: #fff;
 }
-.tree .tree-node {
+.tree .tree-item {
+  display: flex;
+  flex-flow: row;
+}
+.tree .tree-item .tree-switch {
+  display: inline-block;
+}
+.tree .tree-item .tree-node {
   border-radius: 0.3125rem;
   padding-left: 0.1875rem;
 }

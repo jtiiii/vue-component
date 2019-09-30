@@ -1,7 +1,10 @@
 <template>
     <div>
         <v-button :emotion="'info'" :size="'small'" @click="addData">add data 1-2-1 </v-button>
-        <tree :list="[tree]" :emotion="'info'" @itemClick="nodeClick">
+        <tree :list="[tree]" :emotion="'info'" @itemClick="nodeClick" @switchClick="switchClick">
+            <template #switch="{index,item}">
+                {{ item.show? '-': '+' }} test
+            </template>
             <template #item="{index,item}">
                 {{item.text}}
             </template>
@@ -40,6 +43,9 @@
         methods:{
             nodeClick( node ){
                 console.info(node.text);
+            },
+            switchClick( node ){
+                console.log(node);
                 node.show = !node.show;
             },
             addData(){
