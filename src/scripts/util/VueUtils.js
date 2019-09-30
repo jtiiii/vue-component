@@ -1,7 +1,7 @@
 const VueUtils = {
     directives:{
         outsideClick:{
-            bind: function(el, binding, vnode){
+            bind: function(el, binding){
                 let documentHandle = function(e){
                     if(el.contains(e.target)){
                         return false;

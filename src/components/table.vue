@@ -28,6 +28,7 @@
 </template>
 <script>
     import VueUtils from '../scripts/util/VueUtils';
+
     export default {
         name: "v-table",
         props:{
@@ -53,7 +54,7 @@
         methods:{
             rowClass( index ){
                 let result = {};
-                result['row-line'] = !Boolean(index % 2);
+                result['row-line'] = index % 2 === 0;
                 return result;
             }
         }
