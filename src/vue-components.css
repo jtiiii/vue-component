@@ -1,101 +1,102 @@
 @import "assets/styles/themes/bootstrap/loading-mask.css";
 .button {
+  margin: 0 1px;
   outline: none;
   cursor: pointer;
 }
 .button.emotion-default {
-  background-color: #dddee0;
-  border: 1px solid #c2c4c8;
-  background-image: linear-gradient(to bottom, #dddee0 0%, #c7c9cd);
+  background-color: #cfd1d4;
+  border: none;
+  box-shadow: 0 0 1px 1px #c2c4c8;
   color: #383d41;
 }
 .button.emotion-default:active,
 .button.emotion-default.pressed {
-  background-color: #383d41;
-  border: 1px solid #202326;
-  background-image: linear-gradient(to bottom, #383d41 0%, #25282b);
+  background-color: #2c3033;
+  border: none;
+  box-shadow: 0 0 1px 1px #202326;
   color: #e2e3e5;
 }
 .button.emotion-info {
-  background-color: #d1ecf1;
-  border: 1px solid #aadce5;
-  background-image: linear-gradient(to bottom, #d1ecf1 0%, #b2dfe7);
+  background-color: #bde4eb;
+  border: none;
+  box-shadow: 0 0 1px 1px #aadce5;
   color: #0c5460;
 }
 .button.emotion-info:active,
 .button.emotion-info.pressed {
-  background-color: #0c5460;
-  border: 1px solid #062c33;
-  background-image: linear-gradient(to bottom, #0c5460 0%, #07343c);
+  background-color: #094049;
+  border: none;
+  box-shadow: 0 0 1px 1px #062c33;
   color: #d1ecf1;
 }
 .button.emotion-success {
-  background-color: #d4edda;
-  border: 1px solid #b0debb;
-  background-image: linear-gradient(to bottom, #d4edda 0%, #b7e1c1);
+  background-color: #c2e5cb;
+  border: none;
+  box-shadow: 0 0 1px 1px #b0debb;
   color: #155724;
 }
 .button.emotion-success:active,
 .button.emotion-success.pressed {
-  background-color: #155724;
-  border: 1px solid #0b2e13;
-  background-image: linear-gradient(to bottom, #155724 0%, #0d3616);
+  background-color: #10421b;
+  border: none;
+  box-shadow: 0 0 1px 1px #0b2e13;
   color: #d4edda;
 }
 .button.emotion-warning {
-  background-color: #fff3cd;
-  border: 1px solid #ffe79a;
-  background-image: linear-gradient(to bottom, #fff3cd 0%, #ffe9a4);
+  background-color: #ffedb3;
+  border: none;
+  box-shadow: 0 0 1px 1px #ffe79a;
   color: #8a6d3b;
 }
 .button.emotion-warning:active,
 .button.emotion-warning.pressed {
-  background-color: #8a6d3b;
-  border: 1px solid #66512c;
-  background-image: linear-gradient(to bottom, #8a6d3b 0%, #6d562f);
+  background-color: #785f33;
+  border: none;
+  box-shadow: 0 0 1px 1px #66512c;
   color: #fff3cd;
 }
 .button.emotion-danger {
-  background-color: #f8d7da;
-  border: 1px solid #f0acb2;
-  background-image: linear-gradient(to bottom, #f8d7da 0%, #f2b4ba);
+  background-color: #f4c1c6;
+  border: none;
+  box-shadow: 0 0 1px 1px #f0acb2;
   color: #a94442;
 }
 .button.emotion-danger:active,
 .button.emotion-danger.pressed {
-  background-color: #a94442;
-  border: 1px solid #843534;
-  background-image: linear-gradient(to bottom, #a94442 0%, #8c3837);
+  background-color: #973d3b;
+  border: none;
+  box-shadow: 0 0 1px 1px #843534;
   color: #f8d7da;
 }
 .button.size-smaller {
   font-size: 0.625rem;
   min-height: 1.125rem;
-  padding: 0.25rem;
+  padding: 0.25rem 0.575rem;
   border-radius: 0.21875rem;
 }
 .button.size-small {
   font-size: 0.9375rem;
   min-height: 1.6875rem;
-  padding: 0.375rem;
+  padding: 0.375rem 0.8625rem;
   border-radius: 0.328125rem;
 }
 .button.size-medium {
   font-size: 1.25rem;
   min-height: 2.25rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1.15rem;
   border-radius: 0.4375rem;
 }
 .button.size-large {
   font-size: 1.875rem;
   min-height: 3.375rem;
-  padding: 0.75rem;
+  padding: 0.75rem 1.725rem;
   border-radius: 0.65625rem;
 }
 .button.size-larger {
   font-size: 2.5rem;
   min-height: 4.5rem;
-  padding: 1rem;
+  padding: 1rem 2.3rem;
   border-radius: 0.875rem;
 }
 .button:disabled {
