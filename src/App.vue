@@ -1,36 +1,38 @@
 <template>
   <div id="app">
-    <sample-hint id="hint"></sample-hint>
+    <sample-hint id="hint" />
     <hr/>
-    <sample-input id="input"></sample-input>
+    <sample-input id="input" />
     <hr/>
-    <sample-loading id="loading"></sample-loading>
+    <sample-loading id="loading" />
     <hr/>
-    <sample-navigator id="navigator"></sample-navigator>
+    <sample-navigator id="navigator" />
     <hr/>
-    <sample-button id="button"></sample-button>
+    <sample-button id="button" />
     <hr/>
-    <sample-panel id="panel"></sample-panel>
+    <sample-panel id="panel" />
     <hr/>
-    <sample-modal id="modal"></sample-modal>
+    <sample-modal id="modal" />
     <hr/>
-    <sample-thumbnail id="thumbnail"></sample-thumbnail>
+    <sample-thumbnail id="thumbnail" />
     <hr/>
-    <sample-page-bar id="page-bar"></sample-page-bar>
+    <sample-page-bar id="page-bar" />
     <hr/>
-    <sample-dropdown id="dropdown"></sample-dropdown>
+    <sample-dropdown id="dropdown" />
     <hr/>
-    <sample-selector id="selector"></sample-selector>
+    <sample-selector id="selector" />
     <hr/>
-    <sample-upload-image id="upload-image"></sample-upload-image>
+    <sample-upload-image id="upload-image" />
     <hr/>
-    <sample-tree id="tree"></sample-tree>
+    <sample-tree id="tree" />
     <hr/>
-    <sample-table id="table"></sample-table>
+    <sample-table id="table" />
     <hr/>
-    <sample-quill id="quill"></sample-quill>
+    <sample-quill id="quill" />
     <hr/>
-    <sample-cover id="cover"></sample-cover>
+    <sample-cover id="cover" />
+    <hr/>
+    <sample-card id="card" />
     <hr/>
   </div>
 </template>
@@ -53,6 +55,7 @@
     import SampleTable from '../sample/sample-table.vue';
     import SampleQuill from '../sample/sample-quill.vue';
     import SampleCover from '../sample/sample-cover.vue';
+    import SampleCard from '../sample/sample-card.vue';
 
     export default {
   name: 'app',
@@ -61,6 +64,7 @@
     SampleInput,
     SampleNavigator,
     SamplePageBar,
+    SampleCard,
     // SampleSearch,
     SampleButton,
     SamplePanel,
