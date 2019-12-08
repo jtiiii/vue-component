@@ -1,7 +1,7 @@
 <template>
-    <div class="card">
+    <div class="card" :class="cardClass">
             <div class="cover">
-                <img :src="cover" />
+                <img :alt="coverText" :src="cover" />
             </div>
             <div class="content">
                 <slot></slot>
@@ -14,6 +14,16 @@
         components:{
         },
         props: {
+            flow:{
+                type: String,
+                required: false,
+                default: 'row'
+            },
+            coverText:{
+                type: String,
+                required: false,
+                default: '',
+            },
             cover:{
                 type: String,
                 required: false,
@@ -22,6 +32,15 @@
         },
         data(){
             return {};
+        },
+        computed:{
+            cardClass(){
+                let isRow = this.flow === 'row';
+                return {
+                    "row": isRow,
+                    "column": !isRow
+                };
+            }
         }
     }
 </script>
