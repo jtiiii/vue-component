@@ -5,7 +5,7 @@
                 information
             </div>
         </thumbnail>
-        <image-view :src="view.src" :show="view.show" />
+        <image-view :src="view.src" :show="view.show" @click="view.show = false" />
     </div>
 </template>
 <script type="text/javascript">
