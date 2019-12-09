@@ -1,16 +1,17 @@
 <template>
     <div class="thumbnail">
         <div class="thumbnail-img">
-            <canvas ref="canvas" @click="imageClick" ></canvas>
+            <canvas ref="canvas" @click="imageClick" />
         </div>
         <div class="thumbnail-info">
-            <slot :src="src"></slot>
+            <slot/>
         </div>
         <input type="hidden" v-model="src" />
     </div>
 </template>
 <script type="text/javascript">
-    import SizeUtils from '../scripts/util/SizeUtils';
+    import FUtils from 'fo-utils';
+
     export default {
         props:{
             src:{
@@ -32,7 +33,7 @@
                 let img = new Image();
                 img.src = src;
                 img.onload = () =>{
-                    let zoom = SizeUtils.zoom({width: img.width, height: img.height}, 160 );
+                    let zoom = FUtils.SizeUtils.zoom({width: img.width, height: img.height}, 160 );
                     this.dom.canvas.width = zoom.width;
                     this.dom.canvas.height = zoom.height;
                     this.dom.canvas.getContext("2d").drawImage(img,0,0,zoom.width,zoom.height );

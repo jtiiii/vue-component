@@ -16,7 +16,7 @@
                            @click="itemClick"
             >
                 <template #item="{index}">
-                    <slot name="item" :index="index"></slot>
+                    <slot name="item" :index="index" />
                 </template>
             </f-v-navigator>
         </f-v-modal>

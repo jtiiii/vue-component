@@ -32,7 +32,7 @@
     import Modal from './modal.vue';
     import InputFile from './input-file.vue';
     import Button from './button.vue';
-    import SizeUtils from '../scripts/util/SizeUtils';
+    import FUtils from 'fo-utils';
     import SparkMd5 from 'spark-md5';
     import VueUtils from '../scripts/util/VueUtils';
     import Thumbnail from './thumbnail.vue';
@@ -71,7 +71,7 @@
             });
         },
         formatSize(){
-            return SizeUtils.format(this.size);
+            return FUtils.SizeUtils.format(this.size);
         }
     };
 

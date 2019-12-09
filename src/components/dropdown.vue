@@ -21,7 +21,6 @@
     import Button from './button.vue';
     import Modal from './modal.vue';
     import VueUtils from '../scripts/util/VueUtils';
-    import WindowUtils from '../scripts/util/WindowUtils';
 
     export default {
         model:{
@@ -87,7 +86,7 @@
         },
         mounted(){
             this.mobileSize();
-            WindowUtils.onresize( this.mobileSize.bind(this) );
+            window.addEventListener('resize', this.mobileSize.bind(this) );
         }
     };
 </script>
