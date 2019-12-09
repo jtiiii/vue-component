@@ -1,3 +1,4 @@
+> 本repo不再继续维护，因github太卡，因此转移[gitee](https://gitee.com/FuneralObjects/vue-component)
 # vue-component
 前端VUE组件
 

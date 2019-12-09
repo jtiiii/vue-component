@@ -11,17 +11,17 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "homepage": "https://github.com/jtiiii/vue-component#readme",
+  "homepage": "https://gitee.com/FuneralObjects/vue-component",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jtiiii/vue-component.git"
+    "url": "git+https://gitee.com/FuneralObjects/vue-component.git"
   },
   "keywords": [
     "javascript",
     "vue",
     "component"
   ],
-  "author": "FuneralObjects <874972403@qq.com>",
+  "author": "FuneralObjects <funeral_objects@qq.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jtiiii/vue-component/issues"
