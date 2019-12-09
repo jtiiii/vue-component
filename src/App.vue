@@ -1,36 +1,36 @@
 <template>
   <div id="app">
-<!--    <sample-hint id="hint" />-->
-<!--    <hr/>-->
-<!--    <sample-input id="input" />-->
-<!--    <hr/>-->
-<!--    <sample-loading id="loading" />-->
-<!--    <hr/>-->
-<!--    <sample-navigator id="navigator" />-->
-<!--    <hr/>-->
-<!--    <sample-button id="button" />-->
-<!--    <hr/>-->
-<!--    <sample-panel id="panel" />-->
-<!--    <hr/>-->
-<!--    <sample-modal id="modal" />-->
-<!--    <hr/>-->
-<!--    <sample-thumbnail id="thumbnail" />-->
-<!--    <hr/>-->
-<!--    <sample-page-bar id="page-bar" />-->
-<!--    <hr/>-->
-<!--    <sample-dropdown id="dropdown" />-->
-<!--    <hr/>-->
-<!--    <sample-selector id="selector" />-->
-<!--    <hr/>-->
-<!--    <sample-upload-image id="upload-image" />-->
-<!--    <hr/>-->
-<!--    <sample-tree id="tree" />-->
-<!--    <hr/>-->
-<!--    <sample-table id="table" />-->
-<!--    <hr/>-->
-<!--    <sample-quill id="quill" />-->
-<!--    <hr/>-->
-<!--    <sample-cover id="cover" />-->
+    <sample-hint id="hint" />
+    <hr/>
+    <sample-input id="input" />
+    <hr/>
+    <sample-loading id="loading" />
+    <hr/>
+    <sample-navigator id="navigator" />
+    <hr/>
+    <sample-button id="button" />
+    <hr/>
+    <sample-panel id="panel" />
+    <hr/>
+    <sample-modal id="modal" />
+    <hr/>
+    <sample-thumbnail id="thumbnail" />
+    <hr/>
+    <sample-page-bar id="page-bar" />
+    <hr/>
+    <sample-dropdown id="dropdown" />
+    <hr/>
+    <sample-selector id="selector" />
+    <hr/>
+    <sample-upload-image id="upload-image" />
+    <hr/>
+    <sample-tree id="tree" />
+    <hr/>
+    <sample-table id="table" />
+    <hr/>
+    <sample-quill id="quill" />
+    <hr/>
+    <sample-cover id="cover" />
     <hr/>
     <sample-card id="card" />
     <hr/>
